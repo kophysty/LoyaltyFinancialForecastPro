@@ -1466,3 +1466,19 @@ NameError: name 'initial_users' is not defined
 2024-12-16 21:48:18,723 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 21:48:18,723 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 21:48:18,725 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:48:40,791 - loyalty_model - ERROR - logging_config.py:48 - Error: module 'streamlit' has no attribute 'experimental_rerun'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 62, in main
+    st.experimental_rerun()
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'streamlit' has no attribute 'experimental_rerun'
+2024-12-16 21:49:17,028 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:49:17,029 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:49:17,030 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:49:19,486 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:49:19,486 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:49:19,487 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:49:20,238 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:49:20,239 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:49:20,239 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0

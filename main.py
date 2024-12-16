@@ -59,7 +59,7 @@ def main():
                 # Update all parameters from preset
                 for key, value in PRESETS[selected_scenario].items():
                     st.session_state[key] = value
-                st.experimental_rerun()
+                st.rerun()
 
         # Parameter Controls
         with st.expander(t('base_parameters'), expanded=False):
