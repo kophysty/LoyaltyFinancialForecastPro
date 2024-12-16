@@ -9,15 +9,19 @@ def format_currency(value):
 
 def backup_state():
     """Create a backup of current session state values"""
+    log_info("Creating session state backup")
     backup = {}
     for key in st.session_state:
-        backup[key] = st.session_state[key]
+        if isinstance(st.session_state[key], (int, float, str, bool)):
+            backup[key] = st.session_state[key]
     return backup
 
 def restore_state(backup):
     """Restore session state from backup"""
+    log_info("Restoring session state from backup")
     for key, value in backup.items():
-        st.session_state[key] = value
+        if key in st.session_state:
+            st.session_state[key] = value
 
 def scenario_analysis_page():
     st.title("Анализ сценариев")
@@ -51,12 +55,19 @@ def scenario_analysis_page():
                 state_backup = backup_state()
                 
                 # Load scenario preset
-                for key, value in PRESETS[scenario_name].items():
-                    if key in st.session_state:
-                        st.session_state[key] = value
+                required_keys = [
+                    'commission_rate', 'monthly_transaction_volume', 'transaction_growth_rate',
+                    'initial_subscribers', 'subscriber_growth_rate', 'subscription_price',
+                    'base_ad_revenue', 'ad_revenue_growth_rate', 'base_payroll',
+                    'payroll_growth_rate', 'base_marketing_spend', 'marketing_growth_rate',
+                    'base_infrastructure_cost', 'infrastructure_growth_rate'
+                ]
+                
+                for key in required_keys:
+                    if key in PRESETS[scenario_name]:
+                        st.session_state[key] = PRESETS[scenario_name][key]
                     else:
-                        log_warning(f"Missing session state key: {key} in scenario {scenario_name}")
-                        continue
+                        log_warning(f"Missing preset key: {key} in scenario {scenario_name}")
                 
                 # Calculate financials
                 data = model.calculate_financials()
