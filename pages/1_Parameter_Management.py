@@ -49,7 +49,7 @@ def parameter_management_page():
             st.session_state['active_conversion'] = st.number_input(
                 "Конверсия в активных",
                 min_value=0.0,
-                max_value=1.0,
+                max_value=100.0,
                 value=preset_data['active_conversion'] * 100,
                 format="%.2f",
                 help="Значение в процентах"
