@@ -56,11 +56,12 @@ def scenario_analysis_page():
                 
                 # Load scenario preset
                 required_keys = [
-                    'commission_rate', 'monthly_transaction_volume', 'transaction_growth_rate',
-                    'initial_subscribers', 'subscriber_growth_rate', 'subscription_price',
-                    'base_ad_revenue', 'ad_revenue_growth_rate', 'base_payroll',
-                    'payroll_growth_rate', 'base_marketing_spend', 'marketing_growth_rate',
-                    'base_infrastructure_cost', 'infrastructure_growth_rate'
+                    'initial_users', 'active_conversion', 'growth_rate_y1', 'growth_rate_y2',
+                    'avg_check', 'cashback_percent', 'points_usage_rate',
+                    'exchange_commission_rate', 'reward_commission_rate',
+                    'burn_rate_fot_1', 'burn_rate_fot_2', 'base_infra_cost',
+                    'monthly_marketing_budget', 'marketing_efficiency',
+                    'ad_revenue_per_user', 'partnership_rate'
                 ]
                 
                 for key in required_keys:
