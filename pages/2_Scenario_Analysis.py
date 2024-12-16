@@ -35,8 +35,8 @@ def scenario_analysis_page():
     
     for scenario, result in results.items():
         fig_revenue.add_trace(go.Scatter(
-            x=result['months'],
-            y=result['total_revenue'],
+            x=[r['month'] for r in result],
+            y=[r['revenue'] for r in result],
             name=f"{scenario} Revenue",
             mode='lines'
         ))
@@ -54,9 +54,9 @@ def scenario_analysis_page():
     fig_profit = go.Figure()
     
     for scenario, result in results.items():
-        profits = [r - e for r, e in zip(result['total_revenue'], result['total_expenses'])]
+        profits = [r['revenue'] - r['expenses'] for r in result]
         fig_profit.add_trace(go.Scatter(
-            x=result['months'],
+            x=[r['month'] for r in result],
             y=profits,
             name=f"{scenario} Profit",
             mode='lines'
