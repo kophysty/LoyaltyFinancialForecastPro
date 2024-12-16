@@ -14,6 +14,8 @@ def initialize_session_state():
         'growth_rate_y1': 0.30,
         'growth_rate_y2': 0.15,
         'avg_check': 3000,
+        'cashback_rate': 0.15,  # 15% кэшбэка
+        'points_usage_rate': 0.70,  # 70% использования баллов
         'exchange_commission_rate': 0.03,
         'reward_commission_rate': 0.05,
         
