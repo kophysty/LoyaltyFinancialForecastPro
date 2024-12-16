@@ -22,9 +22,23 @@ def documentation_page():
     
     ## Expense Parameters
     
-    ### Payroll Expenses
-    - **Base Payroll**: Initial monthly payroll expenses
-    - **Payroll Growth Rate**: Monthly growth rate of payroll expenses
+    ### Payroll Expenses (ФОТ)
+    
+    Расходы на заработную плату (ФОТ) меняются в зависимости от периода:
+    
+    1. **Первые 6 месяцев (1-6)**: 
+       - Расходы отсутствуют (₽0)
+       - Период начального развития и тестирования
+    
+    2. **Второе полугодие (7-12 месяц)**:
+       - Фиксированная сумма ₽2,500,000 в месяц
+       - Начало активного найма и развития команды
+    
+    3. **Второй год (13-24 месяц)**:
+       - Увеличение до ₽4,000,000 в месяц
+       - Расширение команды для поддержки роста бизнеса
+    
+    > **Важно**: Эти значения являются базовыми и могут корректироваться в различных сценариях
     
     ### Marketing Expenses
     - **Base Marketing Spend**: Initial monthly marketing budget
@@ -57,6 +71,27 @@ def documentation_page():
     ### Revenue Calculations
     1. Commission Revenue = Transaction Volume × Commission Rate
     2. Subscription Revenue = Number of Subscribers × Subscription Price
+    st.markdown("""
+    ## История изменений модели
+    
+    ### Обновление от 16.12.2024
+    
+    #### Изменения в расчете ФОТ
+    - Реализована поэтапная система расчета ФОТ
+    - Добавлены нулевые расходы для первых 6 месяцев
+    - Установлен фиксированный ФОТ 2.5М ₽ для месяцев 7-12
+    - Увеличен ФОТ до 4М ₽ для второго года
+    
+    #### Базовые параметры
+    Оптимизирован набор базовых параметров:
+    - Начальное количество пользователей
+    - Темп роста 1й год
+    - Темп роста 2й год
+    - Средний чек
+    
+    > **Примечание**: Данный раздел будет обновляться с каждым значительным изменением в модели
+    """)
+
     3. Total Revenue = Commission Revenue + Subscription Revenue + Ad Revenue
     
     ### Expense Calculations
