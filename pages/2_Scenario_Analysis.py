@@ -3,88 +3,116 @@ import plotly.graph_objects as go
 from models.financial_model import FinancialModel
 
 def scenario_analysis_page():
-    st.title("Scenario Analysis")
+    st.title("Сценарный анализ")
     
-    # Create financial models for each scenario
-    models = {
-        "Pessimistic": FinancialModel(),
-        "Standard": FinancialModel(),
-        "Optimistic": FinancialModel()
+    # Определение параметров для каждого сценария
+    scenarios = {
+        "Пессимистичный": {
+            "growth_rate_y1": 0.20,
+            "growth_rate_y2": 0.10,
+            "points_usage_rate": 0.60,
+            "exchange_commission_rate": 0.02,
+            "reward_commission_rate": 0.04,
+            "partnership_rate": 0.004
+        },
+        "Стандартный": {
+            "growth_rate_y1": 0.30,
+            "growth_rate_y2": 0.15,
+            "points_usage_rate": 0.70,
+            "exchange_commission_rate": 0.03,
+            "reward_commission_rate": 0.05,
+            "partnership_rate": 0.005
+        },
+        "Оптимистичный": {
+            "growth_rate_y1": 0.40,
+            "growth_rate_y2": 0.20,
+            "points_usage_rate": 0.80,
+            "exchange_commission_rate": 0.04,
+            "reward_commission_rate": 0.06,
+            "partnership_rate": 0.006
+        }
     }
     
-    # Calculate results for each scenario
+    # Рассчитываем результаты для каждого сценария
     results = {}
-    for scenario, model in models.items():
-        if scenario == "Pessimistic":
-            st.session_state.update({
-                "commission_rate": 0.015,
-                "transaction_growth_rate": 0.03,
-                "subscriber_growth_rate": 0.05
-            })
-        elif scenario == "Optimistic":
-            st.session_state.update({
-                "commission_rate": 0.025,
-                "transaction_growth_rate": 0.07,
-                "subscriber_growth_rate": 0.1
-            })
-        results[scenario] = model.calculate_financials()
+    for scenario_name, params in scenarios.items():
+        # Сохраняем текущие значения
+        original_state = {
+            key: st.session_state[key] 
+            for key in params.keys() 
+            if key in st.session_state
+        }
+        
+        # Применяем параметры сценария
+        st.session_state.update(params)
+        
+        # Рассчитываем финансовую модель
+        model = FinancialModel()
+        results[scenario_name] = model.calculate_financials()
+        
+        # Восстанавливаем оригинальные значения
+        st.session_state.update(original_state)
     
-    # Revenue Comparison
-    st.subheader("Revenue Comparison")
+    # График выручки
+    st.subheader("Сравнение выручки")
     fig_revenue = go.Figure()
     
-    for scenario, result in results.items():
+    for scenario_name, result in results.items():
         fig_revenue.add_trace(go.Scatter(
             x=[r['month'] for r in result],
             y=[r['revenue'] for r in result],
-            name=f"{scenario} Revenue",
+            name=scenario_name,
             mode='lines'
         ))
     
     fig_revenue.update_layout(
-        title='Revenue Scenarios Comparison',
-        xaxis_title='Month',
-        yaxis_title='Revenue ($)',
+        title='Сравнение выручки по сценариям',
+        xaxis_title='Месяц',
+        yaxis_title='Выручка (₽)',
         height=500
     )
     st.plotly_chart(fig_revenue, use_container_width=True)
     
-    # Profit Comparison
-    st.subheader("Profit Comparison")
+    # График прибыли
+    st.subheader("Сравнение прибыли")
     fig_profit = go.Figure()
     
-    for scenario, result in results.items():
-        profits = [r['revenue'] - r['expenses'] for r in result]
+    for scenario_name, result in results.items():
         fig_profit.add_trace(go.Scatter(
             x=[r['month'] for r in result],
-            y=profits,
-            name=f"{scenario} Profit",
+            y=[r['profit'] for r in result],
+            name=scenario_name,
             mode='lines'
         ))
     
     fig_profit.update_layout(
-        title='Profit Scenarios Comparison',
-        xaxis_title='Month',
-        yaxis_title='Profit ($)',
+        title='Сравнение прибыли по сценариям',
+        xaxis_title='Месяц',
+        yaxis_title='Прибыль (₽)',
         height=500
     )
     st.plotly_chart(fig_profit, use_container_width=True)
     
-    # Scenario Metrics Table
-    st.subheader("Scenario Metrics")
+    # Таблица метрик
+    st.subheader("Метрики по сценариям")
     metrics_data = []
     
-    for scenario, result in results.items():
-        final_revenue = result['total_revenue'][-1]
-        final_expenses = result['total_expenses'][-1]
-        final_profit = final_revenue - final_expenses
-        roi = (final_profit / final_expenses) * 100
+    def format_currency(value):
+        return f"₽{value:,.0f}"
+    
+    for scenario_name, result in results.items():
+        # Берем данные последнего месяца
+        final_month = result[-1]
+        final_revenue = final_month['revenue']
+        final_expenses = final_month['expenses']
+        final_profit = final_month['profit']
+        roi = (final_profit / final_expenses * 100) if final_expenses > 0 else 0
         
         metrics_data.append({
-            "Scenario": scenario,
-            "Final Revenue": f"${final_revenue:,.2f}",
-            "Final Expenses": f"${final_expenses:,.2f}",
-            "Final Profit": f"${final_profit:,.2f}",
+            "Сценарий": scenario_name,
+            "Выручка (последний месяц)": format_currency(final_revenue),
+            "Расходы (последний месяц)": format_currency(final_expenses),
+            "Прибыль (последний месяц)": format_currency(final_profit),
             "ROI": f"{roi:.1f}%"
         })
     
