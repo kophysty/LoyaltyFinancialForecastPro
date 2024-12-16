@@ -20,10 +20,8 @@ def initialize_session_state():
         'reward_commission_rate': 0.05,
         
         # Expenses
-        'burn_rate_fot_1': 2500000,
-        'burn_rate_fot_2': 3500000,
         'base_infra_cost': 200000,
-        'monthly_marketing_budget': 200000,
+        'marketing_spend_rate': 0.05,  # 5% от дохода
         'marketing_efficiency': 100,
         
         # Additional Revenue

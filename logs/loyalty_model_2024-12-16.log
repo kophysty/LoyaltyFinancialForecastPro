@@ -2636,3 +2636,252 @@ To fix this error, please pass a unique `key` argument to the `slider` element.
 2024-12-16 23:24:21,356 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 23:24:21,357 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 23:24:21,358 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:24:27,155 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:24:27,156 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:24:27,157 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:27:17,967 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:27:17,968 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:27:17,969 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:27:59,889 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:27:59,890 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:27:59,891 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:27:59,891 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:27:59,898 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:27:59,899 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 127, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:28:04,172 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:28:04,173 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:28:04,173 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:28:04,174 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:28:04,176 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:28:04,177 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 127, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:28:04,432 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:28:04,433 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:28:04,433 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:28:04,434 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:28:04,435 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:28:04,436 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 127, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 29, in calculate_financials
+    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'

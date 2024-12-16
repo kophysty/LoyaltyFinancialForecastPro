@@ -101,24 +101,6 @@ def parameter_management_page():
             
         with col2:
             st.markdown("**Операционные параметры:**")
-            st.session_state['burn_rate_fot_1'] = st.number_input(
-                "ФОТ 1й год (₽)",
-                min_value=1000000,
-                max_value=5000000,
-                value=preset_data.get('burn_rate_fot_1', 2000000),
-                step=100000,
-                key=f"fot_1_{selected_preset}"
-            )
-            
-            st.session_state['burn_rate_fot_2'] = st.number_input(
-                "ФОТ 2й год (₽)",
-                min_value=1000000,
-                max_value=7000000,
-                value=preset_data.get('burn_rate_fot_2', 2500000),
-                step=100000,
-                key=f"fot_2_{selected_preset}"
-            )
-            
             st.session_state['base_infra_cost'] = st.number_input(
                 "Базовая инфраструктура (₽)",
                 min_value=100000,
@@ -128,14 +110,16 @@ def parameter_management_page():
                 key=f"infra_{selected_preset}"
             )
             
-            st.session_state['monthly_marketing_budget'] = st.number_input(
-                "Маркетинговый бюджет (₽)",
-                min_value=100000,
-                max_value=5000000,
-                value=preset_data.get('monthly_marketing_budget', 500000),
-                step=100000,
-                key=f"marketing_{selected_preset}"
-            )
+            st.session_state['marketing_spend_rate'] = st.slider(
+                "Затраты на маркетинг (% от дохода)",
+                min_value=0.0,
+                max_value=25.0,
+                value=float(preset_data.get('marketing_spend_rate', 0.05) * 100),
+                step=0.5,
+                format="%.1f%%",
+                help="Процент от дохода, направляемый на маркетинг",
+                key=f"marketing_rate_{selected_preset}"
+            ) / 100
             
             st.session_state['marketing_efficiency'] = st.number_input(
                 "Эффективность маркетинга (польз./100K)",

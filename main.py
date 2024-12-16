@@ -104,20 +104,15 @@ def main():
         with st.expander("Marketing & Operations", expanded=False):
             col5, col6 = st.columns(2)
             with col5:
-                st.session_state['monthly_marketing_budget'] = st.number_input(
-                    "Monthly Marketing Budget (₽)",
-                    min_value=100000,
-                    max_value=5000000,
-                    value=st.session_state['monthly_marketing_budget'],
-                    step=100000
-                )
-                st.session_state['burn_rate_fot_1'] = st.number_input(
-                    "Year 1 Monthly Payroll (₽)",
-                    min_value=1000000,
-                    max_value=5000000,
-                    value=st.session_state['burn_rate_fot_1'],
-                    step=100000
-                )
+                st.session_state['marketing_spend_rate'] = st.slider(
+                    "Затраты на маркетинг (% от дохода)",
+                    min_value=0.0,
+                    max_value=25.0,
+                    value=st.session_state.get('marketing_spend_rate', 5.0),
+                    step=0.5,
+                    format="%.1f%%",
+                    help="Процент от дохода, направляемый на маркетинг"
+                ) / 100
             with col6:
                 st.session_state['marketing_efficiency'] = st.number_input(
                     "Marketing Efficiency (users per 100K)",
@@ -125,13 +120,6 @@ def main():
                     max_value=500,
                     value=st.session_state['marketing_efficiency'],
                     step=10
-                )
-                st.session_state['burn_rate_fot_2'] = st.number_input(
-                    "Year 2 Monthly Payroll (₽)",
-                    min_value=1000000,
-                    max_value=7000000,
-                    value=st.session_state['burn_rate_fot_2'],
-                    step=100000
                 )
         
         # Initialize model and calculate with current parameters
