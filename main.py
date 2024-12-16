@@ -1,6 +1,6 @@
 import streamlit as st
+import json
 # Set page config at the very start
-import streamlit as st
 st.set_page_config(layout="wide")
 
 import plotly.graph_objects as go
@@ -34,11 +34,19 @@ def main():
         
         t = lambda key: get_translation(key, selected_lang)
 
-        # Display scenario selection at the top of the page
+        # Load custom presets if they exist
+        try:
+            with open('custom_presets.json', 'r') as f:
+                custom_presets = json.load(f)
+        except FileNotFoundError:
+            custom_presets = {}
+
+        # Combine default and custom scenarios
         scenario_names = {
             "standard": "Стандартный",
             "pessimistic": "Пессимистичный",
-            "optimistic": "Оптимистичный"
+            "optimistic": "Оптимистичный",
+            **{name: f"Пользовательский: {name}" for name in custom_presets.keys()}
         }
         
         # Get the current scenario from session state or default to 'standard'
@@ -147,6 +155,11 @@ def main():
                 if selected_scenario in PRESETS:
                     # Update all parameters from preset
                     for key, value in PRESETS[selected_scenario].items():
+                        st.session_state[key] = value
+                    st.rerun()
+                elif selected_scenario in custom_presets:
+                    # Update all parameters from custom preset
+                    for key, value in custom_presets[selected_scenario].items():
                         st.session_state[key] = value
                     st.rerun()
                     
