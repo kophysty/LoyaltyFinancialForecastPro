@@ -823,3 +823,9 @@ streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or 
 2024-12-16 17:29:02,165 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 17:29:02,166 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 17:29:02,166 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:31:21,964 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:31:21,965 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:31:21,965 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:31:25,546 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:31:25,553 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:31:25,558 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0

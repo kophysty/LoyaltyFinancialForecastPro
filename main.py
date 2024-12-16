@@ -278,17 +278,82 @@ def main():
         )
         st.plotly_chart(fig_revenue, use_container_width=True)
         
+        # График структуры выручки
+        st.subheader("Структура выручки")
+        fig_revenue_structure = go.Figure()
+
+        # Подготовка данных для графика
+        months = [d['month'] for d in data]
+        revenue_components = [
+            ('Комиссии', [d['commission_revenue'] for d in data], '#8884d8'),
+            ('Подписки', [d['subscription_revenue'] for d in data], '#82ca9d'),
+            ('Премиум', [d['premium_revenue'] for d in data], '#ffc658'),
+            ('Доп. доходы', [d['additional_revenue'] for d in data], '#ff7300')
+        ]
+
+        # Добавление слоев на график
+        for name, values, color in revenue_components:
+            fig_revenue_structure.add_trace(go.Scatter(
+                x=months,
+                y=values,
+                name=name,
+                mode='lines',
+                line=dict(width=0),
+                stackgroup='one',
+                fillcolor=color,
+                hovertemplate=f"{name}: %{{y:,.0f}} ₽<extra></extra>"
+            ))
+
+        # Настройка внешнего вида
+        fig_revenue_structure.update_layout(
+            showlegend=True,
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            height=600,
+            xaxis=dict(
+                title='Месяц',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',d',
+                zeroline=False
+            ),
+            yaxis=dict(
+                title='Сумма (₽)',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',.0f',
+                zeroline=False
+            ),
+            hovermode='x unified',
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            ),
+            margin=dict(l=50, r=50, t=30, b=50),
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
+            )
+        )
+        st.plotly_chart(fig_revenue_structure, use_container_width=True)
+
         # Display user growth
-        st.subheader("User Growth")
+        st.subheader("Рост пользователей")
         fig_users = go.Figure()
         fig_users.add_trace(go.Scatter(
             x=[d['month'] for d in data],
             y=[d['active_users'] for d in data],
-            name='Active Users'
+            name='Активные пользователи'
         ))
         fig_users.update_layout(
-            xaxis_title='Month',
-            yaxis_title='Number of Users',
+            xaxis_title='Месяц',
+            yaxis_title='Количество пользователей',
             height=500
         )
         st.plotly_chart(fig_users, use_container_width=True)
