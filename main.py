@@ -20,7 +20,7 @@ def main():
             return
             
         # Display current month metrics
-        selected_month = st.selectbox("Select Month", range(1, 25), 24)
+        selected_month = st.selectbox("Select Month", range(1, 25), 23)
         month_data = data[selected_month - 1]
         
         # Create metrics columns
