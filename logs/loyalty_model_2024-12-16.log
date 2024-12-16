@@ -2352,3 +2352,12 @@ KeyError: 'st.session_state has no key "cashback_percent". Did you forget to ini
 2024-12-16 22:55:17,343 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 22:55:17,344 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 22:55:17,344 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:56:19,346 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:56:19,347 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:56:19,348 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:56:22,313 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:56:22,313 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:56:22,314 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:56:22,647 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:56:22,649 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:56:22,649 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
