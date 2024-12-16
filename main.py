@@ -214,94 +214,66 @@ def main():
             """, unsafe_allow_html=True)
         
         # Display charts
-        st.subheader("Revenue and Expenses Over Time")
+        st.subheader("Выручка, расходы и прибыль")
         fig_revenue = go.Figure()
-        
-        # Add all traces with markers
-        fig_revenue.add_trace(go.Scatter(
-            x=[d['month'] for d in data],
-            y=[d['revenue'] for d in data],
-            name='Выручка',
-            mode='lines+markers',
-            line=dict(color='#8884d8'),
-            marker=dict(size=6)
-        ))
-        fig_revenue.add_trace(go.Scatter(
-            x=[d['month'] for d in data],
-            y=[d['marketing'] for d in data],
-            name='Маркетинг',
-            mode='lines+markers',
-            line=dict(color='#82ca9d'),
-            marker=dict(size=6)
-        ))
-        fig_revenue.add_trace(go.Scatter(
-            x=[d['month'] for d in data],
-            y=[d['fot'] for d in data],
-            name='ФОТ',
-            mode='lines+markers',
-            line=dict(color='#ff7300'),
-            marker=dict(size=6)
-        ))
-        fig_revenue.add_trace(go.Scatter(
-            x=[d['month'] for d in data],
-            y=[d.get('taxes', 0) for d in data],
-            name='Налоги',
-            mode='lines+markers',
-            line=dict(color='#d88884'),
-            marker=dict(size=6)
-        ))
-        fig_revenue.add_trace(go.Scatter(
-            x=[d['month'] for d in data],
-            y=[d['profit'] for d in data],
-            name='Чистая прибыль',
-            mode='lines+markers',
-            line=dict(color='#ffc658'),
-            marker=dict(size=6)
-        ))
-        
-        # Add annotation box with all values
-        selected_month = 4  # Example month for annotation
-        month_data = data[selected_month - 1]
-        annotation_text = (
-            f"Выручка : {month_data['revenue']:,.0f} ₽<br>"
-            f"Маркетинг : {month_data['marketing']:,.0f} ₽<br>"
-            f"ФОТ : {month_data['fot']:,.0f} ₽<br>"
-            f"Налоги : {month_data.get('taxes', 0):,.0f} ₽<br>"
-            f"Чистая прибыль : {month_data['profit']:,.0f} ₽"
-        )
-        
-        fig_revenue.add_annotation(
-            x=selected_month,
-            y=max([d['revenue'] for d in data]) * 0.95,
-            text=annotation_text,
-            showarrow=True,
-            arrowhead=1,
-            ax=50,
-            ay=-50,
-            bgcolor="white",
-            bordercolor="#c7c7c7",
-            borderwidth=1,
-            borderpad=4,
-            align="left"
-        )
-        
+
+        # Prepare data for traces
+        months = [d['month'] for d in data]
+        traces_data = [
+            ('Выручка', [d['revenue'] for d in data], '#8884d8'),
+            ('Маркетинг', [d['marketing'] for d in data], '#82ca9d'),
+            ('ФОТ', [d['fot'] for d in data], '#ff7300'),
+            ('Налоги', [d.get('taxes', 0) for d in data], '#d88884'),
+            ('Чистая прибыль', [d['profit'] for d in data], '#ffc658')
+        ]
+
+        # Add traces with customized hover template
+        for name, values, color in traces_data:
+            fig_revenue.add_trace(go.Scatter(
+                x=months,
+                y=values,
+                name=name,
+                mode='lines+markers',
+                line=dict(color=color, width=2),
+                marker=dict(size=6, color=color),
+                hovertemplate=f"{name}: %{{y:,.0f}} ₽<extra></extra>"
+            ))
+
+        # Update layout with improved styling
         fig_revenue.update_layout(
-            title='Выручка, расходы и прибыль',
-            xaxis_title='Месяц',
-            yaxis_title='Сумма (₽)',
-            height=500,
             showlegend=True,
             plot_bgcolor='white',
             paper_bgcolor='white',
+            height=600,  # Increased height
             xaxis=dict(
+                title='Месяц',
                 showgrid=True,
                 gridwidth=1,
-                gridcolor='#f0f0f0'
+                gridcolor='#f0f0f0',
+                tickformat=',d',
+                zeroline=False
             ),
             yaxis=dict(
+                title='Сумма (₽)',
                 showgrid=True,
                 gridwidth=1,
-                gridcolor='#f0f0f0'
+                gridcolor='#f0f0f0',
+                tickformat=',.0f',
+                zeroline=False
+            ),
+            hovermode='x unified',
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            ),
+            margin=dict(l=50, r=50, t=30, b=50),  # Reduced top margin
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
             )
         )
         st.plotly_chart(fig_revenue, use_container_width=True)
