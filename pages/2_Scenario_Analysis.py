@@ -55,20 +55,14 @@ def scenario_analysis_page():
                 state_backup = backup_state()
                 
                 # Load scenario preset
-                required_keys = [
-                    'initial_users', 'active_conversion', 'growth_rate_y1', 'growth_rate_y2',
-                    'avg_check', 'cashback_percent', 'points_usage_rate',
-                    'exchange_commission_rate', 'reward_commission_rate',
-                    'burn_rate_fot_1', 'burn_rate_fot_2', 'base_infra_cost',
-                    'monthly_marketing_budget', 'marketing_efficiency',
-                    'ad_revenue_per_user', 'partnership_rate'
-                ]
-                
-                for key in required_keys:
-                    if key in PRESETS[scenario_name]:
-                        st.session_state[key] = PRESETS[scenario_name][key]
-                    else:
-                        log_warning(f"Missing preset key: {key} in scenario {scenario_name}")
+                if scenario_name in PRESETS:
+                    # Directly update session state with all preset values
+                    for key, value in PRESETS[scenario_name].items():
+                        st.session_state[key] = value
+                    log_info(f"Applied preset {scenario_name} with values: {PRESETS[scenario_name]}")
+                else:
+                    log_warning(f"Preset not found: {scenario_name}")
+                    continue
                 
                 # Calculate financials
                 data = model.calculate_financials()

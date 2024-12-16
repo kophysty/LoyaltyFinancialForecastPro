@@ -665,3 +665,74 @@ streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or 
 2024-12-16 16:02:01,446 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 16:02:01,447 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 16:02:01,448 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:36:15,223 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:36:15,225 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:36:15,226 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:36:15,227 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 16:36:15,228 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:36:15,230 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:36:15,232 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:36:15,232 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:36:15,233 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:36:15,235 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:36:15,237 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:36:15,237 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 16:36:15,239 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:36:18,159 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:36:18,159 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:36:18,159 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:36:19,025 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:36:19,026 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:36:19,026 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:37:06,339 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:37:06,340 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:06,342 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:06,343 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 16:37:06,344 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:06,346 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:06,348 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:06,348 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:37:06,349 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:06,351 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:06,353 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:06,354 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 16:37:06,355 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:16,899 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:37:16,900 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:16,902 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:16,903 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 16:37:16,906 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:16,908 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:16,910 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:16,910 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:37:16,912 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:17,795 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:37:17,796 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:17,797 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:17,799 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 16:37:17,802 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:20,852 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:37:20,853 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:20,855 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:20,855 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 16:37:20,861 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:20,864 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:20,866 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:20,866 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:37:20,868 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:22,509 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:37:22,510 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:22,512 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:22,513 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 16:37:22,514 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:22,518 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:22,519 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:22,519 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 16:37:22,520 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:22,523 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 16:37:22,524 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:22,525 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 16:37:22,526 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 16:37:35,129 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 16:37:35,135 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 16:37:35,135 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
