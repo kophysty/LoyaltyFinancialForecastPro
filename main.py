@@ -58,32 +58,32 @@ def main():
 
             with col2:
                 st.session_state['active_conversion'] = st.slider(
-                    "Active Conversion Rate",
+                    t('active_conversion'),
                     min_value=0.1,
                     max_value=1.0,
                     value=st.session_state['active_conversion'],
                     format="%.2f"
                 )
                 st.session_state['growth_rate_y2'] = st.slider(
-                    "Growth Rate Year 2",
+                    t('growth_rate_y2'),
                     min_value=0.05,
                     max_value=0.50,
                     value=st.session_state['growth_rate_y2'],
                     format="%.2f"
                 )
                 st.session_state['cashback_percent'] = st.slider(
-                    "Cashback Percentage",
+                    t('cashback_percent'),
                     min_value=0.05,
                     max_value=0.40,
                     value=st.session_state['cashback_percent'],
                     format="%.2f"
                 )
 
-        with st.expander("Commission Parameters", expanded=False):
+        with st.expander(t('commission_parameters'), expanded=False):
             col3, col4 = st.columns(2)
             with col3:
                 st.session_state['exchange_commission_rate'] = st.slider(
-                    "Exchange Commission Rate",
+                    t('exchange_commission'),
                     min_value=0.01,
                     max_value=0.10,
                     value=st.session_state['exchange_commission_rate'],
@@ -91,7 +91,7 @@ def main():
                 )
             with col4:
                 st.session_state['reward_commission_rate'] = st.slider(
-                    "Reward Commission Rate",
+                    t('reward_commission'),
                     min_value=0.01,
                     max_value=0.10,
                     value=st.session_state['reward_commission_rate'],
