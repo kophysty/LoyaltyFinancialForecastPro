@@ -829,3 +829,60 @@ streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or 
 2024-12-16 17:31:25,546 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 17:31:25,553 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 17:31:25,558 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:32:47,432 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:32:47,435 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:32:47,438 - loyalty_model - INFO - logging_config.py:59 - Applied preset pessimistic with values: {'initial_users': 800, 'active_conversion': 0.35, 'growth_rate_y1': 0.2, 'growth_rate_y2': 0.1, 'avg_check': 2500, 'cashback_percent': 0.12, 'points_usage_rate': 0.6, 'exchange_commission_rate': 0.02, 'reward_commission_rate': 0.03, 'burn_rate_fot_1': 3000000, 'burn_rate_fot_2': 4000000, 'base_infra_cost': 250000, 'monthly_marketing_budget': 150000, 'marketing_efficiency': 80, 'ad_revenue_per_user': 15, 'partnership_rate': 0.003}
+2024-12-16 17:32:47,438 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:32:47,438 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 17:32:47,439 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:32:47,442 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:32:47,443 - loyalty_model - INFO - logging_config.py:59 - Applied preset standard with values: {'initial_users': 1000, 'active_conversion': 0.4, 'growth_rate_y1': 0.3, 'growth_rate_y2': 0.15, 'avg_check': 3000, 'cashback_percent': 0.15, 'points_usage_rate': 0.7, 'exchange_commission_rate': 0.03, 'reward_commission_rate': 0.05, 'burn_rate_fot_1': 2500000, 'burn_rate_fot_2': 3500000, 'base_infra_cost': 200000, 'monthly_marketing_budget': 200000, 'marketing_efficiency': 100, 'ad_revenue_per_user': 20, 'partnership_rate': 0.005}
+2024-12-16 17:32:47,443 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:32:47,444 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:32:47,446 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:32:47,449 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:32:47,452 - loyalty_model - INFO - logging_config.py:59 - Applied preset optimistic with values: {'initial_users': 1200, 'active_conversion': 0.45, 'growth_rate_y1': 0.4, 'growth_rate_y2': 0.2, 'avg_check': 3500, 'cashback_percent': 0.18, 'points_usage_rate': 0.8, 'exchange_commission_rate': 0.04, 'reward_commission_rate': 0.06, 'burn_rate_fot_1': 2000000, 'burn_rate_fot_2': 3000000, 'base_infra_cost': 180000, 'monthly_marketing_budget': 250000, 'marketing_efficiency': 120, 'ad_revenue_per_user': 25, 'partnership_rate': 0.007}
+2024-12-16 17:32:47,453 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:32:47,453 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 17:32:47,455 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:32:58,931 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:32:58,933 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:32:58,933 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:34:53,364 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:34:53,365 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:34:53,365 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:35:14,825 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:35:14,828 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:35:14,830 - loyalty_model - INFO - logging_config.py:59 - Applied preset pessimistic with values: {'initial_users': 800, 'active_conversion': 0.35, 'growth_rate_y1': 0.2, 'growth_rate_y2': 0.1, 'avg_check': 2500, 'cashback_percent': 0.12, 'points_usage_rate': 0.6, 'exchange_commission_rate': 0.02, 'reward_commission_rate': 0.03, 'burn_rate_fot_1': 3000000, 'burn_rate_fot_2': 4000000, 'base_infra_cost': 250000, 'monthly_marketing_budget': 150000, 'marketing_efficiency': 80, 'ad_revenue_per_user': 15, 'partnership_rate': 0.003}
+2024-12-16 17:35:14,831 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:35:14,832 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 17:35:14,833 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:35:14,836 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:35:14,837 - loyalty_model - INFO - logging_config.py:59 - Applied preset standard with values: {'initial_users': 1000, 'active_conversion': 0.4, 'growth_rate_y1': 0.3, 'growth_rate_y2': 0.15, 'avg_check': 3000, 'cashback_percent': 0.15, 'points_usage_rate': 0.7, 'exchange_commission_rate': 0.03, 'reward_commission_rate': 0.05, 'burn_rate_fot_1': 2500000, 'burn_rate_fot_2': 3500000, 'base_infra_cost': 200000, 'monthly_marketing_budget': 200000, 'marketing_efficiency': 100, 'ad_revenue_per_user': 20, 'partnership_rate': 0.005}
+2024-12-16 17:35:14,837 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:35:14,838 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:35:14,840 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:35:14,842 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:35:14,845 - loyalty_model - INFO - logging_config.py:59 - Applied preset optimistic with values: {'initial_users': 1200, 'active_conversion': 0.45, 'growth_rate_y1': 0.4, 'growth_rate_y2': 0.2, 'avg_check': 3500, 'cashback_percent': 0.18, 'points_usage_rate': 0.8, 'exchange_commission_rate': 0.04, 'reward_commission_rate': 0.06, 'burn_rate_fot_1': 2000000, 'burn_rate_fot_2': 3000000, 'base_infra_cost': 180000, 'monthly_marketing_budget': 250000, 'marketing_efficiency': 120, 'ad_revenue_per_user': 25, 'partnership_rate': 0.007}
+2024-12-16 17:35:14,845 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:35:14,846 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 17:35:14,847 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:35:50,044 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:35:50,047 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:35:50,048 - loyalty_model - INFO - logging_config.py:59 - Applied preset pessimistic with values: {'initial_users': 800, 'active_conversion': 0.35, 'growth_rate_y1': 0.2, 'growth_rate_y2': 0.1, 'avg_check': 2500, 'cashback_percent': 0.12, 'points_usage_rate': 0.6, 'exchange_commission_rate': 0.02, 'reward_commission_rate': 0.03, 'burn_rate_fot_1': 3000000, 'burn_rate_fot_2': 4000000, 'base_infra_cost': 250000, 'monthly_marketing_budget': 150000, 'marketing_efficiency': 80, 'ad_revenue_per_user': 15, 'partnership_rate': 0.003}
+2024-12-16 17:35:50,049 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:35:50,050 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 17:35:50,051 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:35:50,053 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:35:50,054 - loyalty_model - INFO - logging_config.py:59 - Applied preset standard with values: {'initial_users': 1000, 'active_conversion': 0.4, 'growth_rate_y1': 0.3, 'growth_rate_y2': 0.15, 'avg_check': 3000, 'cashback_percent': 0.15, 'points_usage_rate': 0.7, 'exchange_commission_rate': 0.03, 'reward_commission_rate': 0.05, 'burn_rate_fot_1': 2500000, 'burn_rate_fot_2': 3500000, 'base_infra_cost': 200000, 'monthly_marketing_budget': 200000, 'marketing_efficiency': 100, 'ad_revenue_per_user': 20, 'partnership_rate': 0.005}
+2024-12-16 17:35:50,055 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:35:50,055 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 17:35:50,056 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:35:50,058 - loyalty_model - INFO - logging_config.py:59 - Creating session state backup
+2024-12-16 17:35:50,060 - loyalty_model - INFO - logging_config.py:59 - Applied preset optimistic with values: {'initial_users': 1200, 'active_conversion': 0.45, 'growth_rate_y1': 0.4, 'growth_rate_y2': 0.2, 'avg_check': 3500, 'cashback_percent': 0.18, 'points_usage_rate': 0.8, 'exchange_commission_rate': 0.04, 'reward_commission_rate': 0.06, 'burn_rate_fot_1': 2000000, 'burn_rate_fot_2': 3000000, 'base_infra_cost': 180000, 'monthly_marketing_budget': 250000, 'marketing_efficiency': 120, 'ad_revenue_per_user': 25, 'partnership_rate': 0.007}
+2024-12-16 17:35:50,061 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:35:50,061 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 17:35:50,062 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-16 17:39:14,255 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 17:39:14,258 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 17:39:14,258 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0

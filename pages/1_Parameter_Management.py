@@ -1,8 +1,54 @@
 import streamlit as st
-from utils.presets import save_preset
+from utils.presets import save_preset, PRESETS
 
 def parameter_management_page():
-    st.title("Parameter Management")
+    st.title("Управление параметрами")
+    
+    # Отображение предустановленных сценариев
+    st.header("Предустановленные сценарии")
+    scenario_names = {
+        "pessimistic": "Пессимистичный",
+        "standard": "Стандартный",
+        "optimistic": "Оптимистичный"
+    }
+    
+    selected_preset = st.selectbox(
+        "Выберите сценарий для просмотра",
+        options=list(scenario_names.keys()),
+        format_func=lambda x: scenario_names[x]
+    )
+    
+    if selected_preset:
+        st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
+        
+        # Отображение параметров выбранного сценария
+        col1, col2 = st.columns(2)
+        preset_data = PRESETS[selected_preset]
+        
+        with col1:
+            st.markdown("**Базовые параметры:**")
+            st.write(f"Начальные пользователи: {preset_data['initial_users']:,}")
+            st.write(f"Конверсия в активных: {preset_data['active_conversion']:.1%}")
+            st.write(f"Рост 1й год: {preset_data['growth_rate_y1']:.1%}")
+            st.write(f"Рост 2й год: {preset_data['growth_rate_y2']:.1%}")
+            st.write(f"Средний чек: {preset_data['avg_check']:,} ₽")
+            st.write(f"Процент кэшбэка: {preset_data['cashback_percent']:.1%}")
+            
+        with col2:
+            st.markdown("**Операционные параметры:**")
+            st.write(f"ФОТ 1й год: {preset_data['burn_rate_fot_1']:,} ₽")
+            st.write(f"ФОТ 2й год: {preset_data['burn_rate_fot_2']:,} ₽")
+            st.write(f"Базовая инфраструктура: {preset_data['base_infra_cost']:,} ₽")
+            st.write(f"Маркетинговый бюджет: {preset_data['monthly_marketing_budget']:,} ₽")
+            st.write(f"Эффективность маркетинга: {preset_data['marketing_efficiency']} польз./100K")
+        
+        # Кнопка для применения сценария
+        if st.button(f"Применить сценарий {scenario_names[selected_preset]}"):
+            for key, value in preset_data.items():
+                st.session_state[key] = value
+            st.success(f"Сценарий {scenario_names[selected_preset]} успешно применен!")
+    
+    st.divider()
     
     st.subheader("Revenue Parameters")
     col1, col2 = st.columns(2)
