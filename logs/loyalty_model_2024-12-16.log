@@ -2990,3 +2990,12 @@ KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forge
 2024-12-16 23:40:03,360 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 23:40:03,361 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 23:40:03,361 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:41:55,181 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:41:55,182 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:41:55,182 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:41:57,965 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:41:57,966 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:41:57,976 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:41:59,422 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:41:59,423 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:41:59,423 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
