@@ -115,29 +115,46 @@ def main():
     
     # Revenue Structure
     fig_revenue = go.Figure()
-    fig_revenue.add_trace(go.Area(
-        x=[r['month'] for r in results],
-        y=[r['commission_revenue'] for r in results],
-        name='Комиссии',
-        fillcolor='#8884d8'
-    ))
-    fig_revenue.add_trace(go.Area(
-        x=[r['month'] for r in results],
-        y=[r['subscription_revenue'] for r in results],
-        name='Подписки',
-        fillcolor='#82ca9d'
-    ))
-    fig_revenue.add_trace(go.Area(
-        x=[r['month'] for r in results],
-        y=[r['premium_revenue'] for r in results],
-        name='Премиум',
-        fillcolor='#ffc658'
-    ))
-    fig_revenue.add_trace(go.Area(
-        x=[r['month'] for r in results],
-        y=[r['additional_revenue'] for r in results],
+    
+    # Calculate cumulative sums for stacking
+    y_commission = [r['commission_revenue'] for r in results]
+    y_subscription = [r['subscription_revenue'] for r in results]
+    y_premium = [r['premium_revenue'] for r in results]
+    y_additional = [r['additional_revenue'] for r in results]
+    
+    x_months = [r['month'] for r in results]
+    
+    # Add traces in reverse order for proper stacking
+    fig_revenue.add_trace(go.Scatter(
+        x=x_months,
+        y=[sum(x) for x in zip(y_commission, y_subscription, y_premium, y_additional)],
+        fill='tonexty',
         name='Доп. доходы',
-        fillcolor='#ff7300'
+        line=dict(color='#ff7300')
+    ))
+    
+    fig_revenue.add_trace(go.Scatter(
+        x=x_months,
+        y=[sum(x) for x in zip(y_commission, y_subscription, y_premium)],
+        fill='tonexty',
+        name='Премиум',
+        line=dict(color='#ffc658')
+    ))
+    
+    fig_revenue.add_trace(go.Scatter(
+        x=x_months,
+        y=[sum(x) for x in zip(y_commission, y_subscription)],
+        fill='tonexty',
+        name='Подписки',
+        line=dict(color='#82ca9d')
+    ))
+    
+    fig_revenue.add_trace(go.Scatter(
+        x=x_months,
+        y=y_commission,
+        fill='tonexty',
+        name='Комиссии',
+        line=dict(color='#8884d8')
     ))
     
     fig_revenue.update_layout(
