@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from utils.config import initialize_session_state
 from utils.logging_config import log_error, log_info
 from models.financial_model import FinancialModel
+from utils.presets import PRESETS
 
 # Initialize session state at the start
 initialize_session_state()
@@ -123,8 +124,29 @@ def main():
             st.error("No data available for visualization")
             return
             
-        # Display current month metrics
-        selected_month = st.selectbox("Select Month", range(1, 25), 23)
+        # Display scenario and month selection
+        col_scenario, col_month = st.columns(2)
+        with col_scenario:
+            scenario_names = {
+                "standard": "Стандартный",
+                "pessimistic": "Пессимистичный",
+                "optimistic": "Оптимистичный"
+            }
+            selected_scenario = st.selectbox(
+                "Сценарий",
+                options=list(scenario_names.keys()),
+                format_func=lambda x: scenario_names[x]
+            )
+            
+            # Apply selected scenario
+            if selected_scenario in PRESETS:
+                for key, value in PRESETS[selected_scenario].items():
+                    st.session_state[key] = value
+                # Recalculate model with new parameters
+                data = model.calculate_financials()
+        
+        with col_month:
+            selected_month = st.selectbox("Месяц", range(1, 25), 23)
         month_data = data[selected_month - 1]
         
         # Calculate totals
