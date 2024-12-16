@@ -2582,3 +2582,9 @@ To fix this error, please pass a unique `key` argument to the `slider` element.
 2024-12-16 23:13:12,610 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 23:13:12,611 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 23:13:12,612 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:13:46,858 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:13:46,859 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:13:46,859 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 23:15:18,867 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:15:18,869 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:15:18,869 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
