@@ -3,8 +3,12 @@ import plotly.graph_objects as go
 from models.financial_model import FinancialModel
 from utils.config import initialize_session_state
 from utils.presets import load_preset
+from utils.logging_config import log_error, log_warning, log_info, log_debug
 
-st.set_page_config(
+# Configure the application
+try:
+    log_info("Starting Loyalty Program Financial Modeling application")
+    st.set_page_config(
     page_title="Loyalty Program Financial Modeling",
     page_icon="📊",
     layout="wide"
@@ -17,9 +21,11 @@ def format_number(value):
     return f"{value:,.0f}"
 
 def main():
-    initialize_session_state()
-    
-    st.title("Финансовая модель программы лояльности")
+    try:
+        log_info("Initializing main application")
+        initialize_session_state()
+        
+        st.title("Финансовая модель программы лояльности")
     
     # Header with month selector
     col1, col2 = st.columns([3, 1])
@@ -206,6 +212,10 @@ def main():
     fig_turnover.update_layout(
         title='Общий оборот',
         xaxis_title='Месяц',
+    except Exception as e:
+        log_error(e, context="Error in main application")
+        st.error(f"Произошла ошибка в приложении: {str(e)}")
+
         yaxis_title='Сумма (₽)',
         height=500
     )
