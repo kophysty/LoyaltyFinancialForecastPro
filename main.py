@@ -204,7 +204,7 @@ def main():
         with col4:
             st.markdown(f"""
             <div class="metric-container">
-                <div class="metric-title">Активные пользователи</div>
+                <div class="metric-title">Актив. участники</div>
                 <div class="metric-value">{month_data['active_users']:,.0f}</div>
                 <div class="metric-details">
                     Новых в месяц: +{month_data['total_new_users']:,.0f}<br>
