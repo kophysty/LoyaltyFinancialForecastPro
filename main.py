@@ -31,25 +31,25 @@ def main():
         t = lambda key: get_translation(key, selected_lang)
 
         # Parameter Controls
-        with st.expander("Base Parameters", expanded=False):
+        with st.expander(t('base_parameters'), expanded=False):
             col1, col2 = st.columns(2)
             with col1:
                 st.session_state['initial_users'] = st.number_input(
-                    "Initial Users",
+                    t('initial_users'),
                     min_value=500,
                     max_value=5000,
                     value=st.session_state['initial_users'],
                     step=100
                 )
                 st.session_state['growth_rate_y1'] = st.slider(
-                    "Growth Rate Year 1",
+                    t('growth_rate_y1'),
                     min_value=0.05,
                     max_value=0.50,
                     value=st.session_state['growth_rate_y1'],
                     format="%.2f"
                 )
                 st.session_state['avg_check'] = st.number_input(
-                    "Average Check (₽)",
+                    t('avg_check'),
                     min_value=1000,
                     max_value=10000,
                     value=int(st.session_state['avg_check']),

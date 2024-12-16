@@ -1,11 +1,17 @@
 import streamlit as st
 from utils.presets import save_preset, PRESETS
 
+from utils.translations import get_translation
+
 def parameter_management_page():
-    st.title("Управление параметрами")
+    # Get current language from session state
+    lang = st.session_state.get('language', 'ru')
+    t = lambda key: get_translation(key, lang)
+    
+    st.title(t('parameter_management'))
     
     # Отображение предустановленных сценариев
-    st.header("Предустановленные сценарии")
+    st.header(t('preset_scenarios'))
     scenario_names = {
         "pessimistic": "Пессимистичный",
         "standard": "Стандартный",
@@ -50,12 +56,12 @@ def parameter_management_page():
     
     st.divider()
     
-    st.subheader("Revenue Parameters")
+    st.subheader(t('revenue_params'))
     col1, col2 = st.columns(2)
     
     with col1:
         st.session_state['commission_rate'] = st.number_input(
-            "Commission Rate",
+            t('commission_rate_label'),
             min_value=0.0,
             max_value=1.0,
             value=st.session_state['commission_rate'],
@@ -63,13 +69,13 @@ def parameter_management_page():
         )
         
         st.session_state['monthly_transaction_volume'] = st.number_input(
-            "Monthly Transaction Volume ($)",
+            t('monthly_volume'),
             min_value=0,
             value=int(st.session_state['monthly_transaction_volume'])
         )
         
         st.session_state['transaction_growth_rate'] = st.number_input(
-            "Transaction Growth Rate",
+            t('transaction_growth'),
             min_value=0.0,
             max_value=1.0,
             value=st.session_state['transaction_growth_rate'],
