@@ -32,14 +32,14 @@ class FinancialModel:
                     
                     # Turnover calculations
                     monthly_check = st.session_state['avg_check']
-                    monthly_transactions = 2.5  # среднее количество транзакций в месяц
+                    monthly_transactions = 3.5  # увеличено среднее количество транзакций в месяц
                     turnover = active_users * monthly_check * monthly_transactions
                     
                     # Commission calculations
-                    # Базовый кэшбэк 5% от оборота
-                    cashback = turnover * 0.05
-                    # 70% баллов используется
-                    used_points = cashback * 0.7
+                    # Базовый кэшбэк 7% от оборота
+                    cashback = turnover * 0.07
+                    # 85% баллов используется
+                    used_points = cashback * 0.85
                     # Комиссия обмена 3% от использованных баллов
                     exchange_commission = used_points * st.session_state['exchange_commission_rate']
                     # Комиссия начисления 5% от всего кэшбэка
