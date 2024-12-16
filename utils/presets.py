@@ -16,6 +16,7 @@ PRESETS = {
         "base_infra_cost": 250000,
         "monthly_marketing_budget": 150000,
         "marketing_efficiency": 100,
+        "marketing_spend_rate": 0.15,
         "ad_revenue_per_user": 15,
         "partnership_rate": 0.003
     },
