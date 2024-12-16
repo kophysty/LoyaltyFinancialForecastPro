@@ -14,11 +14,8 @@ def format_money(amount):
 
 def main():
     try:
-        # Header with title and language selector
-        title_col, _, lang_col = st.columns([4, 1, 1])
-        with title_col:
-            st.title(get_translation('title', st.session_state['language']))
-        with lang_col:
+        # Language selector in sidebar
+        with st.sidebar:
             selected_lang = st.selectbox(
                 "",  # Empty label for cleaner look
                 options=['ru', 'en'],
@@ -26,6 +23,10 @@ def main():
                 index=0 if st.session_state['language'] == 'ru' else 1,
                 key='language'
             )
+            st.divider()
+            
+        # Main title
+        st.title(get_translation('title', st.session_state['language']))
         
         t = lambda key: get_translation(key, selected_lang)
 
