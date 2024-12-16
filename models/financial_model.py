@@ -32,8 +32,10 @@ class FinancialModel:
                     
                     # Turnover and commission calculations
                     turnover = active_users * st.session_state['avg_check'] * 2.5
-                    exchange_commission = turnover * st.session_state['exchange_commission_rate']
-                    reward_commission = turnover * st.session_state['reward_commission_rate']
+                    cashback = turnover * 0.05  # 5% кэшбэк от оборота
+                    used_points = cashback * 0.7  # 70% использования баллов
+                    exchange_commission = used_points * st.session_state['exchange_commission_rate']
+                    reward_commission = cashback * st.session_state['reward_commission_rate']
                     
                     # Partner Revenue
                     stores = active_users / 150
