@@ -53,21 +53,44 @@ def main():
                     min_value=500,
                     max_value=5000,
                     value=st.session_state['initial_users'],
-                    step=100
+                    step=100,
+                    key="init_users_input"
                 )
                 st.session_state['growth_rate_y1'] = st.slider(
                     t('growth_rate_y1'),
                     min_value=0.05,
                     max_value=0.50,
                     value=st.session_state['growth_rate_y1'],
-                    format="%.2f"
+                    format="%.2f",
+                    key="growth_y1_slider"
                 )
                 st.session_state['avg_check'] = st.number_input(
                     t('avg_check'),
                     min_value=1000,
                     max_value=10000,
                     value=int(st.session_state['avg_check']),
-                    step=500
+                    step=500,
+                    key="avg_check_input"
+                )
+                
+                st.session_state['exchange_commission_rate'] = st.slider(
+                    "Комиссия обмена",
+                    min_value=0.01,
+                    max_value=0.10,
+                    value=st.session_state['exchange_commission_rate'],
+                    format="%.3f",
+                    help="Комиссия, взимаемая при обмене баллов лояльности",
+                    key="exchange_commission_slider"
+                )
+                
+                st.session_state['reward_commission_rate'] = st.slider(
+                    "Комиссия начисления",
+                    min_value=0.01,
+                    max_value=0.10,
+                    value=st.session_state['reward_commission_rate'],
+                    format="%.3f",
+                    help="Комиссия, взимаемая при начислении вознаграждений",
+                    key="reward_commission_slider"
                 )
 
             with col2:
@@ -76,36 +99,16 @@ def main():
                     min_value=0.1,
                     max_value=1.0,
                     value=st.session_state['active_conversion'],
-                    format="%.2f"
+                    format="%.2f",
+                    key="active_conversion_slider"
                 )
                 st.session_state['growth_rate_y2'] = st.slider(
                     t('growth_rate_y2'),
                     min_value=0.05,
                     max_value=0.50,
                     value=st.session_state['growth_rate_y2'],
-                    format="%.2f"
-                )
-                
-
-        with st.expander(t('commission_parameters'), expanded=False):
-            col3, col4 = st.columns(2)
-            with col3:
-                st.session_state['exchange_commission_rate'] = st.slider(
-                    t('exchange_commission'),
-                    min_value=0.01,
-                    max_value=0.10,
-                    value=st.session_state['exchange_commission_rate'],
-                    format="%.3f",
-                    help="Комиссия, взимаемая при обмене баллов лояльности"
-                )
-            with col4:
-                st.session_state['reward_commission_rate'] = st.slider(
-                    t('reward_commission'),
-                    min_value=0.01,
-                    max_value=0.10,
-                    value=st.session_state['reward_commission_rate'],
-                    format="%.3f",
-                    help="Комиссия, взимаемая при начислении вознаграждений"
+                    format="%.2f",
+                    key="growth_y2_slider"
                 )
 
         with st.expander("Marketing & Operations", expanded=False):

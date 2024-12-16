@@ -2361,3 +2361,84 @@ KeyError: 'st.session_state has no key "cashback_percent". Did you forget to ini
 2024-12-16 22:56:22,647 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 22:56:22,649 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 22:56:22,649 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:58:13,976 - loyalty_model - ERROR - logging_config.py:48 - Error: There are multiple `slider` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `slider` element.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 111, in main
+    st.session_state['exchange_commission_rate'] = st.slider(
+                                                   ^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/slider.py", line 502, in slider
+    return self._slider(
+           ^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/slider.py", line 547, in _slider
+    element_id = compute_and_register_element_id(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/lib/utils.py", line 226, in compute_and_register_element_id
+    _register_element_id(ctx, element_type, element_id)
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/lib/utils.py", line 132, in _register_element_id
+    raise StreamlitDuplicateElementId(element_type)
+streamlit.errors.StreamlitDuplicateElementId: There are multiple `slider` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `slider` element.
+2024-12-16 22:58:17,101 - loyalty_model - ERROR - logging_config.py:48 - Error: There are multiple `slider` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `slider` element.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 111, in main
+    st.session_state['exchange_commission_rate'] = st.slider(
+                                                   ^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/slider.py", line 502, in slider
+    return self._slider(
+           ^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/slider.py", line 547, in _slider
+    element_id = compute_and_register_element_id(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/lib/utils.py", line 226, in compute_and_register_element_id
+    _register_element_id(ctx, element_type, element_id)
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/lib/utils.py", line 132, in _register_element_id
+    raise StreamlitDuplicateElementId(element_type)
+streamlit.errors.StreamlitDuplicateElementId: There are multiple `slider` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `slider` element.
+2024-12-16 22:58:17,683 - loyalty_model - ERROR - logging_config.py:48 - Error: There are multiple `slider` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `slider` element.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 111, in main
+    st.session_state['exchange_commission_rate'] = st.slider(
+                                                   ^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/slider.py", line 502, in slider
+    return self._slider(
+           ^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/slider.py", line 547, in _slider
+    element_id = compute_and_register_element_id(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/lib/utils.py", line 226, in compute_and_register_element_id
+    _register_element_id(ctx, element_type, element_id)
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/lib/utils.py", line 132, in _register_element_id
+    raise StreamlitDuplicateElementId(element_type)
+streamlit.errors.StreamlitDuplicateElementId: There are multiple `slider` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.
+
+To fix this error, please pass a unique `key` argument to the `slider` element.
+2024-12-16 22:58:52,104 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:58:52,104 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:58:52,104 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:58:55,996 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:58:55,996 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:58:55,997 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:58:56,332 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:58:56,333 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:58:56,333 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
