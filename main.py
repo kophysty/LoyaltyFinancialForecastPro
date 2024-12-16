@@ -161,15 +161,18 @@ def main():
             border-radius: 10px;
             padding: 15px;
             background-color: white;
-            height: 100%;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
         }
         .metric-title {
             color: #666;
             font-size: 0.9em;
             margin-bottom: 8px;
+            flex: 0 0 auto;
         }
         .metric-value {
-            font-size: 1.4em;
+            font-size: 1.3em;
             font-weight: bold;
             color: #1f1f1f;
             margin-bottom: 8px;
@@ -177,15 +180,20 @@ def main():
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            flex: 0 0 auto;
         }
         .metric-subtitle {
             font-size: 0.8em;
             color: #666;
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px solid #f0f0f0;
         }
         .metric-details {
             font-size: 0.8em;
             color: #666;
             margin-top: 8px;
+            flex: 1 1 auto;
         }
         </style>
         """, unsafe_allow_html=True)
@@ -197,6 +205,9 @@ def main():
             <div class="metric-container">
                 <div class="metric-title">Месячная выручка</div>
                 <div class="metric-value">{month_data['revenue']:,.0f} ₽</div>
+                <div class="metric-details">
+                    <div style="text-align: right">Оборот: {month_data['turnover']:,.0f} ₽</div>
+                </div>
                 <div class="metric-subtitle">Общая за 2 года: {total_revenue:,.0f} ₽</div>
             </div>
             """, unsafe_allow_html=True)
