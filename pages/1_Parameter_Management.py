@@ -207,21 +207,6 @@ def parameter_management_page():
             help="Значение в процентах"
         ) / 100
         
-        st.session_state['monthly_transaction_volume'] = st.number_input(
-            t('monthly_volume'),
-            min_value=0,
-            value=int(st.session_state['monthly_transaction_volume'])
-        )
-        
-        st.session_state['transaction_growth_rate'] = st.number_input(
-            t('transaction_growth'),
-            min_value=0.0,
-            max_value=100.0,
-            value=st.session_state['transaction_growth_rate'] * 100,
-            format="%.1f",
-            help="Значение в процентах"
-        ) / 100
-        
         st.session_state['initial_subscribers'] = st.number_input(
             "Initial Subscribers",
             min_value=0,
@@ -229,15 +214,6 @@ def parameter_management_page():
         )
     
     with col2:
-        st.session_state['subscriber_growth_rate'] = st.number_input(
-            "Темп роста подписчиков",
-            min_value=0.0,
-            max_value=100.0,
-            value=st.session_state['subscriber_growth_rate'] * 100,
-            format="%.1f",
-            help="Значение в процентах"
-        ) / 100
-        
         st.session_state['subscription_price'] = st.number_input(
             "Subscription Price ($)",
             min_value=0.0,

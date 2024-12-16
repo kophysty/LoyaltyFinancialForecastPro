@@ -17,9 +17,7 @@ def initialize_session_state():
         'avg_check': 3000,
         'cashback_percent': 0.15,
         'points_usage_rate': 0.70,
-        'monthly_transaction_volume': 1000000,
-        'transaction_growth_rate': 0.05,
-        'subscriber_growth_rate': 0.08,
+        
         'subscription_price': 29.99,
         'commission_rate': 0.02,
         
