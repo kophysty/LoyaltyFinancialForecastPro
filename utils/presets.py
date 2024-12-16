@@ -22,8 +22,8 @@ PRESETS = {
     "standard": {
         "initial_users": 1000,
         "active_conversion": 0.40,
-        "growth_rate_y1": 0.30,
-        "growth_rate_y2": 0.15,
+        "growth_rate_y1": 0.15,
+        "growth_rate_y2": 0.08,
         "avg_check": 3000,
         "points_usage_rate": 0.70,
         "exchange_commission_rate": 0.03,
@@ -32,15 +32,15 @@ PRESETS = {
         "burn_rate_fot_2": 3500000,
         "base_infra_cost": 200000,
         "monthly_marketing_budget": 200000,
-        "marketing_efficiency": 100,
+        "marketing_efficiency": 150,
         "ad_revenue_per_user": 20,
         "partnership_rate": 0.005
     },
     "optimistic": {
         "initial_users": 1200,
         "active_conversion": 0.45,
-        "growth_rate_y1": 0.40,
-        "growth_rate_y2": 0.20,
+        "growth_rate_y1": 0.20,
+        "growth_rate_y2": 0.10,
         "avg_check": 3500,
         "points_usage_rate": 0.80,
         "exchange_commission_rate": 0.04,
@@ -49,7 +49,7 @@ PRESETS = {
         "burn_rate_fot_2": 3000000,
         "base_infra_cost": 180000,
         "monthly_marketing_budget": 250000,
-        "marketing_efficiency": 120,
+        "marketing_efficiency": 200,
         "ad_revenue_per_user": 25,
         "partnership_rate": 0.007
     }
