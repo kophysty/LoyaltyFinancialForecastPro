@@ -1617,3 +1617,43 @@ AttributeError: module 'streamlit' has no attribute 'experimental_rerun'
 2024-12-16 22:14:29,669 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 22:14:29,670 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 22:14:29,671 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:14:56,886 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:14:56,891 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:14:56,891 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 440.0
+2024-12-16 22:14:57,846 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:14:57,847 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:14:57,847 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 440.0
+2024-12-16 22:15:04,443 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:15:04,444 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:15:04,444 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 440.0
+2024-12-16 22:15:05,298 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:15:05,298 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:15:05,298 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 440.0
+2024-12-16 22:15:29,921 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:15:29,922 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:15:29,922 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:17:15,559 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 92, in main
+    value=st.session_state['cashback_percent'],
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'

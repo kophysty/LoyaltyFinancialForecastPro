@@ -15,11 +15,9 @@ def initialize_session_state():
         'growth_rate_y1': 0.30,
         'growth_rate_y2': 0.15,
         'avg_check': 3000,
-        'cashback_percent': 0.15,
         'points_usage_rate': 0.70,
         
         'subscription_price': 29.99,
-        'commission_rate': 0.02,
         
         # Commission Rates
         'commission_rate': 0.03,  # Общая комиссия за транзакции

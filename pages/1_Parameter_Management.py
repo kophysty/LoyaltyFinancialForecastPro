@@ -82,23 +82,7 @@ def parameter_management_page():
                 key=f"avg_check_{selected_preset}"
             )
             
-            st.session_state['cashback_percent'] = st.number_input(
-                "Процент кэшбэка",
-                min_value=0.0,
-                max_value=100.0,
-                value=preset_data['cashback_percent'] * 100,
-                format="%.2f",
-                help="Значение в процентах"
-            ) / 100
             
-            st.session_state['commission_rate'] = st.number_input(
-                "Ставка комиссии",
-                min_value=0.0,
-                max_value=100.0,
-                value=preset_data.get('commission_rate', 0.02) * 100,
-                format="%.2f",
-                help="Значение в процентах"
-            ) / 100
             
         with col2:
             st.markdown("**Операционные параметры:**")
