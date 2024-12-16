@@ -1,0 +1,54 @@
+2024-12-16 15:31:35,841 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:31:35,842 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:31:35,842 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:31:35,844 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.
+2024-12-16 15:31:38,910 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:31:38,939 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:31:38,940 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:31:38,943 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.
+2024-12-16 15:31:39,234 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:31:39,235 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:31:39,235 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:31:39,237 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.

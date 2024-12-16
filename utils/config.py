@@ -6,6 +6,8 @@ def initialize_session_state():
         st.session_state['initial_investment'] = 10000000
         
     # Base Parameters
+    if 'commission_rate' not in st.session_state:
+        st.session_state['commission_rate'] = 0.02
     if 'initial_users' not in st.session_state:
         st.session_state['initial_users'] = 1000
     if 'active_conversion' not in st.session_state:
