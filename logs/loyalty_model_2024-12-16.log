@@ -52,3 +52,414 @@ Traceback (most recent call last):
   File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
     raise StreamlitAPIException(
 streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.
+2024-12-16 15:31:47,411 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:31:47,412 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:31:47,413 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:31:47,416 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.
+2024-12-16 15:31:54,088 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:31:54,089 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: pessimistic
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:31:54,091 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: standard
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:31:54,095 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: optimistic
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:31:54,097 - loyalty_model - WARNING - logging_config.py:55 - No scenario results calculated
+2024-12-16 15:31:59,258 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:31:59,259 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: pessimistic
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:31:59,262 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: standard
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:31:59,263 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: optimistic
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:31:59,265 - loyalty_model - WARNING - logging_config.py:55 - No scenario results calculated
+2024-12-16 15:31:59,845 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:31:59,845 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:31:59,846 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:31:59,848 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.
+2024-12-16 15:32:19,360 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:32:19,362 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: pessimistic
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:32:19,364 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: standard
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:32:19,366 - loyalty_model - ERROR - logging_config.py:48 - Error: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Context: Error in scenario: optimistic
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 129, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/pages/2_Scenario_Analysis.py", line 39, in scenario_analysis_page
+    original_state = st.session_state.copy()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 131, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "copy". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2024-12-16 15:32:19,367 - loyalty_model - WARNING - logging_config.py:55 - No scenario results calculated
+2024-12-16 15:32:56,417 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:32:56,418 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:32:56,419 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:32:56,421 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.
+2024-12-16 15:32:58,974 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:32:58,986 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:32:58,986 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:32:58,991 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.
+2024-12-16 15:32:59,954 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:32:59,955 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:32:59,964 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:32:59,967 - loyalty_model - ERROR - logging_config.py:48 - Error: Selectbox index must be greater than or equal to 0 and less than the length of options.
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 23, in main
+    selected_month = st.selectbox("Select Month", range(1, 25), 24)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py", line 409, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 245, in selectbox
+    return self._selectbox(
+           ^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/elements/widgets/selectbox.py", line 308, in _selectbox
+    raise StreamlitAPIException(
+streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or equal to 0 and less than the length of options.

@@ -35,8 +35,13 @@ def scenario_analysis_page():
         
         for scenario_name in selected_scenarios:
             try:
+                # Store current state values
+                original_values = {}
+                for key in PRESETS[scenario_name].keys():
+                    if key in st.session_state:
+                        original_values[key] = st.session_state[key]
+                
                 # Load scenario preset
-                original_state = st.session_state.copy()
                 for key, value in PRESETS[scenario_name].items():
                     st.session_state[key] = value
                 
@@ -64,8 +69,9 @@ def scenario_analysis_page():
                     "ROI": f"{roi:.1f}%"
                 })
                 
-                # Restore original state
-                st.session_state.update(original_state)
+                # Restore original state values
+                for key, value in original_values.items():
+                    st.session_state[key] = value
                 
             except Exception as e:
                 log_error(e, context=f"Error in scenario: {scenario_name}")

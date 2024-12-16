@@ -8,8 +8,12 @@ def initialize_session_state():
     # Base Parameters
     if 'commission_rate' not in st.session_state:
         st.session_state['commission_rate'] = 0.02
+    if 'monthly_transaction_volume' not in st.session_state:
+        st.session_state['monthly_transaction_volume'] = 1000000
     if 'initial_users' not in st.session_state:
         st.session_state['initial_users'] = 1000
+    if 'transaction_growth_rate' not in st.session_state:
+        st.session_state['transaction_growth_rate'] = 0.05
     if 'active_conversion' not in st.session_state:
         st.session_state['active_conversion'] = 0.4
     if 'growth_rate_y1' not in st.session_state:
