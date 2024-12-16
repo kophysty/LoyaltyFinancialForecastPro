@@ -97,9 +97,14 @@ class FinancialModel:
                         infra_multiplier = 1.5
                     infra_cost = st.session_state['base_infra_cost'] * infra_multiplier
                     
+                    # Marketing expenses calculation
+                    marketing_expense = 0  # No marketing expenses for first 6 months
+                    if month > 6:
+                        marketing_expense = revenue * 0.05  # 5% of revenue from month 7
+                    
                     # Total calculations
                     operational_expenses = burn_rate_fot + infra_cost
-                    total_expenses = operational_expenses + st.session_state['monthly_marketing_budget']
+                    total_expenses = operational_expenses + marketing_expense
                     
                     revenue = (
                         exchange_commission + reward_commission + subscription_revenue +
@@ -118,7 +123,7 @@ class FinancialModel:
                         'month': month,
                         'revenue': revenue,
                         'expenses': total_expenses,
-                        'marketing': st.session_state['monthly_marketing_budget'],
+                        'marketing': marketing_expense,
                         'fot': burn_rate_fot,
                         'infra_cost': infra_cost,
                         'operational_expenses': operational_expenses,
