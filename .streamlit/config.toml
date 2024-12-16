@@ -12,3 +12,6 @@ font = "sans serif"
 
 [client]
 toolbarMode = "auto"
+
+[ui]
+width = "wide"
