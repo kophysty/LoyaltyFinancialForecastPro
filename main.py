@@ -4,6 +4,7 @@ from utils.config import initialize_session_state
 from utils.logging_config import log_error, log_info
 from models.financial_model import FinancialModel
 from utils.presets import PRESETS
+from utils.translations import get_translation
 
 # Initialize session state at the start
 initialize_session_state()
@@ -13,7 +14,19 @@ def format_money(amount):
 
 def main():
     try:
-        st.title("Loyalty Program Financial Model")
+        # Language selector
+        col_lang, _ = st.columns([1, 4])
+        with col_lang:
+            selected_lang = st.selectbox(
+                "Language/Язык",
+                options=['ru', 'en'],
+                format_func=lambda x: 'Русский' if x == 'ru' else 'English',
+                index=0 if st.session_state['language'] == 'ru' else 1,
+                key='language'
+            )
+        
+        t = lambda key: get_translation(key, selected_lang)
+        st.title(t('title'))
 
         # Parameter Controls
         with st.expander("Base Parameters", expanded=False):

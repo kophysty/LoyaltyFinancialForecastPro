@@ -2,6 +2,8 @@ import streamlit as st
 
 def initialize_session_state():
     """Initialize all session state variables with default values"""
+    if 'language' not in st.session_state:
+        st.session_state['language'] = 'ru'
     defaults = {
         # Initial Investment
         'initial_investment': 10000000,
