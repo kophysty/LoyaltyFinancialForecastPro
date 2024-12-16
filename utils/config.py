@@ -21,6 +21,7 @@ def initialize_session_state():
         'transaction_growth_rate': 0.05,
         'subscriber_growth_rate': 0.08,
         'subscription_price': 29.99,
+        'commission_rate': 0.02,
         
         # Commission Rates
         'commission_rate': 0.02,
