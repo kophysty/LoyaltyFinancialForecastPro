@@ -2885,3 +2885,12 @@ Traceback (most recent call last):
   File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
     raise KeyError(_missing_key_error_message(key))
 KeyError: 'st.session_state has no key "monthly_marketing_budget". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 23:29:16,085 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:29:16,085 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:29:16,088 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:29:19,024 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:29:19,025 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:29:19,026 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 23:29:20,199 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 23:29:20,200 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 23:29:20,200 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0

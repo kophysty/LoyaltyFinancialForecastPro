@@ -26,7 +26,13 @@ class FinancialModel:
                     # Growth rates and marketing impact
                     is_first_year = month <= 12
                     base_growth_rate = st.session_state['growth_rate_y1'] if is_first_year else st.session_state['growth_rate_y2']
-                    marketing_impact = (st.session_state['monthly_marketing_budget'] / 100000) * st.session_state['marketing_efficiency']
+                    # Marketing impact calculation
+                    marketing_expense = 0
+                    if month > 6:  # Marketing starts from month 7
+                        marketing_expense = revenue * st.session_state['marketing_spend_rate']
+                    
+                    # Calculate marketing impact based on the marketing expense
+                    marketing_impact = (marketing_expense / 100000) * st.session_state['marketing_efficiency']
                     total_new_users = active_users * base_growth_rate + marketing_impact
                     active_users += total_new_users
                     
