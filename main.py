@@ -101,7 +101,8 @@ def main():
                     min_value=0.01,
                     max_value=0.10,
                     value=st.session_state['exchange_commission_rate'],
-                    format="%.3f"
+                    format="%.3f",
+                    help="Комиссия, взимаемая при обмене баллов лояльности"
                 )
             with col4:
                 st.session_state['reward_commission_rate'] = st.slider(
@@ -109,7 +110,8 @@ def main():
                     min_value=0.01,
                     max_value=0.10,
                     value=st.session_state['reward_commission_rate'],
-                    format="%.3f"
+                    format="%.3f",
+                    help="Комиссия, взимаемая при начислении вознаграждений"
                 )
 
         with st.expander("Marketing & Operations", expanded=False):

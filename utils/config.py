@@ -22,9 +22,9 @@ def initialize_session_state():
         'commission_rate': 0.02,
         
         # Commission Rates
-        'commission_rate': 0.02,
-        'exchange_commission_rate': 0.03,
-        'reward_commission_rate': 0.05,
+        'commission_rate': 0.03,  # Общая комиссия за транзакции
+        'exchange_commission_rate': 0.03,  # Комиссия за обмен баллов
+        'reward_commission_rate': 0.05,  # Комиссия за начисление вознаграждений
         
         # Expenses
         'burn_rate_fot_1': 2500000,
