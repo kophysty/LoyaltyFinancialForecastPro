@@ -45,6 +45,26 @@ TRANSLATIONS = {
         'pessimistic': 'Pessimistic',
         'standard': 'Standard',
         'optimistic': 'Optimistic',
+        
+        # Parameter Management
+        'revenue_parameters': 'Revenue Parameters',
+        'expense_parameters': 'Expense Parameters',
+        'commission_rate': 'Commission Rate',
+        'monthly_transaction_volume': 'Monthly Transaction Volume',
+        'transaction_growth_rate': 'Transaction Growth Rate',
+        'initial_subscribers': 'Initial Subscribers',
+        'subscriber_growth_rate': 'Subscriber Growth Rate',
+        'subscription_price': 'Subscription Price',
+        'base_ad_revenue': 'Base Ad Revenue',
+        'ad_revenue_growth_rate': 'Ad Revenue Growth Rate',
+        'base_payroll': 'Base Monthly Payroll',
+        'payroll_growth_rate': 'Payroll Growth Rate',
+        'base_marketing_spend': 'Base Marketing Spend',
+        'marketing_growth_rate': 'Marketing Growth Rate',
+        'save_custom_preset': 'Save Custom Preset',
+        'preset_name': 'Preset Name',
+        'save_preset': 'Save Preset',
+        'preset_saved': 'Preset saved successfully!',
     },
     'ru': {
         # Main page
@@ -92,6 +112,26 @@ TRANSLATIONS = {
         'pessimistic': 'Пессимистичный',
         'standard': 'Стандартный',
         'optimistic': 'Оптимистичный',
+        
+        # Parameter Management
+        'revenue_parameters': 'Параметры выручки',
+        'expense_parameters': 'Параметры расходов',
+        'commission_rate': 'Ставка комиссии',
+        'monthly_transaction_volume': 'Ежемесячный объем транзакций',
+        'transaction_growth_rate': 'Темп роста транзакций',
+        'initial_subscribers': 'Начальные подписчики',
+        'subscriber_growth_rate': 'Темп роста подписчиков',
+        'subscription_price': 'Стоимость подписки',
+        'base_ad_revenue': 'Базовый доход от рекламы',
+        'ad_revenue_growth_rate': 'Темп роста рекламных доходов',
+        'base_payroll': 'Базовый ФОТ',
+        'payroll_growth_rate': 'Темп роста ФОТ',
+        'base_marketing_spend': 'Базовый маркетинговый бюджет',
+        'marketing_growth_rate': 'Темп роста маркетингового бюджета',
+        'save_custom_preset': 'Сохранить пользовательский пресет',
+        'preset_name': 'Название пресета',
+        'save_preset': 'Сохранить пресет',
+        'preset_saved': 'Пресет успешно сохранен!',
     }
 }
 

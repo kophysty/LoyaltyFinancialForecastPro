@@ -14,11 +14,13 @@ def format_money(amount):
 
 def main():
     try:
-        # Language selector
-        col_lang, _ = st.columns([1, 4])
-        with col_lang:
+        # Header with title and language selector
+        title_col, lang_col = st.columns([5, 1])
+        with title_col:
+            st.title(get_translation('title', st.session_state['language']))
+        with lang_col:
             selected_lang = st.selectbox(
-                "Language/Язык",
+                "",  # Empty label for cleaner look
                 options=['ru', 'en'],
                 format_func=lambda x: 'Русский' if x == 'ru' else 'English',
                 index=0 if st.session_state['language'] == 'ru' else 1,
