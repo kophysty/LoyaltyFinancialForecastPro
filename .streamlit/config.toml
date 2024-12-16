@@ -14,4 +14,4 @@ font = "sans serif"
 toolbarMode = "auto"
 
 [ui]
-width = "wide"
+layout = "wide"
