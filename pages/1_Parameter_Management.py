@@ -91,6 +91,15 @@ def parameter_management_page():
                 help="Значение в процентах"
             ) / 100
             
+            st.session_state['commission_rate'] = st.number_input(
+                "Ставка комиссии",
+                min_value=0.0,
+                max_value=100.0,
+                value=preset_data.get('commission_rate', 0.02) * 100,
+                format="%.2f",
+                help="Значение в процентах"
+            ) / 100
+            
         with col2:
             st.markdown("**Операционные параметры:**")
             st.session_state['burn_rate_fot_1'] = st.number_input(
@@ -198,15 +207,6 @@ def parameter_management_page():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.session_state['commission_rate'] = st.number_input(
-            t('commission_rate_label'),
-            min_value=0.0,
-            max_value=100.0,
-            value=st.session_state['commission_rate'] * 100,
-            format="%.1f",
-            help="Значение в процентах"
-        ) / 100
-        
         st.session_state['initial_subscribers'] = st.number_input(
             "Initial Subscribers",
             min_value=0,
