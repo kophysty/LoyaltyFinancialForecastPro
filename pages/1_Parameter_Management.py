@@ -46,32 +46,32 @@ def parameter_management_page():
                 key=f"init_users_{selected_preset}"
             )
             
-            st.session_state['active_conversion'] = st.slider(
+            st.session_state['active_conversion'] = st.number_input(
                 "Конверсия в активных",
-                min_value=0.1,
+                min_value=0.0,
                 max_value=1.0,
-                value=preset_data['active_conversion'],
+                value=preset_data['active_conversion'] * 100,
                 format="%.2f",
-                key=f"active_conv_{selected_preset}"
-            )
+                help="Значение в процентах"
+            ) / 100
             
-            st.session_state['growth_rate_y1'] = st.slider(
+            st.session_state['growth_rate_y1'] = st.number_input(
                 "Рост 1й год",
-                min_value=0.05,
-                max_value=0.50,
-                value=preset_data['growth_rate_y1'],
+                min_value=0.0,
+                max_value=100.0,
+                value=preset_data['growth_rate_y1'] * 100,
                 format="%.2f",
-                key=f"growth_y1_{selected_preset}"
-            )
+                help="Значение в процентах"
+            ) / 100
             
-            st.session_state['growth_rate_y2'] = st.slider(
+            st.session_state['growth_rate_y2'] = st.number_input(
                 "Рост 2й год",
-                min_value=0.05,
-                max_value=0.50,
-                value=preset_data['growth_rate_y2'],
+                min_value=0.0,
+                max_value=100.0,
+                value=preset_data['growth_rate_y2'] * 100,
                 format="%.2f",
-                key=f"growth_y2_{selected_preset}"
-            )
+                help="Значение в процентах"
+            ) / 100
             
             st.session_state['avg_check'] = st.number_input(
                 "Средний чек (₽)",
@@ -82,14 +82,14 @@ def parameter_management_page():
                 key=f"avg_check_{selected_preset}"
             )
             
-            st.session_state['cashback_percent'] = st.slider(
+            st.session_state['cashback_percent'] = st.number_input(
                 "Процент кэшбэка",
-                min_value=0.05,
-                max_value=0.40,
-                value=preset_data['cashback_percent'],
+                min_value=0.0,
+                max_value=100.0,
+                value=preset_data['cashback_percent'] * 100,
                 format="%.2f",
-                key=f"cashback_{selected_preset}"
-            )
+                help="Значение в процентах"
+            ) / 100
             
         with col2:
             st.markdown("**Операционные параметры:**")
@@ -201,10 +201,11 @@ def parameter_management_page():
         st.session_state['commission_rate'] = st.number_input(
             t('commission_rate_label'),
             min_value=0.0,
-            max_value=1.0,
-            value=st.session_state['commission_rate'],
-            format="%.3f"
-        )
+            max_value=100.0,
+            value=st.session_state['commission_rate'] * 100,
+            format="%.1f",
+            help="Значение в процентах"
+        ) / 100
         
         st.session_state['monthly_transaction_volume'] = st.number_input(
             t('monthly_volume'),
@@ -215,10 +216,11 @@ def parameter_management_page():
         st.session_state['transaction_growth_rate'] = st.number_input(
             t('transaction_growth'),
             min_value=0.0,
-            max_value=1.0,
-            value=st.session_state['transaction_growth_rate'],
-            format="%.3f"
-        )
+            max_value=100.0,
+            value=st.session_state['transaction_growth_rate'] * 100,
+            format="%.1f",
+            help="Значение в процентах"
+        ) / 100
         
         st.session_state['initial_subscribers'] = st.number_input(
             "Initial Subscribers",
@@ -228,12 +230,13 @@ def parameter_management_page():
     
     with col2:
         st.session_state['subscriber_growth_rate'] = st.number_input(
-            "Subscriber Growth Rate",
+            "Темп роста подписчиков",
             min_value=0.0,
-            max_value=1.0,
-            value=st.session_state['subscriber_growth_rate'],
-            format="%.3f"
-        )
+            max_value=100.0,
+            value=st.session_state['subscriber_growth_rate'] * 100,
+            format="%.1f",
+            help="Значение в процентах"
+        ) / 100
         
         st.session_state['subscription_price'] = st.number_input(
             "Subscription Price ($)",
@@ -249,12 +252,13 @@ def parameter_management_page():
         )
         
         st.session_state['ad_revenue_growth_rate'] = st.number_input(
-            "Ad Revenue Growth Rate",
+            "Темп роста рекламных доходов",
             min_value=0.0,
-            max_value=1.0,
-            value=st.session_state['ad_revenue_growth_rate'],
-            format="%.3f"
-        )
+            max_value=100.0,
+            value=st.session_state['ad_revenue_growth_rate'] * 100,
+            format="%.1f",
+            help="Значение в процентах"
+        ) / 100
     
     st.subheader("Expense Parameters")
     col3, col4 = st.columns(2)
@@ -267,12 +271,13 @@ def parameter_management_page():
         )
         
         st.session_state['payroll_growth_rate'] = st.number_input(
-            "Payroll Growth Rate",
+            "Темп роста ФОТ",
             min_value=0.0,
-            max_value=1.0,
-            value=st.session_state['payroll_growth_rate'],
-            format="%.3f"
-        )
+            max_value=100.0,
+            value=st.session_state['payroll_growth_rate'] * 100,
+            format="%.1f",
+            help="Значение в процентах"
+        ) / 100
     
     with col4:
         st.session_state['base_marketing_spend'] = st.number_input(
@@ -282,12 +287,13 @@ def parameter_management_page():
         )
         
         st.session_state['marketing_growth_rate'] = st.number_input(
-            "Marketing Growth Rate",
+            "Темп роста маркетингового бюджета",
             min_value=0.0,
-            max_value=1.0,
-            value=st.session_state['marketing_growth_rate'],
-            format="%.3f"
-        )
+            max_value=100.0,
+            value=st.session_state['marketing_growth_rate'] * 100,
+            format="%.1f",
+            help="Значение в процентах"
+        ) / 100
     
     st.divider()
     st.subheader("Сохранить как новый сценарий")
