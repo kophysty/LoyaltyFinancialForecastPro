@@ -180,7 +180,7 @@ def main():
             border-radius: 10px;
             padding: 15px;
             background-color: white;
-            height: 160px;
+            min-height: 180px;
             display: flex;
             flex-direction: column;
         }
@@ -191,14 +191,13 @@ def main():
             flex: 0 0 auto;
         }
         .metric-value {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: bold;
             color: #1f1f1f;
             margin-bottom: 8px;
             text-align: right;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
             flex: 0 0 auto;
         }
         .metric-subtitle {
