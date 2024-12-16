@@ -15,7 +15,7 @@ PRESETS = {
         "burn_rate_fot_2": 4000000,
         "base_infra_cost": 250000,
         "monthly_marketing_budget": 150000,
-        "marketing_efficiency": 80,
+        "marketing_efficiency": 100,
         "ad_revenue_per_user": 15,
         "partnership_rate": 0.003
     },
