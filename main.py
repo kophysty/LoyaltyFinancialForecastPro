@@ -7,6 +7,9 @@ from models.financial_model import FinancialModel
 # Initialize session state at the start
 initialize_session_state()
 
+def format_money(amount):
+    return "{:,.0f} ₽".format(amount)
+
 def main():
     try:
         st.title("Loyalty Program Financial Model")
@@ -167,53 +170,55 @@ def main():
             st.markdown("""
             <div class="metric-container">
                 <div class="metric-title">Месячная выручка</div>
-                <div class="metric-value">{:,.0f} ₽</div>
-                <div class="metric-subtitle">Общая за 2 года: {:,.0f} ₽</div>
+                <div class="metric-value">{}</div>
+                <div class="metric-subtitle">Общая за 2 года: {}</div>
             </div>
-            """.format(month_data['revenue'], total_revenue), unsafe_allow_html=True)
+            """.format(
+                format_money(month_data['revenue']),
+                format_money(total_revenue)
+            ), unsafe_allow_html=True)
         
         with col2:
             st.markdown("""
             <div class="metric-container">
                 <div class="metric-title">Месячные расходы</div>
-                <div class="metric-value">{:,.0f} ₽</div>
+                <div class="metric-value">{}</div>
                 <div class="metric-details">
-                    ФОТ: {:,.0f} ₽<br>
-                    Маркетинг: {:,.0f} ₽<br>
-                    Налоги: {:,.0f} ₽
+                    ФОТ: {}<br>
+                    Маркетинг: {}<br>
+                    Налоги: {}
                 </div>
             </div>
             """.format(
-                month_data['expenses'],
-                month_data['fot'],
-                month_data['marketing'],
-                month_data.get('taxes', 0)
+                format_money(month_data['expenses']),
+                format_money(month_data['fot']),
+                format_money(month_data['marketing']),
+                format_money(month_data.get('taxes', 0))
             ), unsafe_allow_html=True)
             
         with col3:
             st.markdown("""
             <div class="metric-container">
                 <div class="metric-title">Месячная прибыль</div>
-                <div class="metric-value">{:,.0f} ₽</div>
-                <div class="metric-subtitle">Общая за 2 года: {:,.0f} ₽</div>
-            </div>
-            """.format(month_data['profit'], total_profit), unsafe_allow_html=True)
-            
-        with col4:
-            st.markdown("""
-            <div class="metric-container">
-                <div class="metric-title">Активные пользователи</div>
-                <div class="metric-value">{:,.0f}</div>
-                <div class="metric-details">
-                    Новых в месяц: +{:,.0f}<br>
-                    Партнеров: {:,.0f}
-                </div>
+                <div class="metric-value">{}</div>
+                <div class="metric-subtitle">Общая за 2 года: {}</div>
             </div>
             """.format(
-                month_data['active_users'],
-                month_data['total_new_users'],
-                month_data['active_users'] / 100
+                format_money(month_data['profit']),
+                format_money(total_profit)
             ), unsafe_allow_html=True)
+            
+        with col4:
+            st.markdown(f"""
+            <div class="metric-container">
+                <div class="metric-title">Активные пользователи</div>
+                <div class="metric-value">{month_data['active_users']:,.0f}</div>
+                <div class="metric-details">
+                    Новых в месяц: +{month_data['total_new_users']:,.0f}<br>
+                    Партнеров: {month_data['active_users'] / 100:,.0f}
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
         
         # Display charts
         st.subheader("Revenue and Expenses Over Time")
