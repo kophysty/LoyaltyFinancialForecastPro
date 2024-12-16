@@ -31,31 +31,52 @@ class FinancialModel:
                     active_users += total_new_users
                     
                     # Turnover and commission calculations
-                    turnover = active_users * st.session_state['avg_check'] * 2.5
-                    cashback = turnover * 0.05  # 5% кэшбэк от оборота
-                    used_points = cashback * 0.7  # 70% использования баллов
-                    exchange_commission = used_points * 0.03  # 3% комиссия обмена
-                    reward_commission = cashback * 0.05  # 5% комиссия начисления
+                    monthly_check = st.session_state['avg_check']
+                    monthly_transactions = 2.5  # среднее количество транзакций в месяц
+                    turnover = active_users * monthly_check * monthly_transactions
+                    
+                    # Cashback calculation
+                    cashback_rate = 0.05  # 5% кэшбэк
+                    points_usage_rate = 0.7  # 70% использования баллов
+                    exchange_commission_rate = 0.03  # 3% комиссия обмена
+                    reward_commission_rate = 0.05  # 5% комиссия начисления
+                    
+                    cashback = turnover * cashback_rate
+                    used_points = cashback * points_usage_rate
+                    exchange_commission = used_points * exchange_commission_rate
+                    reward_commission = cashback * reward_commission_rate
                     
                     # Partner Revenue
-                    stores = active_users / 150
-                    restaurants = active_users / 100
+                    stores = active_users / 150  # 1 магазин на 150 пользователей
+                    restaurants = active_users / 100  # 1 ресторан на 100 пользователей
                     subscription_revenue = 0
+                    
+                    # Subscription revenue starts from month 13
                     if month > 12:
+                        # 40% базовых подписок, 20% премиум подписок
+                        basic_stores = stores * 0.4
+                        premium_stores = stores * 0.2
+                        basic_restaurants = restaurants * 0.4
+                        premium_restaurants = restaurants * 0.2
+                        
                         subscription_revenue = (
-                            (stores * 0.4 * 3000) + (stores * 0.2 * 10000) +
-                            (restaurants * 0.4 * 2000) + (restaurants * 0.2 * 7000)
+                            (basic_stores * 3000) + (premium_stores * 10000) +
+                            (basic_restaurants * 2000) + (premium_restaurants * 7000)
                         )
                     
-                    # Additional Revenue
-                    premium_revenue = active_users * 0.05 * (299 + 200)  # 5% premium users
+                    # Additional Revenue Streams
+                    premium_user_rate = 0.05  # 5% премиум пользователей
+                    premium_subscription = 299  # стоимость премиум подписки
+                    premium_services = 200  # дополнительные премиум сервисы
+                    
+                    premium_revenue = active_users * premium_user_rate * (premium_subscription + premium_services)
                     ad_revenue = active_users * st.session_state['ad_revenue_per_user']
                     partner_revenue = turnover * st.session_state['partnership_rate']
                     
                     # Expenses
                     burn_rate_fot = st.session_state['burn_rate_fot_1'] if is_first_year else st.session_state['burn_rate_fot_2']
                     
-                    # Infrastructure costs
+                    # Infrastructure costs with scaling
                     infra_multiplier = 1.0
                     if active_users > 50000:
                         infra_multiplier = 2.0
