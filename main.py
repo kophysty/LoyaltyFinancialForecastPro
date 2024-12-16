@@ -329,6 +329,31 @@ def main():
         )
         st.plotly_chart(fig_revenue, use_container_width=True)
         
+        # Export buttons for revenue chart and data
+        col_exp1, col_exp2 = st.columns(2)
+        with col_exp1:
+            if st.button("Экспорт графика (HTML)"):
+                try:
+                    from utils.export import export_chart
+                    filename = export_chart(fig_revenue, "revenue_expenses_profit")
+                    st.success(f"График сохранен в файл: {filename}")
+                except Exception as e:
+                    st.error(f"Ошибка при экспорте графика: {str(e)}")
+                    
+        with col_exp2:
+            export_format = st.selectbox(
+                "Формат экспорта данных",
+                options=['csv', 'json'],
+                key='revenue_export_format'
+            )
+            if st.button("Экспорт данных"):
+                try:
+                    from utils.export import export_financial_data
+                    filename = export_financial_data(data, format=export_format)
+                    st.success(f"Данные сохранены в файл: {filename}")
+                except Exception as e:
+                    st.error(f"Ошибка при экспорте данных: {str(e)}")
+        
         # График структуры выручки
         st.subheader("Структура выручки")
         fig_revenue_structure = go.Figure()
