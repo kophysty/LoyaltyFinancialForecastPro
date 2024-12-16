@@ -7,6 +7,18 @@ from utils.logging_config import log_error, log_warning, log_info
 def format_currency(value):
     return f"₽{value:,.2f}"
 
+def backup_state():
+    """Create a backup of current session state values"""
+    backup = {}
+    for key in st.session_state:
+        backup[key] = st.session_state[key]
+    return backup
+
+def restore_state(backup):
+    """Restore session state from backup"""
+    for key, value in backup.items():
+        st.session_state[key] = value
+
 def scenario_analysis_page():
     st.title("Анализ сценариев")
     
@@ -35,15 +47,16 @@ def scenario_analysis_page():
         
         for scenario_name in selected_scenarios:
             try:
-                # Store current state values
-                original_values = {}
-                for key in PRESETS[scenario_name].keys():
-                    if key in st.session_state:
-                        original_values[key] = st.session_state[key]
+                # Backup current state
+                state_backup = backup_state()
                 
                 # Load scenario preset
                 for key, value in PRESETS[scenario_name].items():
-                    st.session_state[key] = value
+                    if key in st.session_state:
+                        st.session_state[key] = value
+                    else:
+                        log_warning(f"Missing session state key: {key} in scenario {scenario_name}")
+                        continue
                 
                 # Calculate financials
                 data = model.calculate_financials()
@@ -69,9 +82,8 @@ def scenario_analysis_page():
                     "ROI": f"{roi:.1f}%"
                 })
                 
-                # Restore original state values
-                for key, value in original_values.items():
-                    st.session_state[key] = value
+                # Restore original state
+                restore_state(state_backup)
                 
             except Exception as e:
                 log_error(e, context=f"Error in scenario: {scenario_name}")
