@@ -551,3 +551,31 @@ streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or 
 2024-12-16 15:35:34,301 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-16 15:35:34,306 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 15:35:34,307 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:36:09,410 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:36:09,410 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:36:09,410 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:36:15,813 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:36:15,813 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:36:15,814 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:38:06,202 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:38:06,203 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:38:06,203 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:40:00,595 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:40:00,600 - loyalty_model - WARNING - logging_config.py:55 - Missing session state key: base_infrastructure_cost in scenario pessimistic
+2024-12-16 15:40:00,602 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:40:00,603 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:40:00,618 - loyalty_model - WARNING - logging_config.py:55 - Missing session state key: base_infrastructure_cost in scenario standard
+2024-12-16 15:40:00,619 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:40:00,620 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:40:00,625 - loyalty_model - WARNING - logging_config.py:55 - Missing session state key: base_infrastructure_cost in scenario optimistic
+2024-12-16 15:40:00,625 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:40:00,626 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:40:05,619 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:40:05,620 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:40:05,623 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:40:08,076 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:40:08,077 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:40:08,077 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 15:40:09,140 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 15:40:09,141 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 15:40:09,141 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
