@@ -43,23 +43,6 @@ def main():
         
         # Get the current scenario from session state or default to 'standard'
         current_scenario = st.session_state.get('current_scenario', 'standard')
-        
-        selected_scenario = st.selectbox(
-            "Сценарий",
-            options=list(scenario_names.keys()),
-            format_func=lambda x: scenario_names[x],
-            key='scenario_selector',
-            index=list(scenario_names.keys()).index(current_scenario)
-        )
-        
-        # Apply selected scenario if it changed
-        if selected_scenario != current_scenario:
-            st.session_state['current_scenario'] = selected_scenario
-            if selected_scenario in PRESETS:
-                # Update all parameters from preset
-                for key, value in PRESETS[selected_scenario].items():
-                    st.session_state[key] = value
-                st.rerun()
 
         # Parameter Controls
         with st.expander(t('base_parameters'), expanded=False):
@@ -170,8 +153,25 @@ def main():
             st.error("No data available for visualization")
             return
             
-        # Display month selection
+        # Display scenario and month selection in one row
         col_scenario, col_month = st.columns(2)
+        with col_scenario:
+            selected_scenario = st.selectbox(
+                "Сценарий",
+                options=list(scenario_names.keys()),
+                format_func=lambda x: scenario_names[x],
+                key='scenario_selector',
+                index=list(scenario_names.keys()).index(current_scenario)
+            )
+            # Apply selected scenario if it changed
+            if selected_scenario != current_scenario:
+                st.session_state['current_scenario'] = selected_scenario
+                if selected_scenario in PRESETS:
+                    # Update all parameters from preset
+                    for key, value in PRESETS[selected_scenario].items():
+                        st.session_state[key] = value
+                    st.rerun()
+                    
         with col_month:
             selected_month = st.selectbox("Месяц", range(1, 25), 23)
         month_data = data[selected_month - 1]
