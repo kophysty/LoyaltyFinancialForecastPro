@@ -76,8 +76,11 @@ class FinancialModel:
                     premium_revenue = active_users * premium_user_rate * (premium_subscription + premium_services)
                     
                     # Additional Revenue
-                    ad_revenue = active_users * st.session_state['ad_revenue_per_user']  # реклама
-                    partner_revenue = turnover * st.session_state['partnership_rate']  # доход от партнеров
+                    # Доход от рекламы: увеличиваем ставку на одного пользователя
+                    ad_revenue = active_users * 25  # фиксированная ставка 25₽ с пользователя
+                    
+                    # Доход от партнеров: процент от оборота
+                    partner_revenue = turnover * 0.008  # увеличиваем до 0.8% от оборота
                     
                     # Expenses
                     burn_rate_fot = st.session_state['burn_rate_fot_1'] if is_first_year else st.session_state['burn_rate_fot_2']
