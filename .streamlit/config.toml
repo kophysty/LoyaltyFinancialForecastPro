@@ -12,7 +12,4 @@ font = "sans serif"
 
 [client]
 toolbarMode = "auto"
-
-[ui]
-hideSidebarNav = false
 layout = "wide"
