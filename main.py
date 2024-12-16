@@ -124,20 +124,50 @@ def main():
         selected_month = st.selectbox("Select Month", range(1, 25), 23)
         month_data = data[selected_month - 1]
         
-        # Create metrics columns
+        # Calculate totals
+        total_revenue = sum(d['revenue'] for d in data)
+        total_profit = sum(d['profit'] for d in data)
+        
+        # Create metrics columns with detailed information
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            st.metric("Revenue", f"₽{month_data['revenue']:,.2f}")
+            st.markdown("### Месячная выручка")
+            st.markdown(f"### {month_data['revenue']:,.0f} ₽")
+            st.markdown(f"Общая за 2 года: {total_revenue:,.0f} ₽")
         
         with col2:
-            st.metric("Expenses", f"₽{month_data['expenses']:,.2f}")
+            st.markdown("### Месячные расходы")
+            st.markdown(f"### {month_data['expenses']:,.0f} ₽")
+            st.markdown("""
+            <div style='font-size: 0.8em; color: gray;'>
+            ФОТ: {fot:,.0f} ₽<br>
+            Маркетинг: {marketing:,.0f} ₽<br>
+            Налоги: {taxes:,.0f} ₽
+            </div>
+            """.format(
+                fot=month_data['fot'],
+                marketing=month_data['marketing'],
+                taxes=month_data.get('taxes', 0)
+            ), unsafe_allow_html=True)
             
         with col3:
-            st.metric("Profit", f"₽{month_data['profit']:,.2f}")
+            st.markdown("### Месячная прибыль")
+            st.markdown(f"### {month_data['profit']:,.0f} ₽")
+            st.markdown(f"Общая за 2 года: {total_profit:,.0f} ₽")
             
         with col4:
-            st.metric("Active Users", f"{month_data['active_users']:,.0f}")
+            st.markdown("### Активные пользователи")
+            st.markdown(f"### {month_data['active_users']:,.0f}")
+            st.markdown("""
+            <div style='font-size: 0.8em; color: gray;'>
+            Новых в месяц: +{new_users:,.0f}<br>
+            Партнеров: {partners:,.0f}
+            </div>
+            """.format(
+                new_users=month_data['total_new_users'],
+                partners=month_data['active_users'] / 100
+            ), unsafe_allow_html=True)
         
         # Display charts
         st.subheader("Revenue and Expenses Over Time")
