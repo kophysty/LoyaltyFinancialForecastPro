@@ -29,10 +29,11 @@ class FinancialModel:
                     # Marketing calculations
                     if month <= 6:  # First 6 months: fixed budget
                         marketing_expense = 200000  # Fixed monthly budget
-                        marketing_impact = (marketing_expense / 100000) * st.session_state['marketing_efficiency']
                     else:  # After month 6: percentage of revenue
                         marketing_expense = revenue * st.session_state['marketing_spend_rate']
-                        marketing_impact = (marketing_expense / 100000) * st.session_state['marketing_efficiency']
+                    
+                    # Calculate marketing impact (new users from marketing spend)
+                    marketing_impact = (marketing_expense / 100000) * st.session_state['marketing_efficiency']
                     
                     # Total new users is sum of organic growth and marketing impact
                     total_new_users = active_users * base_growth_rate + marketing_impact

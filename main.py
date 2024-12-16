@@ -107,12 +107,13 @@ def main():
                 st.session_state['marketing_spend_rate'] = st.slider(
                     "Затраты на маркетинг (% от дохода)",
                     min_value=0.0,
-                    max_value=25.0,
-                    value=st.session_state.get('marketing_spend_rate', 5.0),
-                    step=0.5,
-                    format="%.1f%%",
-                    help="Процент от дохода, направляемый на маркетинг"
-                ) / 100
+                    max_value=0.25,
+                    value=st.session_state.get('marketing_spend_rate', 0.05),
+                    step=0.01,
+                    format="%.0f%%",
+                    help="Процент от дохода, направляемый на маркетинг",
+                    key="marketing_rate_slider"
+                )
             with col6:
                 st.session_state['marketing_efficiency'] = st.number_input(
                     "Marketing Efficiency (users per 100K)",
