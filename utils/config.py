@@ -30,5 +30,5 @@ def initialize_session_state():
         st.session_state['marketing_growth_rate'] = 0.06
     if 'base_infrastructure_cost' not in st.session_state:
         st.session_state['base_infrastructure_cost'] = 8000
-    if 'base_infrastructure_cost' not in st.session_state:
+    if 'infrastructure_growth_rate' not in st.session_state:
         st.session_state['infrastructure_growth_rate'] = 0.02
