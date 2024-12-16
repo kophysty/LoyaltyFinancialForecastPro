@@ -11,4 +11,4 @@ textColor = "#262730"
 font = "sans serif"
 
 [client]
-toolbarMode = "minimal"
+toolbarMode = "auto"

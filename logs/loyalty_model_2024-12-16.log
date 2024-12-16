@@ -1154,3 +1154,18 @@ streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or 
 2024-12-16 18:12:18,590 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
 2024-12-16 18:12:18,595 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 18:12:18,595 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 18:13:55,785 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 18:13:55,785 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 18:13:55,786 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 18:13:55,789 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 18:13:55,791 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 18:13:59,950 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 18:13:59,965 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 18:13:59,968 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 18:13:59,986 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 18:13:59,986 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 18:14:00,367 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 18:14:00,368 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 18:14:00,369 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 18:14:00,373 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 18:14:00,379 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
