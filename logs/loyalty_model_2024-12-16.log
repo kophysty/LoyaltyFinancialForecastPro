@@ -1657,3 +1657,442 @@ Traceback (most recent call last):
   File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
     raise KeyError(_missing_key_error_message(key))
 KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:17:55,602 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 92, in main
+    value=st.session_state['cashback_percent'],
+          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:19:59,440 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:19:59,440 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:19:59,441 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:19:59,441 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:19:59,441 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:19:59,441 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:19:59,443 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:19:59,443 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:19:59,444 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:19:59,444 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:19:59,446 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 146, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:19:59,446 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 146, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:27,215 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:20:27,215 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:20:27,215 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:20:27,215 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:27,224 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:27,224 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 146, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:31,504 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:20:31,505 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:20:31,506 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:20:31,507 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:31,509 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:31,510 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 146, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:32,356 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:20:32,357 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:20:32,358 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:20:32,359 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:32,360 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:20:32,361 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 146, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 35, in calculate_financials
+    cashback = turnover * st.session_state['cashback_percent']
+                          ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_percent". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-16 22:21:18,673 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:21:18,673 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:21:18,673 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:21:22,126 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:21:22,141 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:21:22,147 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 22:21:22,770 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 22:21:22,770 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 22:21:22,770 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0

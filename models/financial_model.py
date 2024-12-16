@@ -30,14 +30,10 @@ class FinancialModel:
                     total_new_users = active_users * base_growth_rate + marketing_impact
                     active_users += total_new_users
                     
-                    # Turnover and cashback
+                    # Turnover and commission calculations
                     turnover = active_users * st.session_state['avg_check'] * 2.5
-                    cashback = turnover * st.session_state['cashback_percent']
-                    used_points = cashback * st.session_state['points_usage_rate']
-                    
-                    # Commission Revenue
-                    exchange_commission = used_points * st.session_state['exchange_commission_rate']
-                    reward_commission = cashback * st.session_state['reward_commission_rate']
+                    exchange_commission = turnover * st.session_state['exchange_commission_rate']
+                    reward_commission = turnover * st.session_state['reward_commission_rate']
                     
                     # Partner Revenue
                     stores = active_users / 150

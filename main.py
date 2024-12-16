@@ -85,13 +85,7 @@ def main():
                     value=st.session_state['growth_rate_y2'],
                     format="%.2f"
                 )
-                st.session_state['cashback_percent'] = st.slider(
-                    t('cashback_percent'),
-                    min_value=0.05,
-                    max_value=0.40,
-                    value=st.session_state['cashback_percent'],
-                    format="%.2f"
-                )
+                
 
         with st.expander(t('commission_parameters'), expanded=False):
             col3, col4 = st.columns(2)
