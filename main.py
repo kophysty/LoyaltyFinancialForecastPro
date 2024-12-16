@@ -129,44 +129,90 @@ def main():
         total_profit = sum(d['profit'] for d in data)
         
         # Create metrics columns with detailed information
+        st.markdown("""
+        <style>
+        .metric-container {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: white;
+            height: 100%;
+        }
+        .metric-title {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #1f1f1f;
+            margin-bottom: 8px;
+        }
+        .metric-subtitle {
+            font-size: 0.8em;
+            color: #666;
+        }
+        .metric-details {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 8px;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            st.markdown("### Месячная выручка")
-            st.markdown(f"### {month_data['revenue']:,.0f} ₽")
-            st.markdown(f"Общая за 2 года: {total_revenue:,.0f} ₽")
+            st.markdown("""
+            <div class="metric-container">
+                <div class="metric-title">Месячная выручка</div>
+                <div class="metric-value">{:,.0f} ₽</div>
+                <div class="metric-subtitle">Общая за 2 года: {:,.0f} ₽</div>
+            </div>
+            """.format(month_data['revenue'], total_revenue), unsafe_allow_html=True)
         
         with col2:
-            st.markdown("### Месячные расходы")
-            st.markdown(f"### {month_data['expenses']:,.0f} ₽")
             st.markdown("""
-            <div style='font-size: 0.8em; color: gray;'>
-            ФОТ: {fot:,.0f} ₽<br>
-            Маркетинг: {marketing:,.0f} ₽<br>
-            Налоги: {taxes:,.0f} ₽
+            <div class="metric-container">
+                <div class="metric-title">Месячные расходы</div>
+                <div class="metric-value">{:,.0f} ₽</div>
+                <div class="metric-details">
+                    ФОТ: {:,.0f} ₽<br>
+                    Маркетинг: {:,.0f} ₽<br>
+                    Налоги: {:,.0f} ₽
+                </div>
             </div>
             """.format(
-                fot=month_data['fot'],
-                marketing=month_data['marketing'],
-                taxes=month_data.get('taxes', 0)
+                month_data['expenses'],
+                month_data['fot'],
+                month_data['marketing'],
+                month_data.get('taxes', 0)
             ), unsafe_allow_html=True)
             
         with col3:
-            st.markdown("### Месячная прибыль")
-            st.markdown(f"### {month_data['profit']:,.0f} ₽")
-            st.markdown(f"Общая за 2 года: {total_profit:,.0f} ₽")
+            st.markdown("""
+            <div class="metric-container">
+                <div class="metric-title">Месячная прибыль</div>
+                <div class="metric-value">{:,.0f} ₽</div>
+                <div class="metric-subtitle">Общая за 2 года: {:,.0f} ₽</div>
+            </div>
+            """.format(month_data['profit'], total_profit), unsafe_allow_html=True)
             
         with col4:
-            st.markdown("### Активные пользователи")
-            st.markdown(f"### {month_data['active_users']:,.0f}")
             st.markdown("""
-            <div style='font-size: 0.8em; color: gray;'>
-            Новых в месяц: +{new_users:,.0f}<br>
-            Партнеров: {partners:,.0f}
+            <div class="metric-container">
+                <div class="metric-title">Активные пользователи</div>
+                <div class="metric-value">{:,.0f}</div>
+                <div class="metric-details">
+                    Новых в месяц: +{:,.0f}<br>
+                    Партнеров: {:,.0f}
+                </div>
             </div>
             """.format(
-                new_users=month_data['total_new_users'],
-                partners=month_data['active_users'] / 100
+                month_data['active_users'],
+                month_data['total_new_users'],
+                month_data['active_users'] / 100
             ), unsafe_allow_html=True)
         
         # Display charts
