@@ -451,17 +451,54 @@ def main():
         st.plotly_chart(fig_users, use_container_width=True)
         
         # Display turnover
-        st.subheader("Monthly Turnover")
+        st.subheader("Общий оборот")
         fig_turnover = go.Figure()
         fig_turnover.add_trace(go.Scatter(
             x=[d['month'] for d in data],
             y=[d['turnover'] for d in data],
-            name='Turnover'
+            name='Оборот',
+            mode='lines+markers',
+            line=dict(color='#8884d8', width=2),
+            marker=dict(size=6),
+            hovertemplate='Оборот: %{y:,.0f} ₽<extra></extra>'
         ))
+        
+        # Update layout with improved styling
         fig_turnover.update_layout(
-            xaxis_title='Month',
-            yaxis_title='Amount (₽)',
-            height=500
+            showlegend=True,
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            height=600,
+            xaxis=dict(
+                title='Месяц',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',d',
+                zeroline=False
+            ),
+            yaxis=dict(
+                title='Сумма (₽)',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',.0f',
+                zeroline=False
+            ),
+            hovermode='x unified',
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            ),
+            margin=dict(l=50, r=50, t=30, b=50),
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
+            )
         )
         st.plotly_chart(fig_turnover, use_container_width=True)
         
