@@ -1,4 +1,8 @@
 import streamlit as st
+# Set page config at the very start
+import streamlit as st
+st.set_page_config(layout="wide")
+
 import plotly.graph_objects as go
 from utils.config import initialize_session_state
 from utils.logging_config import log_error, log_info
