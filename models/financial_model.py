@@ -82,8 +82,12 @@ class FinancialModel:
                     # Доход от партнеров: процент от оборота
                     partner_revenue = turnover * 0.003  # 0.3% от оборота
                     
-                    # Expenses
-                    burn_rate_fot = st.session_state['burn_rate_fot_1'] if is_first_year else st.session_state['burn_rate_fot_2']
+                    # Expenses - FOT calculation based on month
+                    burn_rate_fot = 0  # First 6 months - no FOT
+                    if month > 12:  # Second year
+                        burn_rate_fot = 4000000
+                    elif month > 6:  # Months 7-12
+                        burn_rate_fot = 2500000
                     
                     # Infrastructure costs with scaling
                     infra_multiplier = 1.0
