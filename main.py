@@ -368,15 +368,85 @@ def main():
         # Display user growth
         st.subheader("Рост пользователей")
         fig_users = go.Figure()
+
+        # Add traces for different types of growth
         fig_users.add_trace(go.Scatter(
             x=[d['month'] for d in data],
             y=[d['active_users'] for d in data],
-            name='Активные пользователи'
+            name='Активные пользователи',
+            mode='lines+markers',
+            line=dict(color='#8884d8', width=2),
+            marker=dict(size=6),
+            hovertemplate='Активные пользователи: %{y:,.0f}<extra></extra>'
         ))
+
+        fig_users.add_trace(go.Scatter(
+            x=[d['month'] for d in data],
+            y=[d['new_users'] for d in data],
+            name='Новые от маркетинга',
+            mode='lines+markers',
+            line=dict(color='#82ca9d', width=2),
+            marker=dict(size=6),
+            hovertemplate='Новые от маркетинга: %{y:,.0f}<extra></extra>'
+        ))
+
+        fig_users.add_trace(go.Scatter(
+            x=[d['month'] for d in data],
+            y=[d['base_growth'] for d in data],
+            name='Органический рост',
+            mode='lines+markers',
+            line=dict(color='#ffc658', width=2),
+            marker=dict(size=6),
+            hovertemplate='Органический рост: %{y:,.0f}<extra></extra>'
+        ))
+
+        # Add partner growth
+        fig_users.add_trace(go.Scatter(
+            x=[d['month'] for d in data],
+            y=[d['active_users'] / 100 for d in data],  # Partners are 1/100 of active users
+            name='Партнеры',
+            mode='lines+markers',
+            line=dict(color='#ff7300', width=2),
+            marker=dict(size=6),
+            hovertemplate='Партнеры: %{y:,.0f}<extra></extra>'
+        ))
+
+        # Update layout with improved styling
         fig_users.update_layout(
-            xaxis_title='Месяц',
-            yaxis_title='Количество пользователей',
-            height=500
+            showlegend=True,
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            height=600,
+            xaxis=dict(
+                title='Месяц',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',d',
+                zeroline=False
+            ),
+            yaxis=dict(
+                title='Количество пользователей',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',.0f',
+                zeroline=False
+            ),
+            hovermode='x unified',
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            ),
+            margin=dict(l=50, r=50, t=30, b=50),
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
+            )
         )
         st.plotly_chart(fig_users, use_container_width=True)
         
