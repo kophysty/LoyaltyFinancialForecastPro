@@ -147,13 +147,15 @@ def main():
             margin-bottom: 8px;
         }
         .metric-value {
-                font-size: 1.8em;
-                font-weight: bold;
-                color: #1f1f1f;
-                margin-bottom: 8px;
-                text-align: right;
-                direction: ltr;
-            }
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #1f1f1f;
+            margin-bottom: 8px;
+            text-align: right;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .metric-subtitle {
             font-size: 0.8em;
             color: #666;
@@ -172,8 +174,8 @@ def main():
             st.markdown(f"""
             <div class="metric-container">
                 <div class="metric-title">Месячная выручка</div>
-                <div class="metric-value">{month_data['revenue']:,.0f}&nbsp;₽</div>
-                <div class="metric-subtitle">Общая за 2 года: {total_revenue:,.0f}&nbsp;₽</div>
+                <div class="metric-value">{month_data['revenue']:,.0f} ₽</div>
+                <div class="metric-subtitle">Общая за 2 года: {total_revenue:,.0f} ₽</div>
             </div>
             """, unsafe_allow_html=True)
         
@@ -181,26 +183,23 @@ def main():
             st.markdown(f"""
             <div class="metric-container">
                 <div class="metric-title">Месячные расходы</div>
-                <div class="metric-value">{month_data['expenses']:,.0f}&nbsp;₽</div>
+                <div class="metric-value">{month_data['expenses']:,.0f} ₽</div>
                 <div class="metric-details">
-                    ФОТ: {month_data['fot']:,.0f}&nbsp;₽<br>
-                    Маркетинг: {month_data['marketing']:,.0f}&nbsp;₽<br>
-                    Налоги: {month_data.get('taxes', 0):,.0f}&nbsp;₽
+                    <div style="text-align: right">ФОТ: {month_data['fot']:,.0f} ₽</div>
+                    <div style="text-align: right">Маркетинг: {month_data['marketing']:,.0f} ₽</div>
+                    <div style="text-align: right">Налоги: {month_data.get('taxes', 0):,.0f} ₽</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
             
         with col3:
-            st.markdown("""
+            st.markdown(f"""
             <div class="metric-container">
                 <div class="metric-title">Месячная прибыль</div>
-                <div class="metric-value">{}</div>
-                <div class="metric-subtitle">Общая за 2 года: {}</div>
+                <div class="metric-value">{month_data['profit']:,.0f} ₽</div>
+                <div class="metric-subtitle">Общая за 2 года: {total_profit:,.0f} ₽</div>
             </div>
-            """.format(
-                format_money(month_data['profit']),
-                format_money(total_profit)
-            ), unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
             
         with col4:
             st.markdown(f"""
