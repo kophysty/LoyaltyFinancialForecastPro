@@ -44,72 +44,62 @@ def main():
         # Get the current scenario from session state or default to 'standard'
         current_scenario = st.session_state.get('current_scenario', 'standard')
 
-        # Parameter Controls
-        with st.expander(t('base_parameters'), expanded=False):
-            col1, col2 = st.columns(2)
-            with col1:
-                st.session_state['initial_users'] = st.number_input(
-                    t('initial_users'),
-                    min_value=500,
-                    max_value=5000,
-                    value=st.session_state['initial_users'],
-                    step=100,
-                    key="init_users_input"
-                )
-                st.session_state['growth_rate_y1'] = st.slider(
-                    t('growth_rate_y1'),
-                    min_value=0.05,
-                    max_value=0.50,
-                    value=st.session_state['growth_rate_y1'],
-                    format="%.2f",
-                    key="growth_y1_slider"
-                )
-                st.session_state['avg_check'] = st.number_input(
-                    t('avg_check'),
-                    min_value=1000,
-                    max_value=10000,
-                    value=int(st.session_state['avg_check']),
-                    step=500,
-                    key="avg_check_input"
-                )
-                
-                st.session_state['exchange_commission_rate'] = st.slider(
-                    "Комиссия обмена",
-                    min_value=0.01,
-                    max_value=0.10,
-                    value=st.session_state['exchange_commission_rate'],
-                    format="%.3f",
-                    help="Комиссия, взимаемая при обмене баллов лояльности",
-                    key="exchange_commission_slider"
-                )
-                
-                st.session_state['reward_commission_rate'] = st.slider(
-                    "Комиссия начисления",
-                    min_value=0.01,
-                    max_value=0.10,
-                    value=st.session_state['reward_commission_rate'],
-                    format="%.3f",
-                    help="Комиссия, взимаемая при начислении вознаграждений",
-                    key="reward_commission_slider"
-                )
+        # Base Parameters
+        with st.expander("Базовые параметры", expanded=False):
+            st.session_state['initial_users'] = st.number_input(
+                "Начальное количество пользователей",
+                min_value=500,
+                max_value=5000,
+                value=st.session_state['initial_users'],
+                step=100,
+                key="init_users_input"
+            )
+            st.session_state['growth_rate_y1'] = st.slider(
+                "Темп роста 1й год",
+                min_value=0.05,
+                max_value=0.50,
+                value=st.session_state['growth_rate_y1'],
+                format="%.2f",
+                key="growth_y1_slider"
+            )
+            st.session_state['growth_rate_y2'] = st.slider(
+                "Темп роста 2й год",
+                min_value=0.05,
+                max_value=0.50,
+                value=st.session_state['growth_rate_y2'],
+                format="%.2f",
+                key="growth_y2_slider"
+            )
+            st.session_state['avg_check'] = st.number_input(
+                "Средний чек",
+                min_value=1000,
+                max_value=10000,
+                value=int(st.session_state['avg_check']),
+                step=500,
+                key="avg_check_input"
+            )
 
-            with col2:
-                st.session_state['active_conversion'] = st.slider(
-                    t('active_conversion'),
-                    min_value=0.1,
-                    max_value=1.0,
-                    value=st.session_state['active_conversion'],
-                    format="%.2f",
-                    key="active_conversion_slider"
-                )
-                st.session_state['growth_rate_y2'] = st.slider(
-                    t('growth_rate_y2'),
-                    min_value=0.05,
-                    max_value=0.50,
-                    value=st.session_state['growth_rate_y2'],
-                    format="%.2f",
-                    key="growth_y2_slider"
-                )
+        # Commission Parameters
+        with st.expander("Комиссии", expanded=False):
+            st.session_state['exchange_commission_rate'] = st.slider(
+                "Комиссия обмена",
+                min_value=0.01,
+                max_value=0.10,
+                value=st.session_state['exchange_commission_rate'],
+                format="%.3f",
+                help="Комиссия, взимаемая при обмене баллов лояльности",
+                key="exchange_commission_slider"
+            )
+            
+            st.session_state['reward_commission_rate'] = st.slider(
+                "Комиссия начисления",
+                min_value=0.01,
+                max_value=0.10,
+                value=st.session_state['reward_commission_rate'],
+                format="%.3f",
+                help="Комиссия, взимаемая при начислении вознаграждений",
+                key="reward_commission_slider"
+            )
 
         with st.expander("Marketing & Operations", expanded=False):
             col5, col6 = st.columns(2)
