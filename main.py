@@ -34,6 +34,33 @@ def main():
         
         t = lambda key: get_translation(key, selected_lang)
 
+        # Display scenario selection at the top of the page
+        scenario_names = {
+            "standard": "Стандартный",
+            "pessimistic": "Пессимистичный",
+            "optimistic": "Оптимистичный"
+        }
+        
+        # Get the current scenario from session state or default to 'standard'
+        current_scenario = st.session_state.get('current_scenario', 'standard')
+        
+        selected_scenario = st.selectbox(
+            "Сценарий",
+            options=list(scenario_names.keys()),
+            format_func=lambda x: scenario_names[x],
+            key='scenario_selector',
+            index=list(scenario_names.keys()).index(current_scenario)
+        )
+        
+        # Apply selected scenario if it changed
+        if selected_scenario != current_scenario:
+            st.session_state['current_scenario'] = selected_scenario
+            if selected_scenario in PRESETS:
+                # Update all parameters from preset
+                for key, value in PRESETS[selected_scenario].items():
+                    st.session_state[key] = value
+                st.experimental_rerun()
+
         # Parameter Controls
         with st.expander(t('base_parameters'), expanded=False):
             col1, col2 = st.columns(2)
@@ -143,27 +170,8 @@ def main():
             st.error("No data available for visualization")
             return
             
-        # Display scenario and month selection
+        # Display month selection
         col_scenario, col_month = st.columns(2)
-        with col_scenario:
-            scenario_names = {
-                "standard": "Стандартный",
-                "pessimistic": "Пессимистичный",
-                "optimistic": "Оптимистичный"
-            }
-            selected_scenario = st.selectbox(
-                "Сценарий",
-                options=list(scenario_names.keys()),
-                format_func=lambda x: scenario_names[x]
-            )
-            
-            # Apply selected scenario
-            if selected_scenario in PRESETS:
-                for key, value in PRESETS[selected_scenario].items():
-                    st.session_state[key] = value
-                # Recalculate model with new parameters
-                data = model.calculate_financials()
-        
         with col_month:
             selected_month = st.selectbox("Месяц", range(1, 25), 23)
         month_data = data[selected_month - 1]

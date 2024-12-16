@@ -1375,3 +1375,94 @@ streamlit.errors.StreamlitAPIException: Selectbox index must be greater than or 
 2024-12-16 21:42:55,483 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
 2024-12-16 21:42:55,486 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-16 21:42:55,486 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:43:21,960 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:43:21,961 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:21,961 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:43:21,966 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:21,967 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 21:43:36,090 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:43:36,091 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:36,091 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-16 21:43:36,094 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:36,095 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 21:43:48,416 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:43:48,417 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:48,417 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 21:43:48,422 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:48,423 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:43:57,610 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:43:57,611 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:57,611 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:43:57,615 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:43:57,616 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 21:44:20,804 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:44:20,806 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:44:20,806 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:44:20,810 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:44:20,811 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:44:24,110 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:44:24,110 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:44:24,110 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 21:44:24,114 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:44:24,115 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:44:27,399 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:44:27,400 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:44:27,401 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:44:27,405 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:44:27,405 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
+2024-12-16 21:46:27,599 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:46:27,601 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:46:27,601 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:46:27,606 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:46:27,607 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:47:11,896 - loyalty_model - ERROR - logging_config.py:48 - Error: cannot access local variable 'selected_scenario' where it is not associated with a value
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 41, in main
+    initial_users = PRESETS[selected_scenario]['initial_users'] if selected_scenario in PRESETS else st.session_state['initial_users']
+                                                                   ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'selected_scenario' where it is not associated with a value
+2024-12-16 21:47:16,174 - loyalty_model - ERROR - logging_config.py:48 - Error: cannot access local variable 'selected_scenario' where it is not associated with a value
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 41, in main
+    initial_users = PRESETS[selected_scenario]['initial_users'] if selected_scenario in PRESETS else st.session_state['initial_users']
+                                                                   ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'selected_scenario' where it is not associated with a value
+2024-12-16 21:47:16,427 - loyalty_model - ERROR - logging_config.py:48 - Error: cannot access local variable 'selected_scenario' where it is not associated with a value
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 41, in main
+    initial_users = PRESETS[selected_scenario]['initial_users'] if selected_scenario in PRESETS else st.session_state['initial_users']
+                                                                   ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'selected_scenario' where it is not associated with a value
+2024-12-16 21:47:44,413 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'initial_users' is not defined
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 65, in main
+    value=initial_users,
+          ^^^^^^^^^^^^^
+NameError: name 'initial_users' is not defined
+2024-12-16 21:47:47,904 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'initial_users' is not defined
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 65, in main
+    value=initial_users,
+          ^^^^^^^^^^^^^
+NameError: name 'initial_users' is not defined
+2024-12-16 21:47:48,158 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'initial_users' is not defined
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 65, in main
+    value=initial_users,
+          ^^^^^^^^^^^^^
+NameError: name 'initial_users' is not defined
+2024-12-16 21:48:15,026 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:48:15,027 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:48:15,027 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:48:18,356 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:48:18,357 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:48:18,357 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-16 21:48:18,723 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-16 21:48:18,723 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-16 21:48:18,725 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
