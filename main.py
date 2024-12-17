@@ -10,8 +10,12 @@ from models.financial_model import FinancialModel
 from utils.presets import PRESETS
 from utils.translations import get_translation
 
-# Initialize session state at the start
+# Initialize session state and load default preset
 initialize_session_state()
+if 'current_scenario' not in st.session_state:
+    st.session_state['current_scenario'] = 'standard'
+    for key, value in PRESETS['standard'].items():
+        st.session_state[key] = value
 
 def format_money(amount):
     return "{:,.0f} ₽".format(amount)

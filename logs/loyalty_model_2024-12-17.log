@@ -465,3 +465,27 @@ NameError: name 'turnover' is not defined
 2024-12-17 00:46:56,196 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-17 00:46:56,196 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-17 00:46:56,197 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:47:23,326 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:47:23,327 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:47:23,328 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:47:23,357 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:47:23,357 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:47:23,358 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-17 00:47:25,427 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:47:25,428 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:47:25,429 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-17 00:47:25,452 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:47:25,453 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:47:25,453 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:48:13,859 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:48:13,860 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:48:13,860 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:48:32,216 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:48:32,217 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:48:32,218 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:48:35,608 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:48:35,609 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:48:35,609 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:48:36,226 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:48:36,227 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:48:36,227 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
