@@ -369,3 +369,12 @@ Traceback (most recent call last):
     partner_revenue = turnover * 0.003  # 0.3% от оборота
                       ^^^^^^^^
 NameError: name 'turnover' is not defined
+2024-12-17 00:38:01,816 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:38:01,816 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:38:01,816 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:38:05,799 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:38:05,801 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:38:05,801 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:38:06,143 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:38:06,144 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:38:06,144 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
