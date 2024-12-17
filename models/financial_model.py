@@ -39,14 +39,16 @@ class FinancialModel:
                     total_new_users = active_users * base_growth_rate + marketing_impact
                     active_users += total_new_users
                     
-                    # Turnover calculations
+                    # Purchase volume (GMV) calculations
                     monthly_check = st.session_state['avg_check']
                     monthly_transactions = 3.5  # увеличено среднее количество транзакций в месяц
-                    turnover = active_users * monthly_check * monthly_transactions
+                    purchase_volume = active_users * monthly_check * monthly_transactions  # GMV - общий объем покупок пользователей
                     
                     # Commission calculations
                     # Расчет кэшбэка по установленной ставке
-                    cashback = turnover * st.session_state['cashback_rate']
+                    # Расчет кэшбэка (оборот программы лояльности)
+                    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                    cashback = loyalty_turnover  # Для сохранения обратной совместимости
                     # Процент использования баллов
                     used_points = cashback * st.session_state['points_usage_rate']
                     # Расчет дохода от неизрасходованных баллов (5% от 30% неиспользованных)
@@ -141,7 +143,8 @@ class FinancialModel:
                         'operational_expenses': operational_expenses,
                         'profit': net_profit,
                         'taxes': total_tax,
-                        'turnover': turnover,
+                        'purchase_volume': purchase_volume,
+                        'loyalty_turnover': loyalty_turnover,
                         'active_users': active_users,
                         'new_users': marketing_impact,
                         'base_growth': active_users * base_growth_rate,

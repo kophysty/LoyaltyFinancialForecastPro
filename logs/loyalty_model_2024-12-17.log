@@ -270,3 +270,102 @@
 2024-12-17 00:27:19,570 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-17 00:27:19,573 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-17 00:27:19,573 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:28:44,740 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:28:44,741 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:28:44,742 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:29:44,117 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:29:44,118 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:29:44,119 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:31:37,848 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:31:37,849 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:31:37,849 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:34:52,242 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:34:52,243 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:34:52,243 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:35:43,701 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:35:43,702 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:35:43,702 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:36:37,670 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:36:37,672 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:36:37,673 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:37:18,102 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:37:18,103 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:37:18,103 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:37:18,104 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:18,105 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:18,106 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 136, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:22,231 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:37:22,231 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:37:22,231 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:37:22,232 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:22,233 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:22,233 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 136, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:22,486 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:37:22,487 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:37:22,488 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:37:22,488 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:22,490 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined
+2024-12-17 00:37:22,491 - loyalty_model - ERROR - logging_config.py:48 - Error: name 'turnover' is not defined
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 136, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 97, in calculate_financials
+    partner_revenue = turnover * 0.003  # 0.3% от оборота
+                      ^^^^^^^^
+NameError: name 'turnover' is not defined

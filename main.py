@@ -223,7 +223,8 @@ def main():
                 <div class="metric-title">Месячная выручка</div>
                 <div class="metric-value">{month_data['revenue']:,.0f} ₽</div>
                 <div class="metric-details">
-                    <div style="text-align: right">Оборот: {month_data['turnover']:,.0f} ₽</div>
+                    <div style="text-align: right">Объём покупок (GMV): {month_data['purchase_volume']:,.0f} ₽</div>
+                    <div style="text-align: right">Оборот программы: {month_data['loyalty_turnover']:,.0f} ₽</div>
                 </div>
                 <div class="metric-subtitle">Общая за 2 года: {total_revenue:,.0f} ₽</div>
             </div>
@@ -483,16 +484,26 @@ def main():
         st.plotly_chart(fig_users, use_container_width=True)
         
         # Display turnover
-        st.subheader("Общий оборот")
+        st.subheader("Объём покупок (GMV) и оборот программы")
         fig_turnover = go.Figure()
         fig_turnover.add_trace(go.Scatter(
             x=[d['month'] for d in data],
-            y=[d['turnover'] for d in data],
-            name='Оборот',
+            y=[d['purchase_volume'] for d in data],
+            name='Объём покупок (GMV)',
             mode='lines+markers',
             line=dict(color='#8884d8', width=2),
             marker=dict(size=6),
-            hovertemplate='Оборот: %{y:,.0f} ₽<extra></extra>'
+            hovertemplate='Объём покупок: %{y:,.0f} ₽<extra></extra>'
+        ))
+        
+        fig_turnover.add_trace(go.Scatter(
+            x=[d['month'] for d in data],
+            y=[d['loyalty_turnover'] for d in data],
+            name='Оборот программы лояльности',
+            mode='lines+markers',
+            line=dict(color='#82ca9d', width=2),
+            marker=dict(size=6),
+            hovertemplate='Оборот программы: %{y:,.0f} ₽<extra></extra>'
         ))
         
         # Update layout with improved styling
