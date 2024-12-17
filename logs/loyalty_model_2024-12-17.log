@@ -489,3 +489,258 @@ NameError: name 'turnover' is not defined
 2024-12-17 00:48:36,226 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-17 00:48:36,227 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-17 00:48:36,227 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:49:13,454 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:49:13,455 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:49:13,455 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:49:13,480 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:49:13,480 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:49:13,481 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-17 00:49:15,611 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:49:15,612 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:49:15,612 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-17 00:49:15,637 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:49:15,637 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:49:15,637 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:50:07,960 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:50:07,961 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:50:07,961 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:50:07,961 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:07,966 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:07,967 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 147, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:12,053 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:50:12,053 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:50:12,054 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:50:12,054 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:12,056 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:12,057 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 147, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:12,312 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:50:12,312 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:50:12,313 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:50:12,313 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error processing month 1
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:12,314 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in calculate_financials
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+2024-12-17 00:50:12,315 - loyalty_model - ERROR - logging_config.py:48 - Error: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+Context: Error in main application
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 455, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 500, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/LoyaltyFinancialForecastPro/main.py", line 147, in main
+    data = model.calculate_financials()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/models/financial_model.py", line 50, in calculate_financials
+    loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py", line 100, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py", line 94, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "/home/runner/LoyaltyFinancialForecastPro/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py", line 457, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
