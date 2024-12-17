@@ -16,6 +16,7 @@ def initialize_session_state():
         'avg_check': 3000,
         'cashback_rate': 0.15,  # 15% кэшбэка
         'points_usage_rate': 0.70,  # 70% использования баллов
+        'expired_points_rate': 0.05,  # 5% от неиспользованных баллов (30%) становятся доходом
         'exchange_commission_rate': 0.03,
         'reward_commission_rate': 0.05,
         

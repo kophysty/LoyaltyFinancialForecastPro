@@ -9,6 +9,7 @@ PRESETS = {
         "growth_rate_y2": 0.08,  # Ниже стандартного
         "avg_check": 2500,
         "points_usage_rate": 0.60,
+        "expired_points_rate": 0.03,  # Пессимистичный сценарий: меньше баллов сгорает
         "exchange_commission_rate": 0.02,
         "reward_commission_rate": 0.03,
         "burn_rate_fot_1": 3000000,
@@ -27,6 +28,7 @@ PRESETS = {
         "growth_rate_y2": 0.10,  # Базовый темп роста
         "avg_check": 3000,
         "points_usage_rate": 0.70,
+        "expired_points_rate": 0.05,  # Стандартный сценарий: 5% от неиспользованных баллов
         "exchange_commission_rate": 0.03,
         "reward_commission_rate": 0.05,
         "burn_rate_fot_1": 2500000,
@@ -44,6 +46,7 @@ PRESETS = {
         "growth_rate_y2": 0.12,  # Выше стандартного
         "avg_check": 3500,
         "points_usage_rate": 0.80,
+        "expired_points_rate": 0.07,  # Оптимистичный сценарий: больше баллов сгорает
         "exchange_commission_rate": 0.04,
         "reward_commission_rate": 0.06,
         "burn_rate_fot_1": 2000000,

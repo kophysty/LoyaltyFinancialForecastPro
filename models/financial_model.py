@@ -49,6 +49,9 @@ class FinancialModel:
                     cashback = turnover * st.session_state['cashback_rate']
                     # Процент использования баллов
                     used_points = cashback * st.session_state['points_usage_rate']
+                    # Расчет дохода от неизрасходованных баллов (5% от 30% неиспользованных)
+                    unused_points = cashback * (1 - st.session_state['points_usage_rate'])
+                    expired_points_income = unused_points * st.session_state['expired_points_rate']
                     # Комиссия обмена 3% от использованных баллов
                     exchange_commission = used_points * st.session_state['exchange_commission_rate']
                     # Комиссия начисления 5% от всего кэшбэка
@@ -117,7 +120,7 @@ class FinancialModel:
                     
                     revenue = (
                         exchange_commission + reward_commission + subscription_revenue +
-                        premium_revenue + ad_revenue + partner_revenue
+                        premium_revenue + ad_revenue + partner_revenue + expired_points_income
                     )
                     
                     # Tax calculations
@@ -143,7 +146,7 @@ class FinancialModel:
                         'new_users': marketing_impact,
                         'base_growth': active_users * base_growth_rate,
                         'total_new_users': total_new_users,
-                        'commission_revenue': exchange_commission + reward_commission,
+                        'commission_revenue': exchange_commission + reward_commission + expired_points_income,
                         'subscription_revenue': subscription_revenue,
                         'premium_revenue': premium_revenue,
                         'additional_revenue': ad_revenue + partner_revenue
