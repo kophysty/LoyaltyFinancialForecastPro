@@ -9,13 +9,13 @@ PRESETS = {
         "growth_rate_y2": 0.08,  # Ниже стандартного
         "avg_check": 2500,
         "points_usage_rate": 0.60,
+        "cashback_rate": 0.15,  # Добавлен обязательный параметр
         "expired_points_rate": 0.03,  # Пессимистичный сценарий: меньше баллов сгорает
         "exchange_commission_rate": 0.02,
         "reward_commission_rate": 0.03,
         "burn_rate_fot_1": 3000000,
         "burn_rate_fot_2": 4000000,
         "base_infra_cost": 250000,
-        "monthly_marketing_budget": 150000,
         "marketing_efficiency": 100,
         "marketing_spend_rate": 0.15,
         "ad_revenue_per_user": 15,
@@ -28,14 +28,15 @@ PRESETS = {
         "growth_rate_y2": 0.10,  # Базовый темп роста
         "avg_check": 3000,
         "points_usage_rate": 0.70,
+        "cashback_rate": 0.15,  # Добавлен обязательный параметр
         "expired_points_rate": 0.05,  # Стандартный сценарий: 5% от неиспользованных баллов
         "exchange_commission_rate": 0.03,
         "reward_commission_rate": 0.05,
         "burn_rate_fot_1": 2500000,
         "burn_rate_fot_2": 3500000,
         "base_infra_cost": 200000,
-        "monthly_marketing_budget": 200000,
         "marketing_efficiency": 250,  # Значительно увеличена эффективность маркетинга
+        "marketing_spend_rate": 0.05,  # Добавлен обязательный параметр
         "ad_revenue_per_user": 20,
         "partnership_rate": 0.005
     },
@@ -46,14 +47,15 @@ PRESETS = {
         "growth_rate_y2": 0.12,  # Выше стандартного
         "avg_check": 3500,
         "points_usage_rate": 0.80,
+        "cashback_rate": 0.15,  # Добавлен обязательный параметр
         "expired_points_rate": 0.07,  # Оптимистичный сценарий: больше баллов сгорает
         "exchange_commission_rate": 0.04,
         "reward_commission_rate": 0.06,
         "burn_rate_fot_1": 2000000,
         "burn_rate_fot_2": 3000000,
         "base_infra_cost": 180000,
-        "monthly_marketing_budget": 250000,
         "marketing_efficiency": 300,  # Значительно увеличена эффективность маркетинга
+        "marketing_spend_rate": 0.05,  # Добавлен обязательный параметр
         "ad_revenue_per_user": 25,
         "partnership_rate": 0.007
     }

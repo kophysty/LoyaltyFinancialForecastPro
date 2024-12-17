@@ -10,21 +10,35 @@ from models.financial_model import FinancialModel
 from utils.presets import PRESETS
 from utils.translations import get_translation
 
-# Initialize language first
+# Initialize session state with basic defaults
 if 'language' not in st.session_state:
     st.session_state['language'] = 'ru'
 
-# Set and load the current scenario
 if 'current_scenario' not in st.session_state:
     st.session_state['current_scenario'] = 'standard'
 
+# Load preset values first
 scenario = st.session_state['current_scenario']
 if scenario in PRESETS:
-    # Load preset values
-    for key, value in PRESETS[scenario].items():
+    preset_data = PRESETS[scenario].copy()
+    # Ensure all required parameters are present in the preset
+    required_params = [
+        'initial_users', 'active_conversion', 'growth_rate_y1', 'growth_rate_y2',
+        'avg_check', 'points_usage_rate', 'cashback_rate', 'exchange_commission_rate',
+        'reward_commission_rate', 'base_infra_cost', 'marketing_spend_rate',
+        'marketing_efficiency'
+    ]
+    
+    # Check if any required parameters are missing in the preset
+    missing_params = [param for param in required_params if param not in preset_data]
+    if missing_params:
+        st.error(f"Missing required parameters in preset: {', '.join(missing_params)}")
+    
+    # Load all preset values into session state
+    for key, value in preset_data.items():
         st.session_state[key] = value
 
-# Initialize any missing values with defaults
+# Initialize any additional parameters that might be needed
 initialize_session_state()
 
 def format_money(amount):

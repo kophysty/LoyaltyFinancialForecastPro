@@ -753,3 +753,24 @@ KeyError: 'st.session_state has no key "cashback_rate". Did you forget to initia
 2024-12-17 00:51:11,045 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-17 00:51:11,046 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-17 00:51:11,047 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:51:38,781 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:51:38,782 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:51:38,783 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:51:38,812 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:51:38,813 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:51:38,814 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-17 00:51:40,661 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:51:40,662 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:51:40,662 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 280.0
+2024-12-17 00:51:40,686 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:51:40,686 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:51:40,687 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:52:31,414 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:52:31,414 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:52:31,414 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:52:35,650 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:52:35,655 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:52:35,656 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
+2024-12-17 00:52:35,983 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-17 00:52:35,985 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-17 00:52:35,985 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 400.0
