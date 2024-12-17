@@ -50,7 +50,7 @@ def main():
             st.divider()
             
         # Main title
-        st.title(get_translation('title', st.session_state['language']))
+        st.title("Финансовая модель Кошелька Репутации")
         
         t = lambda key: get_translation(key, selected_lang)
 

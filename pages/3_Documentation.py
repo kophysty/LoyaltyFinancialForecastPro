@@ -2,7 +2,7 @@ import streamlit as st
 from utils.translations import get_translation
 
 def documentation_page():
-    st.title("Документация по финансовой модели")
+    st.title("Документация по финансовой модели Кошелька Репутации")
     
     st.markdown("""
     ## Руководство по финансовой модели
