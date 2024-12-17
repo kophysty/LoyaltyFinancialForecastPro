@@ -24,21 +24,25 @@ PRESETS = {
     "standard": {
         "initial_users": 1000,
         "active_conversion": 0.40,
-        "growth_rate_y1": 0.20,  # Базовый темп роста
-        "growth_rate_y2": 0.10,  # Базовый темп роста
+        "growth_rate_y1": 0.20,
+        "growth_rate_y2": 0.10,
         "avg_check": 3000,
         "points_usage_rate": 0.70,
-        "cashback_rate": 0.15,  # Добавлен обязательный параметр
-        "expired_points_rate": 0.05,  # Стандартный сценарий: 5% от неиспользованных баллов
+        "cashback_rate": 0.15,
+        "expired_points_rate": 0.05,
         "exchange_commission_rate": 0.03,
         "reward_commission_rate": 0.05,
+        "base_infra_cost": 200000,
+        "marketing_efficiency": 250,
+        "marketing_spend_rate": 0.05,
+        "ad_revenue_per_user": 20,
+        "partnership_rate": 0.005,
         "burn_rate_fot_1": 2500000,
         "burn_rate_fot_2": 3500000,
-        "base_infra_cost": 200000,
-        "marketing_efficiency": 250,  # Значительно увеличена эффективность маркетинга
-        "marketing_spend_rate": 0.05,  # Добавлен обязательный параметр
-        "ad_revenue_per_user": 20,
-        "partnership_rate": 0.005
+        "initial_investment": 10000000,
+        "marketing_budget_fixed": 200000,
+        "marketing_budget_rate": 0.05,
+        "initial_fot": 0
     },
     "optimistic": {
         "initial_users": 1200,
