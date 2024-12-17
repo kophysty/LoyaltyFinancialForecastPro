@@ -10,18 +10,21 @@ from models.financial_model import FinancialModel
 from utils.presets import PRESETS
 from utils.translations import get_translation
 
-# First set the current scenario
+# Initialize language first
+if 'language' not in st.session_state:
+    st.session_state['language'] = 'ru'
+
+# Set and load the current scenario
 if 'current_scenario' not in st.session_state:
     st.session_state['current_scenario'] = 'standard'
 
-# Load the preset values first
-if 'current_scenario' in st.session_state:
-    scenario = st.session_state['current_scenario']
-    if scenario in PRESETS:
-        for key, value in PRESETS[scenario].items():
-            st.session_state[key] = value
+scenario = st.session_state['current_scenario']
+if scenario in PRESETS:
+    # Load preset values
+    for key, value in PRESETS[scenario].items():
+        st.session_state[key] = value
 
-# Then initialize any missing values
+# Initialize any missing values with defaults
 initialize_session_state()
 
 def format_money(amount):
