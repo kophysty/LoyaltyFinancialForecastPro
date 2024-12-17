@@ -130,54 +130,42 @@ def parameter_management_page():
                 key=f"marketing_eff_{selected_preset}"
             )
 
+        # Функция для получения текущих значений параметров
+        def get_current_values():
+            return {
+                'initial_users': st.session_state['initial_users'],
+                'active_conversion': st.session_state['active_conversion'],
+                'growth_rate_y1': st.session_state['growth_rate_y1'],
+                'growth_rate_y2': st.session_state['growth_rate_y2'],
+                'avg_check': st.session_state['avg_check'],
+                'cashback_rate': st.session_state['cashback_rate'],
+                'points_usage_rate': st.session_state['points_usage_rate'],
+                'exchange_commission_rate': st.session_state.get('exchange_commission_rate', 0.03),
+                'reward_commission_rate': st.session_state.get('reward_commission_rate', 0.05),
+                'base_infra_cost': st.session_state['base_infra_cost'],
+                'marketing_spend_rate': st.session_state['marketing_spend_rate'],
+                'marketing_efficiency': st.session_state['marketing_efficiency'],
+                'ad_revenue_per_user': st.session_state.get('ad_revenue_per_user', 20),
+                'partnership_rate': st.session_state.get('partnership_rate', 0.005)
+            }
+
+        st.divider()
+        st.subheader("Сохранение сценария")
+        
         col_save1, col_save2 = st.columns(2)
         
         with col_save1:
             if selected_preset != "standard":
-                if st.button(f"Сохранить изменения в сценарий {scenario_names[selected_preset]}", key=f"save_{selected_preset}"):
-                    current_values = {
-                        'initial_users': st.session_state['initial_users'],
-                        'active_conversion': st.session_state['active_conversion'],
-                        'growth_rate_y1': st.session_state['growth_rate_y1'],
-                        'growth_rate_y2': st.session_state['growth_rate_y2'],
-                        'avg_check': st.session_state['avg_check'],
-                        'cashback_rate': st.session_state['cashback_rate'],
-                        'points_usage_rate': st.session_state['points_usage_rate'],
-                        'exchange_commission_rate': st.session_state.get('exchange_commission_rate', 0.03),
-                        'reward_commission_rate': st.session_state.get('reward_commission_rate', 0.05),
-                        'burn_rate_fot_1': st.session_state['burn_rate_fot_1'],
-                        'burn_rate_fot_2': st.session_state['burn_rate_fot_2'],
-                        'base_infra_cost': st.session_state['base_infra_cost'],
-                        'monthly_marketing_budget': st.session_state['monthly_marketing_budget'],
-                        'marketing_efficiency': st.session_state['marketing_efficiency'],
-                        'ad_revenue_per_user': st.session_state.get('ad_revenue_per_user', 20),
-                        'partnership_rate': st.session_state.get('partnership_rate', 0.005)
-                    }
+                if st.button("Сохранить изменения в текущий сценарий", key="save_current"):
+                    current_values = get_current_values()
                     PRESETS[selected_preset] = current_values
                     st.success(f"Изменения сохранены в сценарий {scenario_names[selected_preset]}")
         
         with col_save2:
-            new_preset_name = st.text_input("Сохранить как новый сценарий", key=f"new_name_{selected_preset}")
-            if st.button("Сохранить копию", key=f"save_copy_{selected_preset}"):
+            new_preset_name = st.text_input("Название нового сценария", key="new_preset_name")
+            if st.button("Сохранить как новый сценарий", key="save_new"):
                 if new_preset_name:
-                    current_values = {
-                        'initial_users': st.session_state['initial_users'],
-                        'active_conversion': st.session_state['active_conversion'],
-                        'growth_rate_y1': st.session_state['growth_rate_y1'],
-                        'growth_rate_y2': st.session_state['growth_rate_y2'],
-                        'avg_check': st.session_state['avg_check'],
-                        'cashback_rate': st.session_state['cashback_rate'],
-                        'points_usage_rate': st.session_state['points_usage_rate'],
-                        'exchange_commission_rate': st.session_state.get('exchange_commission_rate', 0.03),
-                        'reward_commission_rate': st.session_state.get('reward_commission_rate', 0.05),
-                        'burn_rate_fot_1': st.session_state['burn_rate_fot_1'],
-                        'burn_rate_fot_2': st.session_state['burn_rate_fot_2'],
-                        'base_infra_cost': st.session_state['base_infra_cost'],
-                        'monthly_marketing_budget': st.session_state['monthly_marketing_budget'],
-                        'marketing_efficiency': st.session_state['marketing_efficiency'],
-                        'ad_revenue_per_user': st.session_state.get('ad_revenue_per_user', 20),
-                        'partnership_rate': st.session_state.get('partnership_rate', 0.005)
-                    }
+                    current_values = get_current_values()
                     save_preset(new_preset_name, current_values)
                     st.success(f"Создан новый сценарий: {new_preset_name}")
                 else:
