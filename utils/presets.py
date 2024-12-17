@@ -5,8 +5,8 @@ PRESETS = {
     "pessimistic": {
         "initial_users": 800,
         "active_conversion": 0.35,
-        "growth_rate_y1": 0.20,
-        "growth_rate_y2": 0.10,
+        "growth_rate_y1": 0.15,  # Ниже стандартного
+        "growth_rate_y2": 0.08,  # Ниже стандартного
         "avg_check": 2500,
         "points_usage_rate": 0.60,
         "exchange_commission_rate": 0.02,
@@ -23,8 +23,8 @@ PRESETS = {
     "standard": {
         "initial_users": 1000,
         "active_conversion": 0.40,
-        "growth_rate_y1": 0.08,  # Значительно снижен органический рост
-        "growth_rate_y2": 0.04,  # Значительно снижен органический рост
+        "growth_rate_y1": 0.20,  # Базовый темп роста
+        "growth_rate_y2": 0.10,  # Базовый темп роста
         "avg_check": 3000,
         "points_usage_rate": 0.70,
         "exchange_commission_rate": 0.03,
@@ -40,8 +40,8 @@ PRESETS = {
     "optimistic": {
         "initial_users": 1200,
         "active_conversion": 0.45,
-        "growth_rate_y1": 0.10,  # Значительно снижен органический рост
-        "growth_rate_y2": 0.05,  # Значительно снижен органический рост
+        "growth_rate_y1": 0.25,  # Выше стандартного
+        "growth_rate_y2": 0.12,  # Выше стандартного
         "avg_check": 3500,
         "points_usage_rate": 0.80,
         "exchange_commission_rate": 0.04,
