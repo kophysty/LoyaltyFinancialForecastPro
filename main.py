@@ -338,7 +338,8 @@ def main():
         # Подготовка данных для графика
         months = [d['month'] for d in data]
         revenue_components = [
-            ('Комиссии', [d['commission_revenue'] for d in data], '#8884d8'),
+            ('Комиссии обмена/начисления', [d['commission_revenue'] - d.get('expired_points_income', 0) for d in data], '#8884d8'),
+            ('Неизрасходованные баллы', [d.get('expired_points_income', 0) for d in data], '#4B0082'),
             ('Подписки', [d['subscription_revenue'] for d in data], '#82ca9d'),
             ('Премиум', [d['premium_revenue'] for d in data], '#ffc658'),
             ('Доп. доходы', [d['additional_revenue'] for d in data], '#ff7300')

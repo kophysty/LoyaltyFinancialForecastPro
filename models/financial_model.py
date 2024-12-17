@@ -146,7 +146,8 @@ class FinancialModel:
                         'new_users': marketing_impact,
                         'base_growth': active_users * base_growth_rate,
                         'total_new_users': total_new_users,
-                        'commission_revenue': exchange_commission + reward_commission + expired_points_income,
+                        'commission_revenue': exchange_commission + reward_commission,
+                        'expired_points_income': expired_points_income,
                         'subscription_revenue': subscription_revenue,
                         'premium_revenue': premium_revenue,
                         'additional_revenue': ad_revenue + partner_revenue
