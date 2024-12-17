@@ -256,9 +256,9 @@ def main():
                 <div class="metric-title">Месячные расходы</div>
                 <div class="metric-value">{month_data['expenses']:,.0f} ₽</div>
                 <div class="metric-details">
-                    <div style="text-align: right">ФОТ: {month_data['fot']:,.0f} ₽</div>
+                    <div style="text-align: right">Операционные: {month_data['operational_expenses']:,.0f} ₽</div>
                     <div style="text-align: right">Маркетинг: {month_data['marketing']:,.0f} ₽</div>
-                    <div style="text-align: right">Налоги: {month_data.get('taxes', 0):,.0f} ₽</div>
+                    <div style="text-align: right">Налоги: {month_data['taxes']:,.0f} ₽</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)

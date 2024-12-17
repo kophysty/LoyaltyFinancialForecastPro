@@ -116,21 +116,27 @@ class FinancialModel:
                     if month > 6:
                         marketing_expense = revenue * 0.05  # 5% of revenue from month 7
                     
-                    # Total calculations
-                    operational_expenses = burn_rate_fot + infra_cost
-                    total_expenses = operational_expenses + marketing_expense
-                    
+                    # Revenue calculations
                     revenue = (
                         exchange_commission + reward_commission + subscription_revenue +
                         premium_revenue + ad_revenue + partner_revenue + expired_points_income
                     )
-                    
+
                     # Tax calculations
                     vat = revenue * 0.20  # VAT 20%
                     net_revenue = revenue - vat
-                    profit_before_tax = net_revenue - total_expenses
+                    
+                    # Operational expenses
+                    operational_expenses = burn_rate_fot + infra_cost
+                    expenses_before_tax = operational_expenses + marketing_expense
+                    
+                    # Profit tax calculation
+                    profit_before_tax = net_revenue - expenses_before_tax
                     profit_tax = profit_before_tax * 0.20 if profit_before_tax > 0 else 0
                     total_tax = vat + profit_tax
+                    
+                    # Total calculations including all taxes
+                    total_expenses = expenses_before_tax + total_tax
                     net_profit = profit_before_tax - profit_tax
                     
                     data.append({
