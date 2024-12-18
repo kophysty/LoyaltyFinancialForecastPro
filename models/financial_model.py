@@ -148,7 +148,8 @@ class FinancialModel:
                     
                     # Total calculations including all taxes
                     total_expenses = expenses_before_tax + total_tax
-                    net_profit = profit_before_tax - profit_tax
+                    # Fix profit calculation to properly account for all components
+                    net_profit = net_revenue - total_expenses
                     
                     data.append({
                         'month': month,
