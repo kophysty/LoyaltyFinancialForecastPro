@@ -80,13 +80,12 @@ class FinancialModel:
                         # Расчет выручки от подписок
                         subscription_revenue = premium_partners * 8000  # единая стоимость премиум-подписки
                     
-                    # Premium Revenue Streams
+                    # Премиум подписка для пользователей
                     premium_user_rate = 0.04  # 4% премиум пользователей
                     premium_subscription = 399  # стоимость премиум подписки
-                    premium_services = 300  # дополнительные премиум сервисы
                     
-                    # Расчет премиум выручки
-                    premium_revenue = active_users * premium_user_rate * (premium_subscription + premium_services)
+                    # Расчет выручки от премиум пользователей
+                    premium_revenue = active_users * premium_user_rate * premium_subscription
                     
                     # Additional Revenue
                     # Доход от рекламы: фиксированная ставка с пользователя

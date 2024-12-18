@@ -365,8 +365,8 @@ def main():
         revenue_components = [
             ('Комиссии обмена/начисления', [d['commission_revenue'] - d.get('expired_points_income', 0) for d in data], '#8884d8'),
             ('Неизрасходованные баллы', [d.get('expired_points_income', 0) for d in data], '#4B0082'),
-            ('Подписки', [d['subscription_revenue'] for d in data], '#82ca9d'),
-            ('Премиум', [d['premium_revenue'] for d in data], '#ffc658'),
+            ('Премиум Бизнес', [d['subscription_revenue'] for d in data], '#82ca9d'),
+            ('Премиум Пользователи', [d['premium_revenue'] for d in data], '#ffc658'),
             ('Доп. доходы', [d['additional_revenue'] for d in data], '#ff7300')
         ]
 
