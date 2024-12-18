@@ -16,3 +16,8 @@ PYTHONPATH = "${PYTHONPATH}:${REPL_HOME}"
 
 [languages.python]
 pattern = "**/*.py"
+
+[auth]
+pageEnabled = true
+buttonEnabled = true
+
