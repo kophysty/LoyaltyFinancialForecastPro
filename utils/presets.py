@@ -6,10 +6,10 @@ PRESETS = {
         "initial_users": 800,
         "active_conversion": 0.25,  # Ниже стандартного
         "growth_rate_y1": 0.20,  # Ниже стандартного (25% -> 20%)
-        "growth_rate_y2": 0.1,  # Ниже стандартного
+        "growth_rate_y2": 0.10,  # Ниже стандартного
         "avg_check": 2500,
         "points_usage_rate": 0.50,  # Ниже стандартного
-        "cashback_rate": 0.12,
+        "cashback_rate": 0.12,  # Равно стандартному
         "expired_points_rate": 0.05,  # Меньше баллов сгорает
         "exchange_commission_rate": 0.02,
         "reward_commission_rate": 0.03,
@@ -23,7 +23,7 @@ PRESETS = {
         "premium_business_start_month": 8,  # Равно стандартному
         "premium_user_start_month": 13,
         "ad_start_month": 8,  # Равно стандартному
-        "premium_business_rate": 0.2,  # Ниже стандартного (20% вместо 30%)
+        "premium_business_rate": 0.20,  # Ниже стандартного (20% вместо 30%)
         "premium_business_price": 8000  # Равно стандартному
     },
     "standard": {
@@ -72,7 +72,7 @@ PRESETS = {
         "premium_business_start_month": 8,  # Равно стандартному
         "premium_user_start_month": 13,
         "ad_start_month": 8,  # Равно стандартному
-        "premium_business_rate": 0.4,  # Выше стандартного (40% вместо 30%)
+        "premium_business_rate": 0.40,  # Выше стандартного (40% вместо 30%)
         "premium_business_price": 8000  # Равно стандартному
     }
 }
