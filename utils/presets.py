@@ -6,12 +6,12 @@ PRESETS = {
     "pessimistic": {
         "initial_users": 800,
         "active_conversion": 0.3,
-        "growth_rate_y1": 0.15,  # Ниже стандартного
-        "growth_rate_y2": 0.1,  # Ниже стандартного
+        "growth_rate_y1": 0.15,
+        "growth_rate_y2": 0.1,
         "avg_check": 2500,
         "points_usage_rate": 0.60,
         "cashback_rate": 0.15,
-        "expired_points_rate": 0.03,  # Пессимистичный сценарий: меньше баллов сгорает
+        "expired_points_rate": 0.03,
         "exchange_commission_rate": 0.02,
         "reward_commission_rate": 0.03,
         "burn_rate_fot_1": 2500000,
@@ -21,15 +21,19 @@ PRESETS = {
         "marketing_spend_rate": 0.2,
         "ad_revenue_per_user": 15,
         "partnership_rate": 0.003,
+        "claim_period_months": 2,
         # Параметры подписок для пессимистичного сценария
         "basic_subscription_price": 299,
-        "basic_subscription_start_month": 8,  # Позже чем в стандартном
+        "basic_subscription_start_month": 8,
         "premium_subscription_price": 999,
-        "premium_subscription_start_month": 12,  # Начало со второго года
+        "premium_subscription_start_month": 12,
         "business_subscription_price": 4999,
-        "business_subscription_start_month": 15,  # Позже чем в стандартном
-        "basic_subscription_conversion": 0.03,  # Ниже чем в стандартном
-        "premium_subscription_conversion": 0.01  # Ниже чем в стандартном
+        "business_subscription_start_month": 15,
+        "basic_subscription_conversion": 0.03,
+        "premium_subscription_conversion": 0.01,
+        # Добавляем параметр initial_investment для согласованности
+        "initial_investment": 60000000,
+        "preparatory_expenses": 35000000
     },
     "standard": {
         "initial_users": 1000,
@@ -88,46 +92,58 @@ PRESETS = {
 def load_preset(preset_name):
     """Load a preset and ensure all parameters are properly set"""
     if preset_name in PRESETS:
-        # Список всех параметров, которые нужно сбросить
-        params_to_reset = [
-            # Базовые параметры
-            'initial_users', 'active_conversion', 'growth_rate_y1', 'growth_rate_y2',
-            'avg_check', 'points_usage_rate', 'cashback_rate', 'expired_points_rate',
-            'exchange_commission_rate', 'reward_commission_rate',
-            # Параметры подписок
-            'basic_subscription_price', 'basic_subscription_start_month',
-            'premium_subscription_price', 'premium_subscription_start_month',
-            'business_subscription_price', 'business_subscription_start_month',
-            'basic_subscription_conversion', 'premium_subscription_conversion'
-        ]
-        
-        # Очищаем все параметры
-        for param in params_to_reset:
-            if param in st.session_state:
-                del st.session_state[param]
-        
-        # Загружаем новые параметры из пресета
-        preset_data = PRESETS[preset_name]
-        for key, value in preset_data.items():
-            st.session_state[key] = value
-            log_info(f"Loaded {key} = {value}")
-        
-        # Проверяем все параметры подписок
-        subscription_params = [
-            'basic_subscription_start_month',
-            'premium_subscription_start_month',
-            'business_subscription_start_month'
-        ]
-        
-        # Логируем значения параметров подписок
-        for param in subscription_params:
-            if param in st.session_state:
-                log_info(f"{param}: {st.session_state[param]}")
-            else:
-                log_warning(f"Missing parameter: {param}")
-                
-        # Принудительно вызываем rerun для обновления интерфейса
-        st.experimental_rerun()
+        try:
+            log_info(f"Loading preset: {preset_name}")
+            preset_data = PRESETS[preset_name].copy()
+            
+            # Список всех параметров для отслеживания
+            all_params = [
+                # Базовые параметры
+                'initial_users', 'active_conversion', 'growth_rate_y1', 'growth_rate_y2',
+                'avg_check', 'points_usage_rate', 'cashback_rate', 'expired_points_rate',
+                'exchange_commission_rate', 'reward_commission_rate', 'base_infra_cost',
+                'marketing_efficiency', 'marketing_spend_rate', 'initial_investment',
+                'preparatory_expenses', 'claim_period_months',
+                # Параметры подписок
+                'basic_subscription_price', 'basic_subscription_start_month',
+                'premium_subscription_price', 'premium_subscription_start_month',
+                'business_subscription_price', 'business_subscription_start_month',
+                'basic_subscription_conversion', 'premium_subscription_conversion'
+            ]
+            
+            # Очищаем все параметры из session_state
+            for param in all_params:
+                if param in st.session_state:
+                    del st.session_state[param]
+                    log_info(f"Cleared {param} from session state")
+            
+            # Загружаем все параметры из пресета
+            for param in all_params:
+                if param in preset_data:
+                    st.session_state[param] = preset_data[param]
+                    log_info(f"Set {param} = {preset_data[param]}")
+                else:
+                    log_warning(f"Missing parameter in preset: {param}")
+            
+            # Проверяем критические параметры подписок
+            subscription_starts = [
+                'basic_subscription_start_month',
+                'premium_subscription_start_month',
+                'business_subscription_start_month'
+            ]
+            
+            for param in subscription_starts:
+                if param in st.session_state:
+                    log_info(f"Subscription parameter loaded: {param} = {st.session_state[param]}")
+                else:
+                    log_error(f"Critical subscription parameter missing: {param}")
+            
+            log_info(f"Finished loading preset {preset_name}")
+            return True
+            
+        except Exception as e:
+            log_error(f"Error loading preset {preset_name}: {str(e)}")
+            return False
 
 
 def save_preset(preset_name, values):
