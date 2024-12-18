@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.presets import save_preset, PRESETS
+from utils.presets import save_preset, delete_custom_preset, is_custom_preset, PRESETS
 from utils.translations import get_translation
 
 def parameter_management_page():
@@ -15,12 +15,25 @@ def parameter_management_page():
         "optimistic": "Оптимистичный"
     }
     
-    selected_preset = st.selectbox(
-        "Выберите сценарий для просмотра",
-        options=list(scenario_names.keys()),
-        format_func=lambda x: scenario_names[x],
-        index=list(scenario_names.keys()).index("standard")  # Устанавливаем "Стандартный" по умолчанию
-    )
+    col_select, col_delete = st.columns([3, 1])
+        
+    with col_select:
+        selected_preset = st.selectbox(
+            "Выберите сценарий для просмотра",
+            options=list(scenario_names.keys()),
+            format_func=lambda x: scenario_names[x],
+            index=list(scenario_names.keys()).index("standard")  # Устанавливаем "Стандартный" по умолчанию
+        )
+    
+    with col_delete:
+        if is_custom_preset(selected_preset):
+            if st.button("🗑️ Удалить сценарий", type="secondary", help="Удалить пользовательский сценарий"):
+                if delete_custom_preset(selected_preset):
+                    st.success(f"Сценарий '{selected_preset}' успешно удален")
+                    st.session_state['current_scenario'] = 'standard'  # Возвращаемся к стандартному сценарию
+                    st.rerun()
+                else:
+                    st.error("Не удалось удалить сценарий")
     
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")

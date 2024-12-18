@@ -106,3 +106,28 @@ def load_custom_preset(preset_name):
                     st.session_state[key] = value
     except FileNotFoundError:
         st.error("No custom presets found")
+
+def delete_custom_preset(preset_name):
+    """Delete a custom preset from custom_presets.json"""
+    try:
+        with open('custom_presets.json', 'r') as f:
+            custom_presets = json.load(f)
+        
+        if preset_name in custom_presets:
+            del custom_presets[preset_name]
+            
+            with open('custom_presets.json', 'w') as f:
+                json.dump(custom_presets, f)
+            return True
+        return False
+    except FileNotFoundError:
+        return False
+
+def is_custom_preset(preset_name):
+    """Check if a preset is a custom preset"""
+    try:
+        with open('custom_presets.json', 'r') as f:
+            custom_presets = json.load(f)
+        return preset_name in custom_presets
+    except FileNotFoundError:
+        return False
