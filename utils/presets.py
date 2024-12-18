@@ -23,15 +23,15 @@ PRESETS = {
     },
     "standard": {
         "initial_users": 1000,
-        "active_conversion": 0.30,  // Более реалистичная конверсия
-        "growth_rate_y1": 0.20,    // Сохраняем для инновационного продукта
-        "growth_rate_y2": 0.15,    // Повышаем т.к. будет эффект сетевой ценности
-        "avg_check": 2800,         // Немного консервативнее
-        "points_usage_rate": 0.55,  // Более реалистичное использование
-        "cashback_rate": 0.12,     // Оптимизированный кэшбэк
-        "expired_points_rate": 0.07, // Больше баллов будет сгорать
+        "active_conversion": 0.30,  # Более реалистичная конверсия
+        "growth_rate_y1": 0.20,    # Сохраняем для инновационного продукта
+        "growth_rate_y2": 0.15,    # Повышаем т.к. будет эффект сетевой ценности
+        "avg_check": 2800,         # Немного консервативнее
+        "points_usage_rate": 0.55,  # Более реалистичное использование
+        "cashback_rate": 0.12,     # Оптимизированный кэшбэк
+        "expired_points_rate": 0.07, # Больше баллов будет сгорать
         "exchange_commission_rate": 0.03,
-        "reward_commission_rate": 0.04, // Немного снижаем
+        "reward_commission_rate": 0.04, # Немного снижаем
         "base_infra_cost": 200000,
         "marketing_efficiency": 250,
         "marketing_spend_rate": 0.05,
