@@ -74,19 +74,11 @@ class FinancialModel:
                     
                     # Subscription revenue starts from month 13
                     if month > 12:
-                        # Распределение подписок по типам
-                        basic_stores = stores * 0.35  # 35% базовых подписок
-                        premium_stores = stores * 0.15  # 15% премиум подписок
-                        basic_restaurants = restaurants * 0.35  # 35% базовых подписок
-                        premium_restaurants = restaurants * 0.15  # 15% премиум подписок
+                        # Единый премиум-тариф для всех типов бизнеса
+                        premium_partners = (stores + restaurants) * 0.3  # 30% партнеров на премиум-тарифе
                         
                         # Расчет выручки от подписок
-                        subscription_revenue = (
-                            (basic_stores * 2500) +  # базовая подписка магазина
-                            (premium_stores * 8000) +  # премиум подписка магазина
-                            (basic_restaurants * 2000) +  # базовая подписка ресторана
-                            (premium_restaurants * 6000)  # премиум подписка ресторана
-                        )
+                        subscription_revenue = premium_partners * 8000  # единая стоимость премиум-подписки
                     
                     # Premium Revenue Streams
                     premium_user_rate = 0.04  # 4% премиум пользователей
