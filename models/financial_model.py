@@ -99,9 +99,7 @@ class FinancialModel:
                     # Additional Revenue
                     # Доход от рекламы: фиксированная ставка с пользователя
                     ad_revenue = active_users * 20  # фиксированная ставка 20₽ с пользователя
-                    
-                    # Доход от партнеров: процент от оборота
-                    partner_revenue = purchase_volume * 0.003  # 0.3% от объема покупок (GMV)
+                    partner_revenue = 0  # убрана комиссия с GMV
                     
                     # Expenses - FOT calculation based on month
                     burn_rate_fot = 0  # First 6 months - no FOT
