@@ -49,7 +49,9 @@ PRESETS = {
         "premium_user_start_month": 13,
         "ad_start_month": 8,  # Обновлено согласно требованиям
         "premium_business_rate": 0.3,  # 30% партнеров на премиум-тарифе
-        "premium_business_price": 8000  # Стоимость премиум-подписки
+        "premium_business_price": 8000,  # Стоимость премиум-подписки
+        "initial_investment": 60000000,  # Обновлено с 10М до 60М
+        "preparatory_expenses": 35000000  # Обновлено с 21М до 35М
     },
     "optimistic": {
         "initial_users": 1200,
