@@ -1,11 +1,14 @@
 
+run = "streamlit run main.py --server.address=0.0.0.0 --server.port=80"
+public = true
+
 modules = ["python-3.11"]
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "streamlit run main.py --server.port 5000"]
+run = ["sh", "-c", "streamlit run main.py --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false --server.address=0.0.0.0 --server.port=5000"]
 
 [[ports]]
 localPort = 5000
@@ -47,4 +50,3 @@ task = "packager.installForAll"
 task = "shell.exec"
 args = "streamlit run main.py --server.address=0.0.0.0 --server.port=5000"
 waitForPort = 5000
-
