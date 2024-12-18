@@ -92,8 +92,10 @@ class FinancialModel:
                     premium_revenue = active_users * premium_user_rate * premium_subscription if month >= premium_user_start else 0
                     
                     # Additional Revenue
-                    # Доход от рекламы: фиксированная ставка с пользователя
-                    ad_revenue = active_users * 20  # фиксированная ставка 20₽ с пользователя
+                    # Доход от рекламы начиная с указанного месяца
+                    ad_start_month = st.session_state.get('ad_start_month', 13)
+                    ad_revenue_per_user = st.session_state.get('ad_revenue_per_user', 20)
+                    ad_revenue = active_users * ad_revenue_per_user if month >= ad_start_month else 0
                     partner_revenue = 0  # убрана комиссия с GMV
                     
                     # Expenses - FOT calculation based on month

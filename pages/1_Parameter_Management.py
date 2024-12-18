@@ -137,6 +137,24 @@ def parameter_management_page():
                 step=1,
                 help="В каком месяце начнут действовать премиум-подписки для пользователей"
             )
+
+            st.session_state['ad_start_month'] = st.number_input(
+                "Месяц начала показа рекламы",
+                min_value=1,
+                max_value=24,
+                value=preset_data.get('ad_start_month', 13),
+                step=1,
+                help="В каком месяце начнётся показ рекламы"
+            )
+            
+            st.session_state['ad_revenue_per_user'] = st.number_input(
+                "Доход с пользователя от рекламы (₽)",
+                min_value=0,
+                max_value=100,
+                value=preset_data.get('ad_revenue_per_user', 20),
+                step=5,
+                help="Сколько в среднем приносит один пользователь от рекламы в месяц"
+            )
             
         with col2:
             st.markdown("**Операционные параметры:**")
@@ -229,7 +247,9 @@ def parameter_management_page():
                 'premium_business_start_month': st.session_state['premium_business_start_month'],
                 'premium_business_rate': st.session_state['premium_business_rate'],
                 'premium_business_price': st.session_state['premium_business_price'],
-                'premium_user_start_month': st.session_state['premium_user_start_month']
+                'premium_user_start_month': st.session_state['premium_user_start_month'],
+                'ad_start_month': st.session_state['ad_start_month'],
+                'ad_revenue_per_user': st.session_state['ad_revenue_per_user']
             }
 
         st.divider()
