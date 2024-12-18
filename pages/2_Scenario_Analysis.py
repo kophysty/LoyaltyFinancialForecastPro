@@ -139,9 +139,9 @@ def scenario_analysis_page():
         st.subheader("Параметры инвестиций")
         col1, col2 = st.columns(2)
 
-        # Store previous values
-        prev_investment = st.session_state.get('initial_investment', 30000000)
-        prev_expenses = st.session_state.get('preparatory_expenses', 60000000)
+        # Store previous values with limits
+        prev_investment = min(st.session_state.get('initial_investment', 30000000), 130000000)
+        prev_expenses = min(st.session_state.get('preparatory_expenses', 21000000), 50700000)
 
         with col1:
             initial_investment = st.number_input(
