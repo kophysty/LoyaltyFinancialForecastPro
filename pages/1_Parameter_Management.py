@@ -1,5 +1,5 @@
 import streamlit as st
-from utils.presets import save_preset, PRESETS, load_preset
+from utils.presets import save_preset, PRESETS
 from utils.translations import get_translation
 
 def parameter_management_page():
@@ -18,14 +18,15 @@ def parameter_management_page():
     selected_preset = st.selectbox(
         "Выберите сценарий для просмотра",
         options=list(scenario_names.keys()),
-        format_func=lambda x: scenario_names[x],
-        index=list(scenario_names.keys()).index("standard")
+        format_func=lambda x: scenario_names[x]
     )
     
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
         preset_data = PRESETS[selected_preset]
-        load_preset(selected_preset)
+        
+        for key, value in preset_data.items():
+            st.session_state[key] = value
         
         col1, col2 = st.columns(2)
         
@@ -33,12 +34,11 @@ def parameter_management_page():
             st.markdown("**Базовые параметры:**")
             
             # Добавляем параметры кэшбэка и использования баллов
-            current_cashback = preset_data.get('cashback_rate', 0.15)
             st.session_state['cashback_rate'] = st.slider(
                 "Процент кэшбэка",
                 min_value=0.0,
                 max_value=50.0,
-                value=float(current_cashback * 100),
+                value=float(preset_data.get('cashback_rate', 0.15) * 100),
                 format="%.1f%%",
                 help="Процент кэшбэка от суммы покупки",
                 key=f"cashback_{selected_preset}"
@@ -104,8 +104,8 @@ def parameter_management_page():
             st.session_state['initial_investment'] = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
-                max_value=100000000,
-                value=preset_data.get('initial_investment', 60000000),
+                max_value=50000000,
+                value=preset_data.get('initial_investment', 10000000),
                 step=1000000,
                 help="Объем начальных инвестиций на запуск проекта"
             )
@@ -113,10 +113,10 @@ def parameter_management_page():
             st.session_state['preparatory_expenses'] = st.number_input(
                 "Расходы на подготовительный этап (₽)",
                 min_value=1000000,
-                max_value=50000000,
-                value=preset_data.get('preparatory_expenses', 35000000),
+                max_value=30000000,
+                value=preset_data.get('preparatory_expenses', 21000000),
                 step=1000000,
-                help="Расходы на подготовительный этап перед запуском"
+                help="Расходы на подготовительный этап перед запуском (~$300K)"
             )
             
             st.session_state['base_infra_cost'] = st.number_input(
@@ -166,8 +166,6 @@ def parameter_management_page():
                 key=f"marketing_eff_{selected_preset}"
             )
 
-            # Здесь будет добавлен новый функционал подписок
-
         # Функция для получения текущих значений параметров
         def get_current_values():
             return {
@@ -188,8 +186,7 @@ def parameter_management_page():
                 'partnership_rate': st.session_state.get('partnership_rate', 0.005),
                 'initial_investment': st.session_state['initial_investment'],
                 'preparatory_expenses': st.session_state['preparatory_expenses'],
-                'claim_period_months': st.session_state['claim_period_months'],
-                # Параметры подписок будут добавлены позже
+                'claim_period_months': st.session_state['claim_period_months']
             }
 
         st.divider()
@@ -200,12 +197,8 @@ def parameter_management_page():
         with col_save1:
             if st.button("Сохранить изменения в текущий сценарий", key="save_current"):
                 current_values = get_current_values()
-                save_preset(selected_preset, current_values)
+                PRESETS[selected_preset] = current_values
                 st.success(f"Изменения сохранены в сценарий {scenario_names[selected_preset]}")
-                # Принудительно обновляем значения в сессии
-                for key, value in current_values.items():
-                    st.session_state[key] = value
-                st.rerun()
         
         with col_save2:
             new_preset_name = st.text_input("Название нового сценария", key="new_preset_name")
