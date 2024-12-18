@@ -10,3 +10,9 @@ run = ["sh", "-c", "streamlit run main.py --server.port 5000"]
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[env]
+PYTHONPATH = "${PYTHONPATH}:${REPL_HOME}"
+
+[languages.python]
+pattern = "**/*.py"
