@@ -179,6 +179,16 @@ def parameter_management_page():
                 key=f"basic_sub_price_{selected_preset}"
             )
             
+            st.session_state['basic_subscription_start_month'] = st.number_input(
+                "Месяц запуска базовой подписки",
+                min_value=1,
+                max_value=24,
+                value=preset_data.get('basic_subscription_start_month', 1),
+                step=1,
+                help="Месяц, с которого начинает действовать базовая подписка",
+                key=f"basic_sub_start_{selected_preset}"
+            )
+            
             st.session_state['premium_subscription_price'] = st.number_input(
                 "Стоимость премиум подписки (₽/мес)",
                 min_value=500,
@@ -189,6 +199,16 @@ def parameter_management_page():
                 key=f"premium_sub_price_{selected_preset}"
             )
             
+            st.session_state['premium_subscription_start_month'] = st.number_input(
+                "Месяц запуска премиум подписки",
+                min_value=1,
+                max_value=24,
+                value=preset_data.get('premium_subscription_start_month', 3),
+                step=1,
+                help="Месяц, с которого начинает действовать премиум подписка",
+                key=f"premium_sub_start_{selected_preset}"
+            )
+            
             st.session_state['business_subscription_price'] = st.number_input(
                 "Стоимость бизнес-подписки (₽/мес)",
                 min_value=1000,
@@ -197,6 +217,16 @@ def parameter_management_page():
                 step=500,
                 help="Ежемесячная стоимость подписки для бизнес-клиентов",
                 key=f"business_sub_price_{selected_preset}"
+            )
+            
+            st.session_state['business_subscription_start_month'] = st.number_input(
+                "Месяц запуска бизнес-подписки",
+                min_value=1,
+                max_value=24,
+                value=preset_data.get('business_subscription_start_month', 6),
+                step=1,
+                help="Месяц, с которого начинает действовать бизнес-подписка",
+                key=f"business_sub_start_{selected_preset}"
             )
             
             st.session_state['basic_subscription_conversion'] = st.slider(
@@ -243,8 +273,11 @@ def parameter_management_page():
                 'preparatory_expenses': st.session_state['preparatory_expenses'],
                 'claim_period_months': st.session_state['claim_period_months'],
                 'basic_subscription_price': st.session_state['basic_subscription_price'],
+                'basic_subscription_start_month': st.session_state['basic_subscription_start_month'],
                 'premium_subscription_price': st.session_state['premium_subscription_price'],
+                'premium_subscription_start_month': st.session_state['premium_subscription_start_month'],
                 'business_subscription_price': st.session_state['business_subscription_price'],
+                'business_subscription_start_month': st.session_state['business_subscription_start_month'],
                 'basic_subscription_conversion': st.session_state['basic_subscription_conversion'],
                 'premium_subscription_conversion': st.session_state['premium_subscription_conversion']
             }
