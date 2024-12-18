@@ -138,6 +138,16 @@ def parameter_management_page():
                 help="Количество месяцев, в течение которых пользователь должен подтвердить баллы"
             )
             
+            st.session_state['expired_points_rate'] = st.slider(
+                "Процент сгорающих баллов",
+                min_value=0.0,
+                max_value=100.0,
+                value=float(preset_data.get('expired_points_rate', 0.07) * 100),
+                format="%.1f%%",
+                help="Процент неподтвержденных баллов, которые сгорают после периода подтверждения",
+                key=f"expired_points_{selected_preset}"
+            ) / 100
+            
             st.session_state['marketing_efficiency'] = st.number_input(
                 "Эффективность маркетинга (польз./100K)",
                 min_value=10,
@@ -157,6 +167,7 @@ def parameter_management_page():
                 'avg_check': st.session_state['avg_check'],
                 'cashback_rate': st.session_state['cashback_rate'],
                 'points_usage_rate': st.session_state['points_usage_rate'],
+                'expired_points_rate': st.session_state['expired_points_rate'],
                 'exchange_commission_rate': st.session_state.get('exchange_commission_rate', 0.03),
                 'reward_commission_rate': st.session_state.get('reward_commission_rate', 0.05),
                 'base_infra_cost': st.session_state['base_infra_cost'],
