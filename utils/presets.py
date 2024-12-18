@@ -23,27 +23,36 @@ PRESETS = {
         "partnership_rate": 0.003
     },
     "standard": {
-        "initial_users": 1000,
-        "active_conversion": 0.30,  # Более реалистичная конверсия
-        "growth_rate_y1": 0.20,  # Сохраняем для инновационного продукта
-        "growth_rate_y2": 0.15,  # Повышаем т.к. будет эффект сетевой ценности
-        "avg_check": 2800,  # Немного консервативнее
-        "points_usage_rate": 0.55,  # Более реалистичное использование
-        "cashback_rate": 0.12,  # Оптимизированный кэшбэк
-        "expired_points_rate": 0.07,  # Больше баллов будет сгорать
-        "exchange_commission_rate": 0.03,
-        "reward_commission_rate": 0.04,  # Немного снижаем
-        "base_infra_cost": 200000,
-        "marketing_efficiency": 200,
-        "marketing_spend_rate": 0.1,
-        "ad_revenue_per_user": 20,
-        "partnership_rate": 0.005,
-        "burn_rate_fot_1": 2500000,
-        "burn_rate_fot_2": 3500000,
-        "initial_investment": 10000000,
-        "marketing_budget_fixed": 200000,
-        "marketing_budget_rate": 0.05,
-        "initial_fot": 0
+        # Базовые параметры роста
+        "initial_users": 1000,  # Начальное количество пользователей
+        "active_conversion": 0.30,  # Реалистичная конверсия в активных пользователей
+        "growth_rate_y1": 0.20,  # Рост первого года для инновационного продукта
+        "growth_rate_y2": 0.15,  # Рост второго года с учетом сетевого эффекта
+        
+        # Финансовые параметры
+        "avg_check": 2800,  # Оптимальный средний чек для целевой аудитории
+        "points_usage_rate": 0.70,  # Стандартный уровень использования баллов
+        "cashback_rate": 0.15,  # Конкурентный уровень кэшбэка
+        "expired_points_rate": 0.07,  # Стандартный процент сгорания баллов
+        
+        # Комиссии и доходы
+        "exchange_commission_rate": 0.03,  # Комиссия за обмен баллов
+        "reward_commission_rate": 0.05,  # Комиссия за начисление баллов
+        "ad_revenue_per_user": 20,  # Доход от рекламы на пользователя
+        "partnership_rate": 0.005,  # Комиссия от партнерских транзакций
+        
+        # Операционные расходы
+        "base_infra_cost": 200000,  # Базовая инфраструктура в месяц
+        "marketing_efficiency": 200,  # Новых пользователей на 100К расходов
+        "marketing_spend_rate": 0.05,  # Процент от выручки на маркетинг
+        "burn_rate_fot_1": 2500000,  # ФОТ первого года
+        "burn_rate_fot_2": 3500000,  # ФОТ второго года
+        
+        # Инвестиции и бюджеты
+        "initial_investment": 10000000,  # Начальные инвестиции
+        "marketing_budget_fixed": 200000,  # Фиксированный маркетинговый бюджет
+        "marketing_budget_rate": 0.05,  # Процент выручки на маркетинг
+        "initial_fot": 0  # Начальный ФОТ
     },
     "optimistic": {
         "initial_users": 1200,
