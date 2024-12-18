@@ -18,7 +18,8 @@ def parameter_management_page():
     selected_preset = st.selectbox(
         "Выберите сценарий для просмотра",
         options=list(scenario_names.keys()),
-        format_func=lambda x: scenario_names[x]
+        format_func=lambda x: scenario_names[x],
+        index=list(scenario_names.keys()).index("standard")
     )
     
     if selected_preset:
