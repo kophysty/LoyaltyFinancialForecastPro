@@ -48,7 +48,14 @@ def parameter_management_page():
     
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
-        preset_data = PRESETS[selected_preset]
+        # Получаем данные из соответствующего источника
+        if selected_preset in PRESETS:
+            preset_data = PRESETS[selected_preset]
+        elif selected_preset in custom_presets:
+            preset_data = custom_presets[selected_preset]
+        else:
+            st.error(f"Не удалось загрузить данные для сценария: {selected_preset}")
+            return
         
         for key, value in preset_data.items():
             st.session_state[key] = value
