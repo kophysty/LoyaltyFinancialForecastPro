@@ -118,8 +118,8 @@ class FinancialModel:
                         infra_cost = 0  # Not included in operational expenses as covered by initial investment
                     
                     # Marketing expenses calculation
-                    if month <= 6:  # First 6 months covered by initial investment
-                        marketing_expense = 200000  # Fixed budget covered by initial investment
+                    if month <= 6:  # First 6 months: fixed budget covered by initial investment
+                        marketing_expense = 0  # Not included in operational expenses as covered by initial investment
                     else:  # After 6 months: percentage of revenue
                         marketing_expense = revenue * st.session_state['marketing_spend_rate']
                     
