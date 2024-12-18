@@ -511,3 +511,66 @@
 2024-12-18 02:04:00,608 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-18 02:04:00,611 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-18 02:04:00,611 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:06:02,041 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:06:02,043 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:06:02,043 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:06:02,336 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:06:02,336 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:06:02,337 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:16:30,179 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:16:30,183 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:16:30,183 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:16:30,229 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:16:30,229 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:16:30,230 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:17:55,408 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:17:55,408 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:17:55,408 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:18:55,742 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:18:55,742 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:18:55,743 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:19:59,889 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:19:59,891 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:19:59,891 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:20:18,056 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:20:18,059 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:20:18,061 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:20:18,299 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:20:18,300 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:20:18,301 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:21:24,990 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:21:24,991 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:21:24,991 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:21:25,113 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:21:25,114 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:21:25,138 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:22:17,255 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:22:17,257 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:22:17,258 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:22:17,637 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:22:17,638 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:22:17,639 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:22:28,438 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:22:28,438 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:22:28,439 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:22:28,468 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:22:28,470 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:22:28,470 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 240.0
+2024-12-18 02:22:40,674 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:22:40,676 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:22:40,677 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 240.0
+2024-12-18 02:22:40,725 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:22:40,727 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:22:40,727 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:23:07,022 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:23:07,029 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:23:07,035 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:24:49,165 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:24:49,166 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:24:49,166 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:24:57,858 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:24:57,858 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:24:57,858 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 02:24:58,189 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 02:24:58,189 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 02:24:58,190 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
