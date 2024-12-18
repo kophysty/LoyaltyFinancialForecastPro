@@ -290,8 +290,12 @@ def parameter_management_page():
         with col_save1:
             if st.button("Сохранить изменения в текущий сценарий", key="save_current"):
                 current_values = get_current_values()
-                PRESETS[selected_preset] = current_values
+                save_preset(selected_preset, current_values)
                 st.success(f"Изменения сохранены в сценарий {scenario_names[selected_preset]}")
+                # Принудительно обновляем значения в сессии
+                for key, value in current_values.items():
+                    st.session_state[key] = value
+                st.rerun()
         
         with col_save2:
             new_preset_name = st.text_input("Название нового сценария", key="new_preset_name")

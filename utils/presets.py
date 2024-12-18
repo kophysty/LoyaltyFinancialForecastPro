@@ -82,16 +82,24 @@ def load_preset(preset_name):
 
 
 def save_preset(preset_name, values):
+    global PRESETS
     try:
-        with open('custom_presets.json', 'r') as f:
-            custom_presets = json.load(f)
+        if preset_name in ["pessimistic", "standard", "optimistic"]:
+            # Обновляем существующий пресет
+            PRESETS[preset_name].update(values)
+            log_info(f"Updated preset {preset_name} with values: {values}")
+        else:
+            # Сохраняем новый пользовательский пресет
+            with open('custom_presets.json', 'r') as f:
+                custom_presets = json.load(f)
     except FileNotFoundError:
         custom_presets = {}
 
-    custom_presets[preset_name] = values
-
-    with open('custom_presets.json', 'w') as f:
-        json.dump(custom_presets, f)
+    if preset_name not in ["pessimistic", "standard", "optimistic"]:
+        custom_presets[preset_name] = values
+        with open('custom_presets.json', 'w') as f:
+            json.dump(custom_presets, f)
+            log_info(f"Saved custom preset {preset_name}")
 
 
 def load_custom_preset(preset_name):
