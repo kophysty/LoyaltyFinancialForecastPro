@@ -25,10 +25,21 @@ def parameter_management_page():
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
         
+        # Получаем данные пресета
+        preset_data = PRESETS[selected_preset]
+        
         # Загружаем параметры из выбранного пресета
-        if load_preset(selected_preset):
-            st.success(f"Загружен сценарий: {scenario_names[selected_preset]}")
-            preset_data = PRESETS[selected_preset]
+        if not load_preset(selected_preset):
+            st.error("Ошибка при загрузке параметров сценария")
+            return
+            
+        st.success(f"Загружен сценарий: {scenario_names[selected_preset]}")
+        
+        # Проверяем, что параметры действительно загружены
+        for key in ['basic_subscription_start_month', 'premium_subscription_start_month', 'business_subscription_start_month']:
+            if key not in st.session_state:
+                st.error(f"Не удалось загрузить параметр {key}")
+                return
             
             # Проверяем и выводим загруженные параметры подписок
             subscription_params = {
@@ -45,7 +56,7 @@ def parameter_management_page():
                     st.error(f"Не найден параметр: {desc}")
             
             # Принудительно обновляем состояние
-            st.experimental_rerun()
+            st.rerun()
         
         col1, col2 = st.columns(2)
         

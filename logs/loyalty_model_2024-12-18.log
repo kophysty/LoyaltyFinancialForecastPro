@@ -2967,3 +2967,227 @@ streamlit.errors.StreamlitValueAboveMaxError: The `value` 60000000 is greater th
 2024-12-18 13:45:56,826 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
 2024-12-18 13:45:56,827 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
 2024-12-18 13:45:56,827 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,394 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:46:08,395 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:46:08,395 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 13:46:08,396 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,397 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,398 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,398 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,399 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,399 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,399 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
+2024-12-18 13:46:08,400 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,400 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,400 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,401 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,401 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,402 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,402 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:46:08,403 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12
+2024-12-18 13:46:08,404 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,404 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,404 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,405 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,405 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,406 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,407 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,407 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,407 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,407 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,407 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,408 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:46:08,447 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:46:08,447 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:46:08,447 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 240.0
+2024-12-18 13:46:08,448 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,449 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,452 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,453 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,454 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,454 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,456 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,456 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,457 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 8
+2024-12-18 13:46:08,458 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,459 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,460 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,461 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,462 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:46:08,462 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,463 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,463 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,463 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 15
+2024-12-18 13:46:08,464 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,464 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,464 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,464 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,465 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,466 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,466 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,466 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:08,467 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 8, Premium: 12, Business: 15
+2024-12-18 13:46:25,814 - loyalty_model - INFO - logging_config.py:59 - Loading preset: standard
+2024-12-18 13:46:25,815 - loyalty_model - INFO - logging_config.py:59 - Cleared initial_users from session state
+2024-12-18 13:46:25,815 - loyalty_model - INFO - logging_config.py:59 - Cleared active_conversion from session state
+2024-12-18 13:46:25,815 - loyalty_model - INFO - logging_config.py:59 - Cleared growth_rate_y1 from session state
+2024-12-18 13:46:25,816 - loyalty_model - INFO - logging_config.py:59 - Cleared growth_rate_y2 from session state
+2024-12-18 13:46:25,816 - loyalty_model - INFO - logging_config.py:59 - Cleared avg_check from session state
+2024-12-18 13:46:25,817 - loyalty_model - INFO - logging_config.py:59 - Cleared points_usage_rate from session state
+2024-12-18 13:46:25,817 - loyalty_model - INFO - logging_config.py:59 - Cleared cashback_rate from session state
+2024-12-18 13:46:25,817 - loyalty_model - INFO - logging_config.py:59 - Cleared expired_points_rate from session state
+2024-12-18 13:46:25,818 - loyalty_model - INFO - logging_config.py:59 - Cleared exchange_commission_rate from session state
+2024-12-18 13:46:25,818 - loyalty_model - INFO - logging_config.py:59 - Cleared reward_commission_rate from session state
+2024-12-18 13:46:25,819 - loyalty_model - INFO - logging_config.py:59 - Cleared base_infra_cost from session state
+2024-12-18 13:46:25,819 - loyalty_model - INFO - logging_config.py:59 - Cleared marketing_efficiency from session state
+2024-12-18 13:46:25,819 - loyalty_model - INFO - logging_config.py:59 - Cleared marketing_spend_rate from session state
+2024-12-18 13:46:25,820 - loyalty_model - INFO - logging_config.py:59 - Cleared initial_investment from session state
+2024-12-18 13:46:25,820 - loyalty_model - INFO - logging_config.py:59 - Cleared preparatory_expenses from session state
+2024-12-18 13:46:25,821 - loyalty_model - INFO - logging_config.py:59 - Cleared claim_period_months from session state
+2024-12-18 13:46:25,821 - loyalty_model - INFO - logging_config.py:59 - Cleared basic_subscription_price from session state
+2024-12-18 13:46:25,821 - loyalty_model - INFO - logging_config.py:59 - Cleared basic_subscription_start_month from session state
+2024-12-18 13:46:25,821 - loyalty_model - INFO - logging_config.py:59 - Cleared premium_subscription_price from session state
+2024-12-18 13:46:25,821 - loyalty_model - INFO - logging_config.py:59 - Cleared premium_subscription_start_month from session state
+2024-12-18 13:46:25,822 - loyalty_model - INFO - logging_config.py:59 - Cleared business_subscription_price from session state
+2024-12-18 13:46:25,822 - loyalty_model - INFO - logging_config.py:59 - Cleared business_subscription_start_month from session state
+2024-12-18 13:46:25,823 - loyalty_model - INFO - logging_config.py:59 - Cleared basic_subscription_conversion from session state
+2024-12-18 13:46:25,823 - loyalty_model - INFO - logging_config.py:59 - Cleared premium_subscription_conversion from session state
+2024-12-18 13:46:25,824 - loyalty_model - INFO - logging_config.py:59 - Set initial_users = 1000
+2024-12-18 13:46:25,825 - loyalty_model - INFO - logging_config.py:59 - Set active_conversion = 0.3
+2024-12-18 13:46:25,825 - loyalty_model - INFO - logging_config.py:59 - Set growth_rate_y1 = 0.2
+2024-12-18 13:46:25,825 - loyalty_model - INFO - logging_config.py:59 - Set growth_rate_y2 = 0.15
+2024-12-18 13:46:25,826 - loyalty_model - INFO - logging_config.py:59 - Set avg_check = 2800
+2024-12-18 13:46:25,826 - loyalty_model - INFO - logging_config.py:59 - Set points_usage_rate = 0.55
+2024-12-18 13:46:25,827 - loyalty_model - INFO - logging_config.py:59 - Set cashback_rate = 0.12
+2024-12-18 13:46:25,827 - loyalty_model - INFO - logging_config.py:59 - Set expired_points_rate = 0.07
+2024-12-18 13:46:25,828 - loyalty_model - INFO - logging_config.py:59 - Set exchange_commission_rate = 0.03
+2024-12-18 13:46:25,828 - loyalty_model - INFO - logging_config.py:59 - Set reward_commission_rate = 0.04
+2024-12-18 13:46:25,829 - loyalty_model - INFO - logging_config.py:59 - Set base_infra_cost = 200000
+2024-12-18 13:46:25,829 - loyalty_model - INFO - logging_config.py:59 - Set marketing_efficiency = 200
+2024-12-18 13:46:25,829 - loyalty_model - INFO - logging_config.py:59 - Set marketing_spend_rate = 0.1
+2024-12-18 13:46:25,829 - loyalty_model - WARNING - logging_config.py:55 - Missing parameter in preset: initial_investment
+2024-12-18 13:46:25,829 - loyalty_model - WARNING - logging_config.py:55 - Missing parameter in preset: preparatory_expenses
+2024-12-18 13:46:25,830 - loyalty_model - INFO - logging_config.py:59 - Set claim_period_months = 2
+2024-12-18 13:46:25,830 - loyalty_model - INFO - logging_config.py:59 - Set basic_subscription_price = 299
+2024-12-18 13:46:25,830 - loyalty_model - INFO - logging_config.py:59 - Set basic_subscription_start_month = 6
+2024-12-18 13:46:25,830 - loyalty_model - INFO - logging_config.py:59 - Set premium_subscription_price = 999
+2024-12-18 13:46:25,830 - loyalty_model - INFO - logging_config.py:59 - Set premium_subscription_start_month = 12
+2024-12-18 13:46:25,831 - loyalty_model - INFO - logging_config.py:59 - Set business_subscription_price = 4999
+2024-12-18 13:46:25,832 - loyalty_model - INFO - logging_config.py:59 - Set business_subscription_start_month = 12
+2024-12-18 13:46:25,832 - loyalty_model - INFO - logging_config.py:59 - Set basic_subscription_conversion = 0.05
+2024-12-18 13:46:25,833 - loyalty_model - INFO - logging_config.py:59 - Set premium_subscription_conversion = 0.02
+2024-12-18 13:46:25,833 - loyalty_model - INFO - logging_config.py:59 - Subscription parameter loaded: basic_subscription_start_month = 6
+2024-12-18 13:46:25,833 - loyalty_model - INFO - logging_config.py:59 - Subscription parameter loaded: premium_subscription_start_month = 12
+2024-12-18 13:46:25,833 - loyalty_model - INFO - logging_config.py:59 - Subscription parameter loaded: business_subscription_start_month = 12
+2024-12-18 13:46:25,834 - loyalty_model - INFO - logging_config.py:59 - Finished loading preset standard
+2024-12-18 13:46:35,493 - loyalty_model - INFO - logging_config.py:59 - Loading preset: pessimistic
+2024-12-18 13:46:35,495 - loyalty_model - INFO - logging_config.py:59 - Cleared initial_users from session state
+2024-12-18 13:46:35,495 - loyalty_model - INFO - logging_config.py:59 - Cleared active_conversion from session state
+2024-12-18 13:46:35,495 - loyalty_model - INFO - logging_config.py:59 - Cleared growth_rate_y1 from session state
+2024-12-18 13:46:35,495 - loyalty_model - INFO - logging_config.py:59 - Cleared growth_rate_y2 from session state
+2024-12-18 13:46:35,495 - loyalty_model - INFO - logging_config.py:59 - Cleared avg_check from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared points_usage_rate from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared cashback_rate from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared expired_points_rate from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared exchange_commission_rate from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared reward_commission_rate from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared base_infra_cost from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared marketing_efficiency from session state
+2024-12-18 13:46:35,496 - loyalty_model - INFO - logging_config.py:59 - Cleared marketing_spend_rate from session state
+2024-12-18 13:46:35,497 - loyalty_model - INFO - logging_config.py:59 - Cleared claim_period_months from session state
+2024-12-18 13:46:35,498 - loyalty_model - INFO - logging_config.py:59 - Cleared basic_subscription_price from session state
+2024-12-18 13:46:35,499 - loyalty_model - INFO - logging_config.py:59 - Cleared basic_subscription_start_month from session state
+2024-12-18 13:46:35,499 - loyalty_model - INFO - logging_config.py:59 - Cleared premium_subscription_price from session state
+2024-12-18 13:46:35,499 - loyalty_model - INFO - logging_config.py:59 - Cleared premium_subscription_start_month from session state
+2024-12-18 13:46:35,500 - loyalty_model - INFO - logging_config.py:59 - Cleared business_subscription_price from session state
+2024-12-18 13:46:35,500 - loyalty_model - INFO - logging_config.py:59 - Cleared business_subscription_start_month from session state
+2024-12-18 13:46:35,501 - loyalty_model - INFO - logging_config.py:59 - Cleared basic_subscription_conversion from session state
+2024-12-18 13:46:35,502 - loyalty_model - INFO - logging_config.py:59 - Cleared premium_subscription_conversion from session state
+2024-12-18 13:46:35,502 - loyalty_model - INFO - logging_config.py:59 - Set initial_users = 800
+2024-12-18 13:46:35,502 - loyalty_model - INFO - logging_config.py:59 - Set active_conversion = 0.3
+2024-12-18 13:46:35,502 - loyalty_model - INFO - logging_config.py:59 - Set growth_rate_y1 = 0.15
+2024-12-18 13:46:35,503 - loyalty_model - INFO - logging_config.py:59 - Set growth_rate_y2 = 0.1
+2024-12-18 13:46:35,503 - loyalty_model - INFO - logging_config.py:59 - Set avg_check = 2500
+2024-12-18 13:46:35,503 - loyalty_model - INFO - logging_config.py:59 - Set points_usage_rate = 0.6
+2024-12-18 13:46:35,504 - loyalty_model - INFO - logging_config.py:59 - Set cashback_rate = 0.15
+2024-12-18 13:46:35,505 - loyalty_model - INFO - logging_config.py:59 - Set expired_points_rate = 0.03
+2024-12-18 13:46:35,507 - loyalty_model - INFO - logging_config.py:59 - Set exchange_commission_rate = 0.02
+2024-12-18 13:46:35,508 - loyalty_model - INFO - logging_config.py:59 - Set reward_commission_rate = 0.03
+2024-12-18 13:46:35,508 - loyalty_model - INFO - logging_config.py:59 - Set base_infra_cost = 250000
+2024-12-18 13:46:35,509 - loyalty_model - INFO - logging_config.py:59 - Set marketing_efficiency = 150
+2024-12-18 13:46:35,509 - loyalty_model - INFO - logging_config.py:59 - Set marketing_spend_rate = 0.2
+2024-12-18 13:46:35,510 - loyalty_model - INFO - logging_config.py:59 - Set initial_investment = 60000000
+2024-12-18 13:46:35,510 - loyalty_model - INFO - logging_config.py:59 - Set preparatory_expenses = 35000000
+2024-12-18 13:46:35,510 - loyalty_model - INFO - logging_config.py:59 - Set claim_period_months = 2
+2024-12-18 13:46:35,510 - loyalty_model - INFO - logging_config.py:59 - Set basic_subscription_price = 299
+2024-12-18 13:46:35,510 - loyalty_model - INFO - logging_config.py:59 - Set basic_subscription_start_month = 8
+2024-12-18 13:46:35,511 - loyalty_model - INFO - logging_config.py:59 - Set premium_subscription_price = 999
+2024-12-18 13:46:35,511 - loyalty_model - INFO - logging_config.py:59 - Set premium_subscription_start_month = 12
+2024-12-18 13:46:35,512 - loyalty_model - INFO - logging_config.py:59 - Set business_subscription_price = 4999
+2024-12-18 13:46:35,512 - loyalty_model - INFO - logging_config.py:59 - Set business_subscription_start_month = 15
+2024-12-18 13:46:35,512 - loyalty_model - INFO - logging_config.py:59 - Set basic_subscription_conversion = 0.03
+2024-12-18 13:46:35,513 - loyalty_model - INFO - logging_config.py:59 - Set premium_subscription_conversion = 0.01
+2024-12-18 13:46:35,513 - loyalty_model - INFO - logging_config.py:59 - Subscription parameter loaded: basic_subscription_start_month = 8
+2024-12-18 13:46:35,518 - loyalty_model - INFO - logging_config.py:59 - Subscription parameter loaded: premium_subscription_start_month = 12
+2024-12-18 13:46:35,518 - loyalty_model - INFO - logging_config.py:59 - Subscription parameter loaded: business_subscription_start_month = 15
+2024-12-18 13:46:35,519 - loyalty_model - INFO - logging_config.py:59 - Finished loading preset pessimistic
+2024-12-18 13:47:17,990 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:47:17,991 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:47:17,991 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 13:47:17,992 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,992 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,992 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,992 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,993 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,993 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,994 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
+2024-12-18 13:47:17,994 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,995 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,996 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,997 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,997 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,997 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:17,998 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:47:17,999 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12
+2024-12-18 13:47:18,000 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,000 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,000 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,001 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,001 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,002 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,003 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,004 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,004 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,005 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,005 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,006 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,951 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:47:18,952 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:47:18,953 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 13:47:18,954 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,955 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,956 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,957 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,958 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,959 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,959 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
+2024-12-18 13:47:18,959 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,959 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,959 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,960 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,960 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,960 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,960 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:47:18,960 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12
+2024-12-18 13:47:18,960 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,961 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,961 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,961 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,962 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,962 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,962 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,962 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,962 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,963 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,963 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
+2024-12-18 13:47:18,963 - loyalty_model - INFO - logging_config.py:59 - Current subscription starts - Basic: 6, Premium: 12, Business: 12
