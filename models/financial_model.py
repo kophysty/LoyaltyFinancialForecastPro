@@ -73,9 +73,9 @@ class FinancialModel:
                     subscription_revenue = 0
                     
                     # Проверяем, начали ли действовать подписки
-                    basic_sub_active = month >= st.session_state.get('basic_subscription_start_month', 1)
-                    premium_sub_active = month >= st.session_state.get('premium_subscription_start_month', 3)
-                    business_sub_active = month >= st.session_state.get('business_subscription_start_month', 6)
+                    basic_sub_active = month >= st.session_state.get('basic_subscription_start_month', 6)
+                    premium_sub_active = month >= st.session_state.get('premium_subscription_start_month', 12)
+                    business_sub_active = month >= st.session_state.get('business_subscription_start_month', 12)
                     
                     # Инициализация переменных подписок
                     user_subscription_revenue = 0

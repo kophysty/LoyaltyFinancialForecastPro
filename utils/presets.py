@@ -46,11 +46,11 @@ PRESETS = {
         "initial_fot": 0,
         # Параметры подписок
         "basic_subscription_price": 299,
-        "basic_subscription_start_month": 1,
+        "basic_subscription_start_month": 6,  # Обновлено
         "premium_subscription_price": 999,
-        "premium_subscription_start_month": 3,
+        "premium_subscription_start_month": 12,  # Обновлено
         "business_subscription_price": 4999,
-        "business_subscription_start_month": 6,
+        "business_subscription_start_month": 12,  # Обновлено
         "basic_subscription_conversion": 0.05,
         "premium_subscription_conversion": 0.02
     },
