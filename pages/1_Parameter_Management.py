@@ -18,7 +18,8 @@ def parameter_management_page():
     selected_preset = st.selectbox(
         "Выберите сценарий для просмотра",
         options=list(scenario_names.keys()),
-        format_func=lambda x: scenario_names[x]
+        format_func=lambda x: scenario_names[x],
+        index=list(scenario_names.keys()).index("standard")  # Устанавливаем "Стандартный" по умолчанию
     )
     
     if selected_preset:
@@ -98,9 +99,7 @@ def parameter_management_page():
                 step=500,
                 key=f"avg_check_{selected_preset}"
             )
-            
-        with col2:
-            st.markdown("**Управление доходами:**")
+
             st.session_state['premium_business_start_month'] = st.number_input(
                 "Месяц начала подписок Премиум Бизнес",
                 min_value=1,
@@ -110,6 +109,7 @@ def parameter_management_page():
                 help="В каком месяце начнут действовать подписки Премиум Бизнес"
             )
             
+        with col2:
             st.markdown("**Операционные параметры:**")
             st.session_state['initial_investment'] = st.number_input(
                 "Начальные инвестиции (₽)",
