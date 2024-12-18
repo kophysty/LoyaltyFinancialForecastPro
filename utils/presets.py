@@ -41,6 +41,7 @@ PRESETS = {
         "burn_rate_fot_1": 2500000,
         "burn_rate_fot_2": 3500000,
         "initial_investment": 10000000,
+        "preparatory_expenses": 21000000,  # ~$300K на подготовительный этап
         "marketing_budget_fixed": 200000,
         "marketing_budget_rate": 0.05,
         "initial_fot": 0

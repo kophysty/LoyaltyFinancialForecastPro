@@ -107,7 +107,16 @@ def parameter_management_page():
                 max_value=50000000,
                 value=preset_data.get('initial_investment', 10000000),
                 step=1000000,
-                help="Объем начальных инвестиций"
+                help="Объем начальных инвестиций на запуск проекта"
+            )
+            
+            st.session_state['preparatory_expenses'] = st.number_input(
+                "Расходы на подготовительный этап (₽)",
+                min_value=1000000,
+                max_value=30000000,
+                value=preset_data.get('preparatory_expenses', 21000000),
+                step=1000000,
+                help="Расходы на подготовительный этап перед запуском (~$300K)"
             )
             
             st.session_state['base_infra_cost'] = st.number_input(
@@ -176,6 +185,7 @@ def parameter_management_page():
                 'ad_revenue_per_user': st.session_state.get('ad_revenue_per_user', 20),
                 'partnership_rate': st.session_state.get('partnership_rate', 0.005),
                 'initial_investment': st.session_state['initial_investment'],
+                'preparatory_expenses': st.session_state['preparatory_expenses'],
                 'claim_period_months': st.session_state['claim_period_months']
             }
 

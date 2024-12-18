@@ -73,8 +73,18 @@ def scenario_analysis_page():
                 final_revenue = final_month['revenue']
                 final_expenses = final_month['expenses']
                 final_profit = final_month['profit']
-                total_investment = sum(month['expenses'] for month in data)
+                # Calculate total operational expenses
+                total_operational_expenses = sum(month['expenses'] for month in data)
                 total_profit = sum(month['profit'] for month in data)
+                
+                # Add initial and preparatory investments
+                total_investment = (
+                    total_operational_expenses +
+                    st.session_state.get('initial_investment', 10000000) +
+                    st.session_state.get('preparatory_expenses', 21000000)
+                )
+                
+                # Calculate ROI including all investments
                 roi = (total_profit / total_investment * 100) if total_investment > 0 else 0
                 
                 # Store metrics
@@ -82,6 +92,8 @@ def scenario_analysis_page():
                     "Сценарий": {"pessimistic": "Пессимистичный", 
                                 "standard": "Стандартный", 
                                 "optimistic": "Оптимистичный"}[scenario_name],
+                    "Начальные инвестиции": format_currency(st.session_state.get('initial_investment', 10000000)),
+                    "Подготовительные расходы": format_currency(st.session_state.get('preparatory_expenses', 21000000)),
                     "Выручка (последний месяц)": format_currency(final_revenue),
                     "Расходы (последний месяц)": format_currency(final_expenses),
                     "Прибыль (последний месяц)": format_currency(final_profit),
