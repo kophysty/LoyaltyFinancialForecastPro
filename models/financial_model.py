@@ -130,26 +130,23 @@ class FinancialModel:
                     )
 
                     # Tax calculations
-                    vat = revenue * 0.20  # VAT 20%
-                    net_revenue = revenue - vat
+                    vat = revenue * 0.20  # НДС 20%
+                    net_revenue = revenue - vat  # Выручка после НДС
                     
-                    # Operational expenses
+                    # Операционные расходы
                     operational_expenses = burn_rate_fot + infra_cost
-                    expenses_before_tax = operational_expenses + marketing_expense
+                    total_expenses_before_tax = operational_expenses + marketing_expense
                     
-                    # Profit tax calculation
-                    # Добавляем доход от сгоревших баллов к налогооблагаемой базе
-                    profit_before_tax = net_revenue - expenses_before_tax
-                    # Сгоревшие баллы включаются в налогооблагаемую базу
-                    expired_points_taxable = expired_points_income
-                    profit_before_tax += expired_points_taxable
+                    # Расчет прибыли до налога на прибыль
+                    profit_before_tax = net_revenue - total_expenses_before_tax
+                    
+                    # Налог на прибыль (если есть прибыль)
                     profit_tax = profit_before_tax * 0.20 if profit_before_tax > 0 else 0
-                    total_tax = vat + profit_tax
                     
-                    # Total calculations including all taxes
-                    total_expenses = expenses_before_tax + total_tax
-                    # Fix profit calculation to properly account for all components
-                    net_profit = net_revenue - total_expenses
+                    # Итоговые расчеты
+                    total_expenses = total_expenses_before_tax  # Не включаем налоги в расходы
+                    total_tax = vat + profit_tax  # Общая сумма налогов отдельно
+                    net_profit = net_revenue - total_expenses - profit_tax  # Чистая прибыль после всех расходов и налогов
                     
                     data.append({
                         'month': month,
