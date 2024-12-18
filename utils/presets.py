@@ -65,8 +65,8 @@ PRESETS = {
         "exchange_commission_rate": 0.04,
         "reward_commission_rate": 0.05,
         "base_infra_cost": 180000,
-        "marketing_efficiency": 250,  # Выше стандартного
-        "marketing_spend_rate": 0.15,  # Равно стандартному
+        "marketing_efficiency": 200,  # Изменено с 250 на 200
+        "marketing_spend_rate": 0.10,  # Изменено с 15% на 10%
         "ad_revenue_per_user": 25,
         "partnership_rate": 0.007,
         "burn_rate_fot_1": 2000000,
