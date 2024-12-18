@@ -3330,3 +3330,9 @@ streamlit.errors.StreamlitValueAboveMaxError: The `value` 60000000 is greater th
 2024-12-18 22:26:35,225 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-18 22:26:35,225 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-18 22:26:35,226 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 22:26:58,594 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 22:26:58,595 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 22:26:58,596 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 22:26:59,553 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 22:26:59,553 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 22:26:59,554 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
