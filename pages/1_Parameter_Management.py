@@ -137,6 +137,15 @@ def parameter_management_page():
                 step=1,
                 help="В каком месяце начнут действовать премиум-подписки для пользователей"
             )
+            
+            st.session_state['premium_user_price'] = st.number_input(
+                "Стоимость премиум-подписки для пользователей (₽)",
+                min_value=100,
+                max_value=5000,
+                value=preset_data.get('premium_user_price', 299),
+                step=100,
+                help="Месячная стоимость премиум-подписки для обычных пользователей"
+            )
 
             st.session_state['ad_start_month'] = st.number_input(
                 "Месяц начала показа рекламы",
@@ -248,8 +257,10 @@ def parameter_management_page():
                 'premium_business_rate': st.session_state['premium_business_rate'],
                 'premium_business_price': st.session_state['premium_business_price'],
                 'premium_user_start_month': st.session_state['premium_user_start_month'],
+                'premium_user_price': st.session_state['premium_user_price'],
                 'ad_start_month': st.session_state['ad_start_month'],
-                'ad_revenue_per_user': st.session_state['ad_revenue_per_user']
+                'ad_revenue_per_user': st.session_state['ad_revenue_per_user'],
+                'premium_user_price': st.session_state['premium_user_price']
             }
 
         st.divider()
@@ -303,7 +314,9 @@ def parameter_management_page():
                 "premium_user_start_month": 13,
                 "ad_start_month": 8,  # Согласно требованиям
                 "premium_business_rate": 0.30,
-                "premium_business_price": 8000
+                "premium_business_price": 8000,
+                "premium_user_price": 299,
+                "premium_user_price": 299
             }
             
             PRESETS["pessimistic"] = {
@@ -323,6 +336,7 @@ def parameter_management_page():
                 "burn_rate_fot_1": 2500000,
                 "burn_rate_fot_2": 3000000,
                 "premium_business_rate": 0.20,
+                "premium_user_price": 299
             }
             
             PRESETS["optimistic"] = {
@@ -342,6 +356,7 @@ def parameter_management_page():
                 "burn_rate_fot_1": 2000000,
                 "burn_rate_fot_2": 3000000,
                 "premium_business_rate": 0.40,
+                "premium_user_price": 299
             }
             
             # Перезагружаем страницу для применения изменений
