@@ -85,26 +85,26 @@ class FinancialModel:
                     
                     # Расчет выручки от базовой подписки
                     if basic_sub_active:
-                        basic_subscribers = active_users * st.session_state.get('basic_subscription_conversion', 0.05)
-                        user_subscription_revenue += basic_subscribers * st.session_state.get('basic_subscription_price', 299)
+                        basic_subscribers = active_users * st.session_state['basic_subscription_conversion']
+                        user_subscription_revenue += basic_subscribers * st.session_state['basic_subscription_price']
                     
                     # Расчет выручки от премиум подписки
                     if premium_sub_active:
-                        premium_subscribers = active_users * st.session_state.get('premium_subscription_conversion', 0.02)
-                        user_subscription_revenue += premium_subscribers * st.session_state.get('premium_subscription_price', 999)
+                        premium_subscribers = active_users * st.session_state['premium_subscription_conversion']
+                        user_subscription_revenue += premium_subscribers * st.session_state['premium_subscription_price']
                     
                     # Расчет выручки от бизнес-подписок
                     business_subscription_revenue = 0
                     if business_sub_active:
                         business_subscribers = (stores + restaurants) * 0.15  # 15% бизнес-клиентов
-                        business_subscription_revenue = business_subscribers * st.session_state.get('business_subscription_price', 4999)
+                        business_subscription_revenue = business_subscribers * st.session_state['business_subscription_price']
                     
                     # Общая выручка от подписок
                     subscription_revenue = user_subscription_revenue + business_subscription_revenue
                     
                     # Детализация выручки от подписок для структуры доходов
-                    basic_revenue = basic_subscribers * st.session_state.get('basic_subscription_price', 299) if basic_sub_active else 0
-                    premium_revenue = premium_subscribers * st.session_state.get('premium_subscription_price', 999) if premium_sub_active else 0
+                    basic_revenue = basic_subscribers * st.session_state['basic_subscription_price'] if basic_sub_active else 0
+                    premium_revenue = premium_subscribers * st.session_state['premium_subscription_price'] if premium_sub_active else 0
                     
                     subscription_details = {
                         'basic': basic_revenue,

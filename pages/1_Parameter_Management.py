@@ -24,7 +24,8 @@ def parameter_management_page():
     
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
-        load_preset(selected_preset)  # Используем функцию load_preset вместо прямого присваивания
+        preset_data = PRESETS[selected_preset]
+        load_preset(selected_preset)
         
         col1, col2 = st.columns(2)
         
@@ -32,11 +33,12 @@ def parameter_management_page():
             st.markdown("**Базовые параметры:**")
             
             # Добавляем параметры кэшбэка и использования баллов
+            current_cashback = preset_data.get('cashback_rate', 0.15)
             st.session_state['cashback_rate'] = st.slider(
                 "Процент кэшбэка",
                 min_value=0.0,
                 max_value=50.0,
-                value=float(preset_data.get('cashback_rate', 0.15) * 100),
+                value=float(current_cashback * 100),
                 format="%.1f%%",
                 help="Процент кэшбэка от суммы покупки",
                 key=f"cashback_{selected_preset}"
