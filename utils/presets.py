@@ -20,7 +20,16 @@ PRESETS = {
         "marketing_efficiency": 150,
         "marketing_spend_rate": 0.2,
         "ad_revenue_per_user": 15,
-        "partnership_rate": 0.003
+        "partnership_rate": 0.003,
+        # Параметры подписок для пессимистичного сценария
+        "basic_subscription_price": 299,
+        "basic_subscription_start_month": 8,  # Позже чем в стандартном
+        "premium_subscription_price": 999,
+        "premium_subscription_start_month": 12,  # Начало со второго года
+        "business_subscription_price": 4999,
+        "business_subscription_start_month": 15,  # Позже чем в стандартном
+        "basic_subscription_conversion": 0.03,  # Ниже чем в стандартном
+        "premium_subscription_conversion": 0.01  # Ниже чем в стандартном
     },
     "standard": {
         "initial_users": 1000,
