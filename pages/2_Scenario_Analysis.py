@@ -140,14 +140,14 @@ def scenario_analysis_page():
         col1, col2 = st.columns(2)
 
         # Store previous values with limits
-        prev_investment = min(st.session_state.get('initial_investment', 30000000), 130000000)
-        prev_expenses = min(st.session_state.get('preparatory_expenses', 21000000), 50700000)
+        prev_investment = min(st.session_state.get('initial_investment', 30000000), 100000000)
+        prev_expenses = min(st.session_state.get('preparatory_expenses', 21000000), 100000000)
 
         with col1:
             initial_investment = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
-                max_value=130000000,
+                max_value=100000000,
                 value=prev_investment,
                 step=1000000,
                 help="Объем начальных инвестиций на запуск проекта",
@@ -158,10 +158,10 @@ def scenario_analysis_page():
             preparatory_expenses = st.number_input(
                 "Расходы на подготовительный этап (₽)",
                 min_value=1000000,
-                max_value=50700000,
+                max_value=100000000,
                 value=prev_expenses,
                 step=1000000,
-                help="Расходы на подготовительный этап перед запуском (~$300K)",
+                help="Расходы на подготовительный этап перед запуском",
                 key='preparatory_expenses_input',
                 on_change=None)
 
