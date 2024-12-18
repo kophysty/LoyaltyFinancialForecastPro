@@ -88,15 +88,21 @@ PRESETS = {
 def load_preset(preset_name):
     """Load a preset and ensure all parameters are properly set"""
     if preset_name in PRESETS:
-        # Сначала очищаем существующие параметры подписок
-        subscription_params = [
+        # Список всех параметров, которые нужно сбросить
+        params_to_reset = [
+            # Базовые параметры
+            'initial_users', 'active_conversion', 'growth_rate_y1', 'growth_rate_y2',
+            'avg_check', 'points_usage_rate', 'cashback_rate', 'expired_points_rate',
+            'exchange_commission_rate', 'reward_commission_rate',
+            # Параметры подписок
             'basic_subscription_price', 'basic_subscription_start_month',
             'premium_subscription_price', 'premium_subscription_start_month',
             'business_subscription_price', 'business_subscription_start_month',
             'basic_subscription_conversion', 'premium_subscription_conversion'
         ]
         
-        for param in subscription_params:
+        # Очищаем все параметры
+        for param in params_to_reset:
             if param in st.session_state:
                 del st.session_state[param]
         
@@ -104,20 +110,24 @@ def load_preset(preset_name):
         preset_data = PRESETS[preset_name]
         for key, value in preset_data.items():
             st.session_state[key] = value
-            
-        # Проверяем загрузку параметров подписок
-        missing_params = []
-        for param in subscription_params:
-            if param not in st.session_state:
-                missing_params.append(param)
+            log_info(f"Loaded {key} = {value}")
         
-        if missing_params:
-            log_warning(f"Missing subscription parameters for {preset_name}: {missing_params}")
-        else:
-            log_info(f"Successfully loaded all subscription parameters for {preset_name}")
-            log_info(f"Basic subscription starts at month {st.session_state['basic_subscription_start_month']}")
-            log_info(f"Premium subscription starts at month {st.session_state['premium_subscription_start_month']}")
-            log_info(f"Business subscription starts at month {st.session_state['business_subscription_start_month']}")
+        # Проверяем все параметры подписок
+        subscription_params = [
+            'basic_subscription_start_month',
+            'premium_subscription_start_month',
+            'business_subscription_start_month'
+        ]
+        
+        # Логируем значения параметров подписок
+        for param in subscription_params:
+            if param in st.session_state:
+                log_info(f"{param}: {st.session_state[param]}")
+            else:
+                log_warning(f"Missing parameter: {param}")
+                
+        # Принудительно вызываем rerun для обновления интерфейса
+        st.experimental_rerun()
 
 
 def save_preset(preset_name, values):
