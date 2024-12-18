@@ -113,10 +113,15 @@ class FinancialModel:
                         infra_multiplier = 1.5
                     infra_cost = st.session_state['base_infra_cost'] * infra_multiplier
                     
+                    # First 6 months infrastructure costs are covered by initial investment
+                    if month <= 6:
+                        infra_cost = 0  # Not included in operational expenses as covered by initial investment
+                    
                     # Marketing expenses calculation
-                    marketing_expense = 0  # No marketing expenses for first 6 months
-                    if month > 6:
-                        marketing_expense = revenue * 0.05  # 5% of revenue from month 7
+                    if month <= 6:  # First 6 months covered by initial investment
+                        marketing_expense = 200000  # Fixed budget covered by initial investment
+                    else:  # After 6 months: percentage of revenue
+                        marketing_expense = revenue * st.session_state['marketing_spend_rate']
                     
                     # Revenue calculations
                     revenue = (
