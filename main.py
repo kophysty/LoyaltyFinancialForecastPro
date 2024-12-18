@@ -201,24 +201,25 @@ def main():
         .metric-container {
             border: 1px solid #e0e0e0;
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
             background-color: white;
-            height: 220px;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 10px;
         }
         .metric-title {
             color: #666;
             font-size: 0.9em;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             flex: 0 0 auto;
         }
         .metric-value {
             font-size: 1.2em;
             font-weight: bold;
             color: #1f1f1f;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             text-align: right;
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -227,24 +228,24 @@ def main():
         .metric-subtitle {
             font-size: 0.8em;
             color: #666;
-            padding-top: 8px;
+            padding-top: 10px;
             border-top: 1px solid #f0f0f0;
             margin-top: auto;
         }
         .metric-details {
             font-size: 0.75em;
             color: #666;
-            margin: 8px 0;
-            flex: 1 0 auto;
+            flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            gap: 6px;
         }
         .metric-details div {
             text-align: right;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            margin-bottom: 4px;
+            line-height: 1.4;
         }
         </style>
         """, unsafe_allow_html=True)
@@ -292,8 +293,8 @@ def main():
                 <div class="metric-title">Актив. участники</div>
                 <div class="metric-value">{month_data['active_users']:,.0f}</div>
                 <div class="metric-details">
-                    Новых в месяц: +{month_data['total_new_users']:,.0f}<br>
-                    Партнеров: {month_data['active_users'] / 100:,.0f}
+                    <div>Новых в месяц: +{month_data['total_new_users']:,.0f}</div>
+                    <div>Партнеров: {month_data['active_users'] / 100:,.0f}</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
