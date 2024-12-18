@@ -110,6 +110,16 @@ def main():
                 step=500,
                 key="avg_check_input"
             )
+            
+            st.session_state['cashback_rate'] = st.slider(
+                "Процент кэшбэка",
+                min_value=0.05,
+                max_value=0.20,
+                value=st.session_state['cashback_rate'],
+                format="%.2f",
+                help="Процент кэшбэка от суммы покупки",
+                key="cashback_rate_slider"
+            )
 
         # Commission Parameters
         with st.expander("Комиссии", expanded=False):
