@@ -21,32 +21,20 @@ PRESETS = {
         "marketing_spend_rate": 0.2,
         "ad_revenue_per_user": 15,
         "partnership_rate": 0.003,
-        "claim_period_months": 2,
-        # Параметры подписок для пессимистичного сценария
-        "basic_subscription_price": 299,
-        "basic_subscription_start_month": 8,
-        "premium_subscription_price": 999,
-        "premium_subscription_start_month": 12,
-        "business_subscription_price": 4999,
-        "business_subscription_start_month": 15,
-        "basic_subscription_conversion": 0.03,
-        "premium_subscription_conversion": 0.01,
-        # Добавляем параметр initial_investment для согласованности
         "initial_investment": 60000000,
         "preparatory_expenses": 35000000
     },
     "standard": {
         "initial_users": 1000,
-        "active_conversion": 0.30,  # Более реалистичная конверсия
-        "claim_period_months": 2,  # Период для подтверждения баллов в месяцах
-        "growth_rate_y1": 0.20,  # Сохраняем для инновационного продукта
-        "growth_rate_y2": 0.15,  # Повышаем т.к. будет эффект сетевой ценности
-        "avg_check": 2800,  # Немного консервативнее
-        "points_usage_rate": 0.55,  # Более реалистичное использование
-        "cashback_rate": 0.12,  # Оптимизированный кэшбэк
-        "expired_points_rate": 0.07,  # Больше баллов будет сгорать
+        "active_conversion": 0.30,
+        "growth_rate_y1": 0.20,
+        "growth_rate_y2": 0.15,
+        "avg_check": 2800,
+        "points_usage_rate": 0.55,
+        "cashback_rate": 0.12,
+        "expired_points_rate": 0.07,
         "exchange_commission_rate": 0.03,
-        "reward_commission_rate": 0.04,  # Немного снижаем
+        "reward_commission_rate": 0.04,
         "base_infra_cost": 200000,
         "marketing_efficiency": 200,
         "marketing_spend_rate": 0.1,
@@ -56,16 +44,8 @@ PRESETS = {
         "burn_rate_fot_2": 3500000,
         "marketing_budget_fixed": 200000,
         "marketing_budget_rate": 0.05,
-        "initial_fot": 0,
-        # Параметры подписок
-        "basic_subscription_price": 299,
-        "basic_subscription_start_month": 6,  # Обновлено
-        "premium_subscription_price": 999,
-        "premium_subscription_start_month": 12,  # Обновлено
-        "business_subscription_price": 4999,
-        "business_subscription_start_month": 12,  # Обновлено
-        "basic_subscription_conversion": 0.05,
-        "premium_subscription_conversion": 0.02
+        "initial_investment": 60000000,
+        "preparatory_expenses": 35000000
     },
     "optimistic": {
         "initial_users": 1200,
@@ -75,7 +55,7 @@ PRESETS = {
         "avg_check": 3200,
         "points_usage_rate": 0.65,
         "cashback_rate": 0.17,
-        "expired_points_rate": 0.07,  # Оптимистичный сценарий: больше баллов сгорает
+        "expired_points_rate": 0.07,
         "exchange_commission_rate": 0.04,
         "reward_commission_rate": 0.06,
         "burn_rate_fot_1": 2000000,
@@ -84,7 +64,9 @@ PRESETS = {
         "marketing_efficiency": 200,
         "marketing_spend_rate": 0.05,
         "ad_revenue_per_user": 25,
-        "partnership_rate": 0.007
+        "partnership_rate": 0.007,
+        "initial_investment": 60000000,
+        "preparatory_expenses": 35000000
     }
 }
 
