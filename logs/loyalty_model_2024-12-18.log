@@ -2805,3 +2805,39 @@ streamlit.errors.StreamlitValueAboveMaxError: The `value` 60000000 is greater th
 2024-12-18 13:38:02,265 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
 2024-12-18 13:38:02,266 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
 2024-12-18 13:38:02,267 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12
+2024-12-18 13:38:18,836 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:38:18,836 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:38:18,836 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 13:38:18,837 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
+2024-12-18 13:38:18,838 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:38:18,839 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12
+2024-12-18 13:38:18,871 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:38:18,871 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:38:18,871 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 240.0
+2024-12-18 13:38:18,872 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 8
+2024-12-18 13:38:18,873 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:38:18,874 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 15
+2024-12-18 13:38:30,054 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:38:30,055 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:38:30,055 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 240.0
+2024-12-18 13:38:30,056 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 8
+2024-12-18 13:38:30,059 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:38:30,060 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 15
+2024-12-18 13:38:30,089 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:38:30,091 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:38:30,091 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 13:38:30,092 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
+2024-12-18 13:38:30,093 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:38:30,094 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12
+2024-12-18 13:39:25,691 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:39:25,692 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:39:25,693 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 13:39:25,694 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
+2024-12-18 13:39:25,694 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:39:25,694 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12
+2024-12-18 13:39:26,924 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 13:39:26,928 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 13:39:26,930 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 13:39:26,930 - loyalty_model - INFO - logging_config.py:59 - Активация базовой подписки в месяце 6
+2024-12-18 13:39:26,934 - loyalty_model - INFO - logging_config.py:59 - Активация премиум подписки в месяце 12
+2024-12-18 13:39:26,934 - loyalty_model - INFO - logging_config.py:59 - Активация бизнес подписки в месяце 12

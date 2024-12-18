@@ -86,9 +86,9 @@ PRESETS = {
 
 
 def load_preset(preset_name):
+    """Load a preset and ensure all parameters are properly set"""
     if preset_name in PRESETS:
-        preset_data = PRESETS[preset_name]
-        # Убедимся, что все параметры подписок загружены
+        # Сначала очищаем существующие параметры подписок
         subscription_params = [
             'basic_subscription_price', 'basic_subscription_start_month',
             'premium_subscription_price', 'premium_subscription_start_month',
@@ -96,16 +96,28 @@ def load_preset(preset_name):
             'basic_subscription_conversion', 'premium_subscription_conversion'
         ]
         
-        # Загружаем все параметры из пресета
+        for param in subscription_params:
+            if param in st.session_state:
+                del st.session_state[param]
+        
+        # Загружаем новые параметры из пресета
+        preset_data = PRESETS[preset_name]
         for key, value in preset_data.items():
             st.session_state[key] = value
             
-        # Проверяем, что все параметры подписок установлены
+        # Проверяем загрузку параметров подписок
+        missing_params = []
         for param in subscription_params:
-            if param not in st.session_state and param in preset_data:
-                st.session_state[param] = preset_data[param]
+            if param not in st.session_state:
+                missing_params.append(param)
         
-        log_info(f"Loaded preset {preset_name} with subscription parameters")
+        if missing_params:
+            log_warning(f"Missing subscription parameters for {preset_name}: {missing_params}")
+        else:
+            log_info(f"Successfully loaded all subscription parameters for {preset_name}")
+            log_info(f"Basic subscription starts at month {st.session_state['basic_subscription_start_month']}")
+            log_info(f"Premium subscription starts at month {st.session_state['premium_subscription_start_month']}")
+            log_info(f"Business subscription starts at month {st.session_state['business_subscription_start_month']}")
 
 
 def save_preset(preset_name, values):

@@ -24,8 +24,18 @@ def parameter_management_page():
     
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
-        preset_data = PRESETS[selected_preset]
-        load_preset(selected_preset)
+        load_preset(selected_preset)  # Загружаем параметры через функцию load_preset
+        preset_data = PRESETS[selected_preset]  # Получаем данные для отображения
+        
+        # Проверяем загруженные параметры подписок
+        subscription_params = [
+            'basic_subscription_start_month',
+            'premium_subscription_start_month',
+            'business_subscription_start_month'
+        ]
+        for param in subscription_params:
+            if param in st.session_state:
+                st.write(f"Загружен параметр {param}: {st.session_state[param]}")
         
         col1, col2 = st.columns(2)
         
