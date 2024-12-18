@@ -253,7 +253,29 @@ def parameter_management_page():
             }
 
         st.divider()
-        st.subheader("Управление сценариями")
+        st.subheader("Сохранение сценария")
+        
+        col_save1, col_save2 = st.columns(2)
+        
+        with col_save1:
+            if st.button("Сохранить изменения в текущий сценарий", key="save_current"):
+                current_values = get_current_values()
+                PRESETS[selected_preset] = current_values
+                st.success(f"Изменения сохранены в сценарий {scenario_names[selected_preset]}")
+        
+        with col_save2:
+            new_preset_name = st.text_input("Название нового сценария", key="new_preset_name")
+            save_new = st.button("Сохранить как новый сценарий", key="save_new")
+            if save_new:
+                if new_preset_name:
+                    current_values = get_current_values()
+                    save_preset(new_preset_name, current_values)
+                    st.success(f"Создан новый сценарий: {new_preset_name}")
+                else:
+                    st.warning("Введите название для нового сценария")
+
+        st.divider()
+        st.subheader("Восстановление значений по умолчанию")
         
         # Кнопка для восстановления значений по умолчанию
         if st.button("Восстановить значения по умолчанию для всех сценариев", type="primary"):
@@ -325,28 +347,6 @@ def parameter_management_page():
             # Перезагружаем страницу для применения изменений
             st.success("Значения по умолчанию восстановлены!")
             st.rerun()
-        
-        st.divider()
-        st.subheader("Сохранение сценария")
-        
-        col_save1, col_save2 = st.columns(2)
-        
-        with col_save1:
-            if st.button("Сохранить изменения в текущий сценарий", key="save_current"):
-                current_values = get_current_values()
-                PRESETS[selected_preset] = current_values
-                st.success(f"Изменения сохранены в сценарий {scenario_names[selected_preset]}")
-        
-        with col_save2:
-            new_preset_name = st.text_input("Название нового сценария", key="new_preset_name")
-            save_new = st.button("Сохранить как новый сценарий", key="save_new")
-            if save_new:
-                if new_preset_name:
-                    current_values = get_current_values()
-                    save_preset(new_preset_name, current_values)
-                    st.success(f"Создан новый сценарий: {new_preset_name}")
-                else:
-                    st.warning("Введите название для нового сценария")
 
         
 
