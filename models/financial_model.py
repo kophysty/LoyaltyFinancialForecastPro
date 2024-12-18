@@ -131,7 +131,11 @@ class FinancialModel:
                     expenses_before_tax = operational_expenses + marketing_expense
                     
                     # Profit tax calculation
+                    # Добавляем доход от сгоревших баллов к налогооблагаемой базе
                     profit_before_tax = net_revenue - expenses_before_tax
+                    # Сгоревшие баллы включаются в налогооблагаемую базу
+                    expired_points_taxable = expired_points_income
+                    profit_before_tax += expired_points_taxable
                     profit_tax = profit_before_tax * 0.20 if profit_before_tax > 0 else 0
                     total_tax = vat + profit_tax
                     

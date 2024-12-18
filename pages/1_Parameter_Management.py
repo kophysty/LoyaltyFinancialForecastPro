@@ -101,6 +101,15 @@ def parameter_management_page():
             
         with col2:
             st.markdown("**Операционные параметры:**")
+            st.session_state['initial_investment'] = st.number_input(
+                "Начальные инвестиции (₽)",
+                min_value=1000000,
+                max_value=50000000,
+                value=preset_data.get('initial_investment', 10000000),
+                step=1000000,
+                help="Объем начальных инвестиций"
+            )
+            
             st.session_state['base_infra_cost'] = st.number_input(
                 "Базовая инфраструктура (₽)",
                 min_value=100000,
@@ -120,6 +129,14 @@ def parameter_management_page():
                 help="Процент от дохода, направляемый на маркетинг",
                 key=f"marketing_rate_{selected_preset}"
             ) / 100
+            
+            st.session_state['claim_period_months'] = st.number_input(
+                "Период подтверждения баллов (месяцы)",
+                min_value=1,
+                max_value=12,
+                value=preset_data.get('claim_period_months', 2),
+                help="Количество месяцев, в течение которых пользователь должен подтвердить баллы"
+            )
             
             st.session_state['marketing_efficiency'] = st.number_input(
                 "Эффективность маркетинга (польз./100K)",
