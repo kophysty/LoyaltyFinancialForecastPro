@@ -129,24 +129,23 @@ class FinancialModel:
                         premium_revenue + ad_revenue + partner_revenue + expired_points_income
                     )
 
-                    # Tax calculations
-                    vat = revenue * 0.20  # НДС 20%
-                    net_revenue = revenue - vat  # Выручка после НДС
-                    
-                    # Операционные расходы
+                    # Операционные расходы (без налогов)
                     operational_expenses = burn_rate_fot + infra_cost
-                    total_expenses_before_tax = operational_expenses + marketing_expense
+                    total_expenses = operational_expenses + marketing_expense
+                    
+                    # Расчет НДС
+                    vat = revenue * 0.20  # НДС 20%
+                    revenue_after_vat = revenue - vat
                     
                     # Расчет прибыли до налога на прибыль
-                    profit_before_tax = net_revenue - total_expenses_before_tax
+                    profit_before_tax = revenue_after_vat - total_expenses
                     
-                    # Налог на прибыль (если есть прибыль)
-                    profit_tax = profit_before_tax * 0.20 if profit_before_tax > 0 else 0
+                    # Расчет налога на прибыль
+                    profit_tax = max(0, profit_before_tax * 0.20)  # 20% только если есть прибыль
                     
                     # Итоговые расчеты
-                    total_expenses = total_expenses_before_tax  # Не включаем налоги в расходы
-                    total_tax = vat + profit_tax  # Общая сумма налогов отдельно
-                    net_profit = net_revenue - total_expenses - profit_tax  # Чистая прибыль после всех расходов и налогов
+                    total_tax = vat + profit_tax  # Общая сумма налогов
+                    net_profit = profit_before_tax - profit_tax  # Чистая прибыль
                     
                     data.append({
                         'month': month,
