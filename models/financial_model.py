@@ -66,91 +66,13 @@ class FinancialModel:
                     # Комиссия начисления 5% от всего кэшбэка
                     reward_commission = cashback * st.session_state['reward_commission_rate']
                     
-                    # Partner and Subscription Revenue
+                    # Partner Revenue
                     # Расчет количества партнеров (магазинов и ресторанов)
                     stores = active_users / 100  # 1 магазин на 100 пользователей
                     restaurants = active_users / 80  # 1 ресторан на 80 пользователей
-                    subscription_revenue = 0
                     
-                    # Получаем и проверяем параметры подписок
-                    required_params = [
-                        'basic_subscription_start_month',
-                        'premium_subscription_start_month',
-                        'business_subscription_start_month',
-                        'basic_subscription_price',
-                        'premium_subscription_price',
-                        'business_subscription_price',
-                        'basic_subscription_conversion',
-                        'premium_subscription_conversion'
-                    ]
-                    
-                    for param in required_params:
-                        if param not in st.session_state:
-                            log_error(f"Missing subscription parameter: {param}")
-                            raise ValueError(f"Required subscription parameter missing: {param}")
-                    
-                    # Получаем месяцы начала подписок
-                    basic_start = st.session_state['basic_subscription_start_month']
-                    premium_start = st.session_state['premium_subscription_start_month']
-                    business_start = st.session_state['business_subscription_start_month']
-                    
-                    log_info(f"Calculating revenue for month {month}")
-                    log_info(f"Subscription starts - Basic: {basic_start}, Premium: {premium_start}, Business: {business_start}")
-                    
-                    # Определяем активность подписок
-                    basic_sub_active = month >= basic_start
-                    premium_sub_active = month >= premium_start
-                    business_sub_active = month >= business_start
-                    
-                    if basic_sub_active:
-                        log_info(f"Basic subscription active in month {month}")
-                    if premium_sub_active:
-                        log_info(f"Premium subscription active in month {month}")
-                    if business_sub_active:
-                        log_info(f"Business subscription active in month {month}")
-                    
-                    # Логируем активацию подписок для отладки
-                    if month == basic_start:
-                        log_info(f"Активация базовой подписки в месяце {month}")
-                    if month == premium_start:
-                        log_info(f"Активация премиум подписки в месяце {month}")
-                    if month == business_start:
-                        log_info(f"Активация бизнес подписки в месяце {month}")
-                    
-                    # Инициализация переменных подписок
-                    user_subscription_revenue = 0
-                    basic_subscribers = 0
-                    premium_subscribers = 0
-                    business_subscribers = 0
-                    
-                    # Расчет выручки от базовой подписки
-                    if basic_sub_active:
-                        basic_subscribers = active_users * st.session_state['basic_subscription_conversion']
-                        user_subscription_revenue += basic_subscribers * st.session_state['basic_subscription_price']
-                    
-                    # Расчет выручки от премиум подписки
-                    if premium_sub_active:
-                        premium_subscribers = active_users * st.session_state['premium_subscription_conversion']
-                        user_subscription_revenue += premium_subscribers * st.session_state['premium_subscription_price']
-                    
-                    # Расчет выручки от бизнес-подписок
-                    business_subscription_revenue = 0
-                    if business_sub_active:
-                        business_subscribers = (stores + restaurants) * 0.15  # 15% бизнес-клиентов
-                        business_subscription_revenue = business_subscribers * st.session_state['business_subscription_price']
-                    
-                    # Общая выручка от подписок
-                    subscription_revenue = user_subscription_revenue + business_subscription_revenue
-                    
-                    # Детализация выручки от подписок для структуры доходов
-                    basic_revenue = basic_subscribers * st.session_state['basic_subscription_price'] if basic_sub_active else 0
-                    premium_revenue = premium_subscribers * st.session_state['premium_subscription_price'] if premium_sub_active else 0
-                    
-                    subscription_details = {
-                        'basic': basic_revenue,
-                        'premium': premium_revenue,
-                        'business': business_subscription_revenue
-                    }
+                    # Базовый доход от партнеров
+                    partner_revenue = (stores + restaurants) * 1000  # фиксированный доход с партнера
                     
                     # Premium Revenue Streams
                     premium_user_rate = 0.04  # 4% премиум пользователей
