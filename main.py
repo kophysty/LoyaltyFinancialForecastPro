@@ -203,9 +203,10 @@ def main():
             border-radius: 10px;
             padding: 15px;
             background-color: white;
-            min-height: 180px;
+            height: 200px;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
         .metric-title {
             color: #666;
@@ -226,15 +227,18 @@ def main():
         .metric-subtitle {
             font-size: 0.8em;
             color: #666;
-            margin-top: auto;
             padding-top: 8px;
             border-top: 1px solid #f0f0f0;
+            margin-top: auto;
         }
         .metric-details {
             font-size: 0.8em;
             color: #666;
-            margin-top: 8px;
-            flex: 1 1 auto;
+            margin: 8px 0;
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         </style>
         """, unsafe_allow_html=True)
