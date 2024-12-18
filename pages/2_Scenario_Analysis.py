@@ -120,24 +120,40 @@ def scenario_analysis_page():
         col1, col2 = st.columns(2)
         
         with col1:
-            st.session_state['initial_investment'] = st.number_input(
+            initial_investment = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
                 max_value=50000000,
                 value=st.session_state.get('initial_investment', 10000000),
                 step=1000000,
-                help="Объем начальных инвестиций на запуск проекта"
+                help="Объем начальных инвестиций на запуск проекта",
+                key="initial_investment_input"
             )
+            st.session_state['initial_investment'] = initial_investment
             
         with col2:
-            st.session_state['preparatory_expenses'] = st.number_input(
+            preparatory_expenses = st.number_input(
                 "Расходы на подготовительный этап (₽)",
                 min_value=1000000,
                 max_value=30000000,
                 value=st.session_state.get('preparatory_expenses', 21000000),
                 step=1000000,
-                help="Расходы на подготовительный этап перед запуском (~$300K)"
+                help="Расходы на подготовительный этап перед запуском (~$300K)",
+                key="preparatory_expenses_input"
             )
+            st.session_state['preparatory_expenses'] = preparatory_expenses
+            
+        # Триггер для перерасчета при изменении параметров
+        if 'last_investment' not in st.session_state:
+            st.session_state['last_investment'] = initial_investment
+        if 'last_preparatory' not in st.session_state:
+            st.session_state['last_preparatory'] = preparatory_expenses
+            
+        if (st.session_state['last_investment'] != initial_investment or 
+            st.session_state['last_preparatory'] != preparatory_expenses):
+            st.session_state['last_investment'] = initial_investment
+            st.session_state['last_preparatory'] = preparatory_expenses
+            st.experimental_rerun()
         
         # Plot comparisons
         st.subheader("Графики сравнения")
