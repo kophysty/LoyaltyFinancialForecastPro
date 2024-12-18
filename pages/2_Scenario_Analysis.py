@@ -78,11 +78,10 @@ def scenario_analysis_page():
                 total_profit = sum(month['profit'] for month in data)
                 
                 # Add initial and preparatory investments
-                total_investment = (
-                    total_operational_expenses +
-                    st.session_state.get('initial_investment', 10000000) +
-                    st.session_state.get('preparatory_expenses', 21000000)
-                )
+                initial_investment = st.session_state.get('initial_investment', 10000000)
+                preparatory_expenses = st.session_state.get('preparatory_expenses', 21000000)
+                total_investment = total_operational_expenses + initial_investment + preparatory_expenses
+                log_info(f"Scenario {scenario_name}: Total investment = {total_investment} (operational: {total_operational_expenses}, initial: {initial_investment}, preparatory: {preparatory_expenses})")
                 
                 # Calculate ROI including all investments
                 roi = (total_profit / total_investment * 100) if total_investment > 0 else 0
