@@ -147,7 +147,7 @@ def scenario_analysis_page():
             initial_investment = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
-                max_value=100000000,
+                max_value=130000000,
                 value=prev_investment,
                 step=1000000,
                 help="Объем начальных инвестиций на запуск проекта",
@@ -158,7 +158,7 @@ def scenario_analysis_page():
             preparatory_expenses = st.number_input(
                 "Расходы на подготовительный этап (₽)",
                 min_value=1000000,
-                max_value=39000000,
+                max_value=50700000,
                 value=prev_expenses,
                 step=1000000,
                 help="Расходы на подготовительный этап перед запуском (~$300K)",
