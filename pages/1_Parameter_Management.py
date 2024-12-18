@@ -100,6 +100,16 @@ def parameter_management_page():
             )
             
         with col2:
+            st.markdown("**Управление доходами:**")
+            st.session_state['premium_business_start_month'] = st.number_input(
+                "Месяц начала подписок Премиум Бизнес",
+                min_value=1,
+                max_value=24,
+                value=preset_data.get('premium_business_start_month', 13),
+                step=1,
+                help="В каком месяце начнут действовать подписки Премиум Бизнес"
+            )
+            
             st.markdown("**Операционные параметры:**")
             st.session_state['initial_investment'] = st.number_input(
                 "Начальные инвестиции (₽)",
@@ -186,7 +196,8 @@ def parameter_management_page():
                 'partnership_rate': st.session_state.get('partnership_rate', 0.005),
                 'initial_investment': st.session_state['initial_investment'],
                 'preparatory_expenses': st.session_state['preparatory_expenses'],
-                'claim_period_months': st.session_state['claim_period_months']
+                'claim_period_months': st.session_state['claim_period_months'],
+                'premium_business_start_month': st.session_state['premium_business_start_month']
             }
 
         st.divider()

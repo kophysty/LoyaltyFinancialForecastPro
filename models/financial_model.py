@@ -72,8 +72,9 @@ class FinancialModel:
                     restaurants = active_users / 80  # 1 ресторан на 80 пользователей
                     subscription_revenue = 0
                     
-                    # Subscription revenue starts from month 13
-                    if month > 12:
+                    # Subscription revenue starts from configured month
+                    premium_business_start = st.session_state.get('premium_business_start_month', 13)
+                    if month >= premium_business_start:
                         # Единый премиум-тариф для всех типов бизнеса
                         premium_partners = (stores + restaurants) * 0.3  # 30% партнеров на премиум-тарифе
                         
