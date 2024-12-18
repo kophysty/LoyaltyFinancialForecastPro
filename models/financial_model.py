@@ -72,28 +72,42 @@ class FinancialModel:
                     restaurants = active_users / 80  # 1 ресторан на 80 пользователей
                     subscription_revenue = 0
                     
-                    # Получаем месяцы начала подписок из текущего сценария
-                    subscription_starts = {
-                        'basic': st.session_state.get('basic_subscription_start_month'),
-                        'premium': st.session_state.get('premium_subscription_start_month'),
-                        'business': st.session_state.get('business_subscription_start_month')
-                    }
+                    # Получаем и проверяем параметры подписок
+                    required_params = [
+                        'basic_subscription_start_month',
+                        'premium_subscription_start_month',
+                        'business_subscription_start_month',
+                        'basic_subscription_price',
+                        'premium_subscription_price',
+                        'business_subscription_price',
+                        'basic_subscription_conversion',
+                        'premium_subscription_conversion'
+                    ]
                     
-                    # Проверяем наличие всех необходимых параметров
-                    missing_params = [k for k, v in subscription_starts.items() if v is None]
-                    if missing_params:
-                        log_error(f"Missing subscription start months: {missing_params}")
-                        raise ValueError(f"Missing required subscription parameters: {missing_params}")
+                    for param in required_params:
+                        if param not in st.session_state:
+                            log_error(f"Missing subscription parameter: {param}")
+                            raise ValueError(f"Required subscription parameter missing: {param}")
                     
-                    basic_start = subscription_starts['basic']
-                    premium_start = subscription_starts['premium']
-                    business_start = subscription_starts['business']
+                    # Получаем месяцы начала подписок
+                    basic_start = st.session_state['basic_subscription_start_month']
+                    premium_start = st.session_state['premium_subscription_start_month']
+                    business_start = st.session_state['business_subscription_start_month']
                     
-                    log_info(f"Current subscription starts - Basic: {basic_start}, Premium: {premium_start}, Business: {business_start}")
+                    log_info(f"Calculating revenue for month {month}")
+                    log_info(f"Subscription starts - Basic: {basic_start}, Premium: {premium_start}, Business: {business_start}")
                     
+                    # Определяем активность подписок
                     basic_sub_active = month >= basic_start
                     premium_sub_active = month >= premium_start
                     business_sub_active = month >= business_start
+                    
+                    if basic_sub_active:
+                        log_info(f"Basic subscription active in month {month}")
+                    if premium_sub_active:
+                        log_info(f"Premium subscription active in month {month}")
+                    if business_sub_active:
+                        log_info(f"Business subscription active in month {month}")
                     
                     # Логируем активацию подписок для отладки
                     if month == basic_start:
