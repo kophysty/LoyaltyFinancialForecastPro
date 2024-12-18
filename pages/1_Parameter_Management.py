@@ -24,35 +24,8 @@ def parameter_management_page():
     
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
-        
-        # Загружаем параметры только при изменении выбранного пресета
-        if 'last_loaded_preset' not in st.session_state or st.session_state['last_loaded_preset'] != selected_preset:
-            if load_preset(selected_preset):
-                st.session_state['last_loaded_preset'] = selected_preset
-                st.success(f"Загружен сценарий: {scenario_names[selected_preset]}")
-            else:
-                st.error("Ошибка при загрузке параметров сценария")
-                return
-        
-        # Проверяем и выводим текущие параметры подписок
-        subscription_params = {
-            'basic_subscription_start_month': 'Базовая подписка',
-            'premium_subscription_start_month': 'Премиум подписка',
-            'business_subscription_start_month': 'Бизнес подписка'
-        }
-        
-        st.write("**Месяцы запуска подписок:**")
-        missing_params = []
-        for param, desc in subscription_params.items():
-            if param in st.session_state:
-                st.write(f"{desc}: месяц {st.session_state[param]}")
-            else:
-                missing_params.append(param)
-                st.error(f"Не найден параметр: {desc}")
-        
-        if missing_params:
-            st.error("Отсутствуют критические параметры подписок")
-            return
+        preset_data = PRESETS[selected_preset]
+        load_preset(selected_preset)
         
         col1, col2 = st.columns(2)
         

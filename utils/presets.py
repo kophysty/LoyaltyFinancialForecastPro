@@ -90,60 +90,11 @@ PRESETS = {
 
 
 def load_preset(preset_name):
-    """Load a preset and ensure all parameters are properly set"""
+    """Load a preset configuration"""
     if preset_name in PRESETS:
-        try:
-            log_info(f"Loading preset: {preset_name}")
-            preset_data = PRESETS[preset_name].copy()
-            
-            # Список всех параметров для отслеживания
-            all_params = [
-                # Базовые параметры
-                'initial_users', 'active_conversion', 'growth_rate_y1', 'growth_rate_y2',
-                'avg_check', 'points_usage_rate', 'cashback_rate', 'expired_points_rate',
-                'exchange_commission_rate', 'reward_commission_rate', 'base_infra_cost',
-                'marketing_efficiency', 'marketing_spend_rate', 'initial_investment',
-                'preparatory_expenses', 'claim_period_months',
-                # Параметры подписок
-                'basic_subscription_price', 'basic_subscription_start_month',
-                'premium_subscription_price', 'premium_subscription_start_month',
-                'business_subscription_price', 'business_subscription_start_month',
-                'basic_subscription_conversion', 'premium_subscription_conversion'
-            ]
-            
-            # Очищаем все параметры из session_state
-            for param in all_params:
-                if param in st.session_state:
-                    del st.session_state[param]
-                    log_info(f"Cleared {param} from session state")
-            
-            # Загружаем все параметры из пресета
-            for param in all_params:
-                if param in preset_data:
-                    st.session_state[param] = preset_data[param]
-                    log_info(f"Set {param} = {preset_data[param]}")
-                else:
-                    log_warning(f"Missing parameter in preset: {param}")
-            
-            # Проверяем критические параметры подписок
-            subscription_starts = [
-                'basic_subscription_start_month',
-                'premium_subscription_start_month',
-                'business_subscription_start_month'
-            ]
-            
-            for param in subscription_starts:
-                if param in st.session_state:
-                    log_info(f"Subscription parameter loaded: {param} = {st.session_state[param]}")
-                else:
-                    log_error(f"Critical subscription parameter missing: {param}")
-            
-            log_info(f"Finished loading preset {preset_name}")
-            return True
-            
-        except Exception as e:
-            log_error(f"Error loading preset {preset_name}: {str(e)}")
-            return False
+        preset_data = PRESETS[preset_name]
+        for key, value in preset_data.items():
+            st.session_state[key] = value
 
 
 def save_preset(preset_name, values):
