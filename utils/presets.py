@@ -6,7 +6,7 @@ PRESETS = {
         "initial_users": 800,
         "active_conversion": 0.35,
         "growth_rate_y1": 0.15,  # Ниже стандартного
-        "growth_rate_y2": 0.08,  # Ниже стандартного
+        "growth_rate_y2": 0.1,  # Ниже стандартного
         "avg_check": 2500,
         "points_usage_rate": 0.60,
         "cashback_rate": 0.15,  # Добавлен обязательный параметр
@@ -16,7 +16,7 @@ PRESETS = {
         "burn_rate_fot_1": 3000000,
         "burn_rate_fot_2": 4000000,
         "base_infra_cost": 250000,
-        "marketing_efficiency": 100,
+        "marketing_efficiency": 150,
         "marketing_spend_rate": 0.15,
         "ad_revenue_per_user": 15,
         "partnership_rate": 0.003
@@ -33,8 +33,8 @@ PRESETS = {
         "exchange_commission_rate": 0.03,
         "reward_commission_rate": 0.04, # Немного снижаем
         "base_infra_cost": 200000,
-        "marketing_efficiency": 250,
-        "marketing_spend_rate": 0.05,
+        "marketing_efficiency": 200,
+        "marketing_spend_rate": 0.1,
         "ad_revenue_per_user": 20,
         "partnership_rate": 0.005,
         "burn_rate_fot_1": 2500000,
@@ -49,8 +49,8 @@ PRESETS = {
         "active_conversion": 0.45,
         "growth_rate_y1": 0.25,  # Выше стандартного
         "growth_rate_y2": 0.12,  # Выше стандартного
-        "avg_check": 3500,
-        "points_usage_rate": 0.80,
+        "avg_check": 3200,
+        "points_usage_rate": 0.70,
         "cashback_rate": 0.15,  # Добавлен обязательный параметр
         "expired_points_rate": 0.07,  # Оптимистичный сценарий: больше баллов сгорает
         "exchange_commission_rate": 0.04,
@@ -58,7 +58,7 @@ PRESETS = {
         "burn_rate_fot_1": 2000000,
         "burn_rate_fot_2": 3000000,
         "base_infra_cost": 180000,
-        "marketing_efficiency": 300,  # Значительно увеличена эффективность маркетинга
+        "marketing_efficiency": 200,  # Значительно увеличена эффективность маркетинга
         "marketing_spend_rate": 0.05,  # Добавлен обязательный параметр
         "ad_revenue_per_user": 25,
         "partnership_rate": 0.007

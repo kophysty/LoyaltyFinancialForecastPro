@@ -1,14 +1,18 @@
-import streamlit as st
 import json
-# Set page config at the very start
-st.set_page_config(layout="wide")
-
 import plotly.graph_objects as go
 from utils.config import initialize_session_state
 from utils.logging_config import log_error, log_info
 from models.financial_model import FinancialModel
 from utils.presets import PRESETS
 from utils.translations import get_translation
+import streamlit as st
+
+# Set page config at the very start
+st.set_page_config(
+    page_title="Финансовая модель Кошелька Репутации",
+    page_icon="💰",
+    layout="wide"
+)
 
 def init_app():
     """Initialize application state"""
