@@ -72,10 +72,23 @@ class FinancialModel:
                     restaurants = active_users / 80  # 1 ресторан на 80 пользователей
                     subscription_revenue = 0
                     
-                    # Проверяем, начали ли действовать подписки, без значений по умолчанию
-                    basic_sub_active = month >= st.session_state['basic_subscription_start_month']
-                    premium_sub_active = month >= st.session_state['premium_subscription_start_month']
-                    business_sub_active = month >= st.session_state['business_subscription_start_month']
+                    # Проверяем, начали ли действовать подписки
+                    # Используем значения из session_state, которые должны быть уже инициализированы
+                    basic_start = st.session_state['basic_subscription_start_month']
+                    premium_start = st.session_state['premium_subscription_start_month']
+                    business_start = st.session_state['business_subscription_start_month']
+                    
+                    basic_sub_active = month >= basic_start
+                    premium_sub_active = month >= premium_start
+                    business_sub_active = month >= business_start
+                    
+                    # Логируем активацию подписок для отладки
+                    if month == basic_start:
+                        log_info(f"Активация базовой подписки в месяце {month}")
+                    if month == premium_start:
+                        log_info(f"Активация премиум подписки в месяце {month}")
+                    if month == business_start:
+                        log_info(f"Активация бизнес подписки в месяце {month}")
                     
                     # Инициализация переменных подписок
                     user_subscription_revenue = 0
