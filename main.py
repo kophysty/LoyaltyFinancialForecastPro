@@ -232,13 +232,19 @@ def main():
             margin-top: auto;
         }
         .metric-details {
-            font-size: 0.8em;
+            font-size: 0.75em;
             color: #666;
             margin: 8px 0;
             flex: 1 0 auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+        .metric-details div {
+            text-align: right;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            margin-bottom: 4px;
         }
         </style>
         """, unsafe_allow_html=True)
@@ -251,8 +257,8 @@ def main():
                 <div class="metric-title">Месячная выручка</div>
                 <div class="metric-value">{month_data['revenue']:,.0f} ₽</div>
                 <div class="metric-details">
-                    <div style="text-align: right">Объём покупок (GMV): {month_data['purchase_volume']:,.0f} ₽</div>
-                    <div style="text-align: right">Оборот программы: {month_data['loyalty_turnover']:,.0f} ₽</div>
+                    <div>Объём покупок (GMV): {month_data['purchase_volume']:,.0f} ₽</div>
+                    <div>Оборот программы: {month_data['loyalty_turnover']:,.0f} ₽</div>
                 </div>
                 <div class="metric-subtitle">Общая за 2 года: {total_revenue:,.0f} ₽</div>
             </div>
