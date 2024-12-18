@@ -163,7 +163,9 @@ def parameter_management_page():
                 'marketing_spend_rate': st.session_state['marketing_spend_rate'],
                 'marketing_efficiency': st.session_state['marketing_efficiency'],
                 'ad_revenue_per_user': st.session_state.get('ad_revenue_per_user', 20),
-                'partnership_rate': st.session_state.get('partnership_rate', 0.005)
+                'partnership_rate': st.session_state.get('partnership_rate', 0.005),
+                'initial_investment': st.session_state['initial_investment'],
+                'claim_period_months': st.session_state['claim_period_months']
             }
 
         st.divider()

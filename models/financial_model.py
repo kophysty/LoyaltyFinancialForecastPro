@@ -49,11 +49,13 @@ class FinancialModel:
                     # Расчет кэшбэка (оборот программы лояльности)
                     loyalty_turnover = purchase_volume * st.session_state['cashback_rate']  # Фактический оборот программы лояльности
                     cashback = loyalty_turnover  # Для сохранения обратной совместимости
-                    # Процент использования баллов
+                    # Процент использования баллов с учетом периода подтверждения
+                    claim_period = st.session_state.get('claim_period_months', 2)
                     used_points = cashback * st.session_state['points_usage_rate']
-                    # Расчет дохода от неизрасходованных баллов (5% от 30% неиспользованных)
-                    unused_points = cashback * (1 - st.session_state['points_usage_rate'])
-                    expired_points_income = unused_points * st.session_state['expired_points_rate']
+                    # Расчет дохода от неподтвержденных баллов
+                    unclaimed_points = cashback * (1 - st.session_state['points_usage_rate'])
+                    # Баллы сгорают только если не подтверждены в течение claim_period месяцев
+                    expired_points_income = (unclaimed_points * st.session_state['expired_points_rate']) if month > claim_period else 0
                     # Комиссия обмена 3% от использованных баллов
                     exchange_commission = used_points * st.session_state['exchange_commission_rate']
                     # Комиссия начисления 5% от всего кэшбэка
