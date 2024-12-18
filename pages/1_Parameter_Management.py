@@ -253,6 +253,80 @@ def parameter_management_page():
             }
 
         st.divider()
+        st.subheader("Управление сценариями")
+        
+        # Кнопка для восстановления значений по умолчанию
+        if st.button("Восстановить значения по умолчанию для всех сценариев", type="primary"):
+            # Восстанавливаем стандартные значения для всех сценариев
+            PRESETS["standard"] = {
+                "initial_users": 1000,
+                "active_conversion": 0.30,
+                "claim_period_months": 2,
+                "growth_rate_y1": 0.25,  # Согласно требованиям
+                "growth_rate_y2": 0.15,
+                "avg_check": 2800,
+                "points_usage_rate": 0.55,
+                "cashback_rate": 0.12,
+                "expired_points_rate": 0.07,
+                "exchange_commission_rate": 0.03,
+                "reward_commission_rate": 0.04,
+                "base_infra_cost": 200000,
+                "marketing_efficiency": 200,
+                "marketing_spend_rate": 0.15,  # Согласно требованиям
+                "ad_revenue_per_user": 20,
+                "partnership_rate": 0.005,
+                "burn_rate_fot_1": 2500000,
+                "burn_rate_fot_2": 3500000,
+                "premium_business_start_month": 8,  # Согласно требованиям
+                "premium_user_start_month": 13,
+                "ad_start_month": 8,  # Согласно требованиям
+                "premium_business_rate": 0.30,
+                "premium_business_price": 8000
+            }
+            
+            PRESETS["pessimistic"] = {
+                **PRESETS["standard"],
+                "initial_users": 800,
+                "active_conversion": 0.25,
+                "growth_rate_y1": 0.20,
+                "growth_rate_y2": 0.10,
+                "avg_check": 2500,
+                "points_usage_rate": 0.50,
+                "exchange_commission_rate": 0.02,
+                "reward_commission_rate": 0.03,
+                "base_infra_cost": 250000,
+                "marketing_efficiency": 150,
+                "ad_revenue_per_user": 15,
+                "partnership_rate": 0.003,
+                "burn_rate_fot_1": 2500000,
+                "burn_rate_fot_2": 3000000,
+                "premium_business_rate": 0.20,
+            }
+            
+            PRESETS["optimistic"] = {
+                **PRESETS["standard"],
+                "initial_users": 1200,
+                "active_conversion": 0.35,
+                "growth_rate_y1": 0.30,
+                "growth_rate_y2": 0.20,
+                "avg_check": 3200,
+                "points_usage_rate": 0.60,
+                "exchange_commission_rate": 0.04,
+                "reward_commission_rate": 0.05,
+                "base_infra_cost": 180000,
+                "marketing_efficiency": 250,
+                "ad_revenue_per_user": 25,
+                "partnership_rate": 0.007,
+                "burn_rate_fot_1": 2000000,
+                "burn_rate_fot_2": 3000000,
+                "premium_business_rate": 0.40,
+            }
+            
+            # Перезагружаем страницу для применения изменений
+            st.success("Значения по умолчанию восстановлены!")
+            st.rerun()
+        
+        st.divider()
         st.subheader("Сохранение сценария")
         
         col_save1, col_save2 = st.columns(2)
