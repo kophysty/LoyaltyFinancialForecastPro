@@ -1,4 +1,5 @@
 import streamlit as st
+import json
 from utils.presets import save_preset, delete_custom_preset, is_custom_preset, PRESETS
 from utils.translations import get_translation
 
@@ -9,10 +10,20 @@ def parameter_management_page():
     st.title(t('parameter_management'))
     
     st.header(t('preset_scenarios'))
+    
+    # Загружаем пользовательские сценарии
+    try:
+        with open('custom_presets.json', 'r') as f:
+            custom_presets = json.load(f)
+    except FileNotFoundError:
+        custom_presets = {}
+    
+    # Объединяем стандартные и пользовательские сценарии
     scenario_names = {
-        "pessimistic": "Пессимистичный",
         "standard": "Стандартный",
-        "optimistic": "Оптимистичный"
+        "pessimistic": "Пессимистичный",
+        "optimistic": "Оптимистичный",
+        **{name: f"Пользовательский: {name}" for name in custom_presets.keys()}
     }
     
     col_select, col_delete = st.columns([3, 1])
