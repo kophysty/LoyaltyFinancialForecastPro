@@ -201,8 +201,8 @@ def parameter_management_page():
             st.session_state['initial_investment'] = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
-                max_value=50000000,
-                value=preset_data.get('initial_investment', 10000000),
+                max_value=100000000,
+                value=preset_data.get('initial_investment', 60000000),
                 step=1000000,
                 help="Объем начальных инвестиций на запуск проекта"
             )
@@ -210,10 +210,10 @@ def parameter_management_page():
             st.session_state['preparatory_expenses'] = st.number_input(
                 "Расходы на подготовительный этап (₽)",
                 min_value=1000000,
-                max_value=30000000,
-                value=preset_data.get('preparatory_expenses', 21000000),
+                max_value=50000000,
+                value=preset_data.get('preparatory_expenses', 35000000),
                 step=1000000,
-                help="Расходы на подготовительный этап перед запуском (~$300K)"
+                help="Расходы на подготовительный этап перед запуском"
             )
             
             st.session_state['base_infra_cost'] = st.number_input(
