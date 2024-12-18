@@ -77,12 +77,18 @@ class FinancialModel:
                     premium_sub_active = month >= st.session_state.get('premium_subscription_start_month', 3)
                     business_sub_active = month >= st.session_state.get('business_subscription_start_month', 6)
                     
-                    # Расчет выручки от пользовательских подписок
+                    # Инициализация переменных подписок
                     user_subscription_revenue = 0
+                    basic_subscribers = 0
+                    premium_subscribers = 0
+                    business_subscribers = 0
+                    
+                    # Расчет выручки от базовой подписки
                     if basic_sub_active:
                         basic_subscribers = active_users * st.session_state.get('basic_subscription_conversion', 0.05)
                         user_subscription_revenue += basic_subscribers * st.session_state.get('basic_subscription_price', 299)
                     
+                    # Расчет выручки от премиум подписки
                     if premium_sub_active:
                         premium_subscribers = active_users * st.session_state.get('premium_subscription_conversion', 0.02)
                         user_subscription_revenue += premium_subscribers * st.session_state.get('premium_subscription_price', 999)
@@ -97,10 +103,13 @@ class FinancialModel:
                     subscription_revenue = user_subscription_revenue + business_subscription_revenue
                     
                     # Детализация выручки от подписок для структуры доходов
+                    basic_revenue = basic_subscribers * st.session_state.get('basic_subscription_price', 299) if basic_sub_active else 0
+                    premium_revenue = premium_subscribers * st.session_state.get('premium_subscription_price', 999) if premium_sub_active else 0
+                    
                     subscription_details = {
-                        'basic': basic_subscribers * st.session_state.get('basic_subscription_price', 299) if basic_sub_active else 0,
-                        'premium': premium_subscribers * st.session_state.get('premium_subscription_price', 999) if premium_sub_active else 0,
-                        'business': business_subscription_revenue if business_sub_active else 0
+                        'basic': basic_revenue,
+                        'premium': premium_revenue,
+                        'business': business_subscription_revenue
                     }
                     
                     # Premium Revenue Streams

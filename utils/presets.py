@@ -86,7 +86,19 @@ def save_preset(preset_name, values):
     global PRESETS
     try:
         if preset_name in ["pessimistic", "standard", "optimistic"]:
-            # Обновляем существующий пресет
+            # Обновляем существующий пресет со всеми параметрами подписок
+            subscription_params = [
+                'basic_subscription_price', 'basic_subscription_start_month',
+                'premium_subscription_price', 'premium_subscription_start_month',
+                'business_subscription_price', 'business_subscription_start_month',
+                'basic_subscription_conversion', 'premium_subscription_conversion'
+            ]
+            
+            # Проверяем наличие всех параметров подписок
+            for param in subscription_params:
+                if param not in values and param in st.session_state:
+                    values[param] = st.session_state[param]
+            
             PRESETS[preset_name].update(values)
             log_info(f"Updated preset {preset_name} with values: {values}")
         else:
