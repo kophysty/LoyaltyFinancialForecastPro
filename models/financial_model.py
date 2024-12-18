@@ -96,6 +96,13 @@ class FinancialModel:
                     # Общая выручка от подписок
                     subscription_revenue = user_subscription_revenue + business_subscription_revenue
                     
+                    # Детализация выручки от подписок для структуры доходов
+                    subscription_details = {
+                        'basic': basic_subscribers * st.session_state.get('basic_subscription_price', 299) if basic_sub_active else 0,
+                        'premium': premium_subscribers * st.session_state.get('premium_subscription_price', 999) if premium_sub_active else 0,
+                        'business': business_subscription_revenue if business_sub_active else 0
+                    }
+                    
                     # Premium Revenue Streams
                     premium_user_rate = 0.04  # 4% премиум пользователей
                     premium_subscription = 399  # стоимость премиум подписки
@@ -174,8 +181,11 @@ class FinancialModel:
                         'total_new_users': total_new_users,
                         'commission_revenue': exchange_commission + reward_commission,
                         'expired_points_income': expired_points_income,
-                        'unclaimed_points': unclaimed_points,  # Добавляем для отслеживания истории
+                        'unclaimed_points': unclaimed_points,
                         'subscription_revenue': subscription_revenue,
+                        'subscription_basic': subscription_details['basic'],
+                        'subscription_premium': subscription_details['premium'],
+                        'subscription_business': subscription_details['business'],
                         'premium_revenue': premium_revenue,
                         'additional_revenue': ad_revenue + partner_revenue
                     })
