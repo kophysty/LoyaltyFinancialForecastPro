@@ -110,6 +110,25 @@ def parameter_management_page():
                 help="В каком месяце начнут действовать подписки Премиум Бизнес"
             )
             
+            st.session_state['premium_business_rate'] = st.slider(
+                "Процент партнеров на премиум-тарифе",
+                min_value=0.0,
+                max_value=100.0,
+                value=float(preset_data.get('premium_business_rate', 0.3) * 100),
+                format="%.1f%%",
+                help="Процент партнеров, которые приобретают премиум-подписку",
+                key=f"premium_business_rate_{selected_preset}"
+            ) / 100
+            
+            st.session_state['premium_business_price'] = st.number_input(
+                "Стоимость Премиум Бизнес (₽)",
+                min_value=1000,
+                max_value=20000,
+                value=preset_data.get('premium_business_price', 8000),
+                step=1000,
+                help="Стоимость премиум-подписки для бизнеса"
+            )
+            
         with col2:
             st.markdown("**Операционные параметры:**")
             st.session_state['initial_investment'] = st.number_input(
@@ -198,7 +217,9 @@ def parameter_management_page():
                 'initial_investment': st.session_state['initial_investment'],
                 'preparatory_expenses': st.session_state['preparatory_expenses'],
                 'claim_period_months': st.session_state['claim_period_months'],
-                'premium_business_start_month': st.session_state['premium_business_start_month']
+                'premium_business_start_month': st.session_state['premium_business_start_month'],
+                'premium_business_rate': st.session_state['premium_business_rate'],
+                'premium_business_price': st.session_state['premium_business_price']
             }
 
         st.divider()

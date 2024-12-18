@@ -76,10 +76,12 @@ class FinancialModel:
                     premium_business_start = st.session_state.get('premium_business_start_month', 13)
                     if month >= premium_business_start:
                         # Единый премиум-тариф для всех типов бизнеса
-                        premium_partners = (stores + restaurants) * 0.3  # 30% партнеров на премиум-тарифе
+                        premium_rate = st.session_state.get('premium_business_rate', 0.3)  # процент партнеров на премиум-тарифе
+                        premium_partners = (stores + restaurants) * premium_rate
                         
                         # Расчет выручки от подписок
-                        subscription_revenue = premium_partners * 8000  # единая стоимость премиум-подписки
+                        premium_price = st.session_state.get('premium_business_price', 8000)  # стоимость премиум-подписки
+                        subscription_revenue = premium_partners * premium_price
                     
                     # Премиум подписка для пользователей
                     premium_user_rate = 0.04  # 4% премиум пользователей
