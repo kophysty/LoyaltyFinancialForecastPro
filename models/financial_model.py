@@ -72,11 +72,24 @@ class FinancialModel:
                     restaurants = active_users / 80  # 1 ресторан на 80 пользователей
                     subscription_revenue = 0
                     
-                    # Проверяем, начали ли действовать подписки
-                    # Используем значения из session_state, которые должны быть уже инициализированы
-                    basic_start = st.session_state['basic_subscription_start_month']
-                    premium_start = st.session_state['premium_subscription_start_month']
-                    business_start = st.session_state['business_subscription_start_month']
+                    # Получаем месяцы начала подписок из текущего сценария
+                    subscription_starts = {
+                        'basic': st.session_state.get('basic_subscription_start_month'),
+                        'premium': st.session_state.get('premium_subscription_start_month'),
+                        'business': st.session_state.get('business_subscription_start_month')
+                    }
+                    
+                    # Проверяем наличие всех необходимых параметров
+                    missing_params = [k for k, v in subscription_starts.items() if v is None]
+                    if missing_params:
+                        log_error(f"Missing subscription start months: {missing_params}")
+                        raise ValueError(f"Missing required subscription parameters: {missing_params}")
+                    
+                    basic_start = subscription_starts['basic']
+                    premium_start = subscription_starts['premium']
+                    business_start = subscription_starts['business']
+                    
+                    log_info(f"Current subscription starts - Basic: {basic_start}, Premium: {premium_start}, Business: {business_start}")
                     
                     basic_sub_active = month >= basic_start
                     premium_sub_active = month >= premium_start

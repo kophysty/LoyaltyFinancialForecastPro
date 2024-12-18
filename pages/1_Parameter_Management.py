@@ -24,18 +24,28 @@ def parameter_management_page():
     
     if selected_preset:
         st.subheader(f"Параметры сценария: {scenario_names[selected_preset]}")
-        load_preset(selected_preset)  # Загружаем параметры через функцию load_preset
-        preset_data = PRESETS[selected_preset]  # Получаем данные для отображения
         
-        # Проверяем загруженные параметры подписок
-        subscription_params = [
-            'basic_subscription_start_month',
-            'premium_subscription_start_month',
-            'business_subscription_start_month'
-        ]
-        for param in subscription_params:
-            if param in st.session_state:
-                st.write(f"Загружен параметр {param}: {st.session_state[param]}")
+        # Загружаем параметры из выбранного пресета
+        if load_preset(selected_preset):
+            st.success(f"Загружен сценарий: {scenario_names[selected_preset]}")
+            preset_data = PRESETS[selected_preset]
+            
+            # Проверяем и выводим загруженные параметры подписок
+            subscription_params = {
+                'basic_subscription_start_month': 'Базовая подписка',
+                'premium_subscription_start_month': 'Премиум подписка',
+                'business_subscription_start_month': 'Бизнес подписка'
+            }
+            
+            st.write("**Месяцы запуска подписок:**")
+            for param, desc in subscription_params.items():
+                if param in st.session_state:
+                    st.write(f"{desc}: месяц {st.session_state[param]}")
+                else:
+                    st.error(f"Не найден параметр: {desc}")
+            
+            # Принудительно обновляем состояние
+            st.experimental_rerun()
         
         col1, col2 = st.columns(2)
         
