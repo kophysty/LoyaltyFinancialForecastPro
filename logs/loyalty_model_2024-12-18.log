@@ -1901,3 +1901,9 @@ AttributeError: module 'streamlit' has no attribute 'experimental_rerun'
 2024-12-18 12:38:55,234 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 540.0
 2024-12-18 12:38:55,236 - loyalty_model - INFO - logging_config.py:59 - Scenario optimistic: Total investment = 234879983.28811166 (operational: 203879983.28811166, initial: 10000000, preparatory: 21000000)
 2024-12-18 12:38:55,236 - loyalty_model - INFO - logging_config.py:59 - Restoring session state from backup
+2024-12-18 12:45:02,935 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 12:45:02,936 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 12:45:02,936 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 12:45:03,899 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 12:45:03,899 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 12:45:03,900 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0

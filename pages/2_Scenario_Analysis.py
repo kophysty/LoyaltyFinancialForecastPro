@@ -168,13 +168,46 @@ def scenario_analysis_page():
                 name={"pessimistic": "Пессимистичный", 
                      "standard": "Стандартный", 
                      "optimistic": "Оптимистичный"}[scenario_name],
-                mode='lines'
+                mode='lines+markers',
+                line=dict(width=2),
+                marker=dict(size=6),
+                hovertemplate=f"Выручка: %{{y:,.0f}} ₽<extra></extra>"
             ))
         fig_revenue.update_layout(
-            title='Сравнение выручки по сценариям',
-            xaxis_title='Месяц',
-            yaxis_title='Выручка (₽)',
-            height=500
+            showlegend=True,
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            height=600,
+            xaxis=dict(
+                title='Месяц',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',d',
+                zeroline=False
+            ),
+            yaxis=dict(
+                title='Выручка (₽)',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',.0f',
+                zeroline=False
+            ),
+            hovermode='x unified',
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            ),
+            margin=dict(l=50, r=50, t=30, b=50),
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
+            )
         )
         st.plotly_chart(fig_revenue, use_container_width=True)
         
@@ -188,13 +221,46 @@ def scenario_analysis_page():
                 name={"pessimistic": "Пессимистичный", 
                      "standard": "Стандартный", 
                      "optimistic": "Оптимистичный"}[scenario_name],
-                mode='lines'
+                mode='lines+markers',
+                line=dict(width=2),
+                marker=dict(size=6),
+                hovertemplate=f"Прибыль: %{{y:,.0f}} ₽<extra></extra>"
             ))
         fig_profit.update_layout(
-            title='Сравнение прибыли по сценариям',
-            xaxis_title='Месяц',
-            yaxis_title='Прибыль (₽)',
-            height=500
+            showlegend=True,
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            height=600,
+            xaxis=dict(
+                title='Месяц',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',d',
+                zeroline=False
+            ),
+            yaxis=dict(
+                title='Прибыль (₽)',
+                showgrid=True,
+                gridwidth=1,
+                gridcolor='#f0f0f0',
+                tickformat=',.0f',
+                zeroline=False
+            ),
+            hovermode='x unified',
+            hoverlabel=dict(
+                bgcolor="white",
+                font_size=12,
+                font_family="Arial"
+            ),
+            margin=dict(l=50, r=50, t=30, b=50),
+            legend=dict(
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1
+            )
         )
         st.plotly_chart(fig_profit, use_container_width=True)
         
