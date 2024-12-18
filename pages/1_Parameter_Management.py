@@ -167,6 +167,60 @@ def parameter_management_page():
                 key=f"marketing_eff_{selected_preset}"
             )
 
+            st.markdown("**Параметры подписок:**")
+            
+            st.session_state['basic_subscription_price'] = st.number_input(
+                "Стоимость базовой подписки (₽/мес)",
+                min_value=100,
+                max_value=5000,
+                value=preset_data.get('basic_subscription_price', 299),
+                step=50,
+                help="Ежемесячная стоимость базовой подписки для пользователей",
+                key=f"basic_sub_price_{selected_preset}"
+            )
+            
+            st.session_state['premium_subscription_price'] = st.number_input(
+                "Стоимость премиум подписки (₽/мес)",
+                min_value=500,
+                max_value=10000,
+                value=preset_data.get('premium_subscription_price', 999),
+                step=100,
+                help="Ежемесячная стоимость премиум подписки для пользователей",
+                key=f"premium_sub_price_{selected_preset}"
+            )
+            
+            st.session_state['business_subscription_price'] = st.number_input(
+                "Стоимость бизнес-подписки (₽/мес)",
+                min_value=1000,
+                max_value=50000,
+                value=preset_data.get('business_subscription_price', 4999),
+                step=500,
+                help="Ежемесячная стоимость подписки для бизнес-клиентов",
+                key=f"business_sub_price_{selected_preset}"
+            )
+            
+            st.session_state['basic_subscription_conversion'] = st.slider(
+                "Конверсия в базовую подписку",
+                min_value=0.0,
+                max_value=20.0,
+                value=float(preset_data.get('basic_subscription_conversion', 0.05) * 100),
+                step=0.1,
+                format="%.1f%%",
+                help="Процент пользователей, оформляющих базовую подписку",
+                key=f"basic_sub_conv_{selected_preset}"
+            ) / 100
+            
+            st.session_state['premium_subscription_conversion'] = st.slider(
+                "Конверсия в премиум подписку",
+                min_value=0.0,
+                max_value=10.0,
+                value=float(preset_data.get('premium_subscription_conversion', 0.02) * 100),
+                step=0.1,
+                format="%.1f%%",
+                help="Процент пользователей, оформляющих премиум подписку",
+                key=f"premium_sub_conv_{selected_preset}"
+            ) / 100
+
         # Функция для получения текущих значений параметров
         def get_current_values():
             return {
@@ -187,7 +241,12 @@ def parameter_management_page():
                 'partnership_rate': st.session_state.get('partnership_rate', 0.005),
                 'initial_investment': st.session_state['initial_investment'],
                 'preparatory_expenses': st.session_state['preparatory_expenses'],
-                'claim_period_months': st.session_state['claim_period_months']
+                'claim_period_months': st.session_state['claim_period_months'],
+                'basic_subscription_price': st.session_state['basic_subscription_price'],
+                'premium_subscription_price': st.session_state['premium_subscription_price'],
+                'business_subscription_price': st.session_state['business_subscription_price'],
+                'basic_subscription_conversion': st.session_state['basic_subscription_conversion'],
+                'premium_subscription_conversion': st.session_state['premium_subscription_conversion']
             }
 
         st.divider()
