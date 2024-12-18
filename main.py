@@ -279,7 +279,7 @@ def main():
             st.markdown(f"""
             <div class="metric-container">
                 <div class="metric-title">Месячные расходы</div>
-                <div class="metric-value">{month_data['expenses']:,.0f} ₽</div>
+                <div class="metric-value">{(month_data['operational_expenses'] + month_data['marketing']):,.0f} ₽</div>
                 <div class="metric-details">
                     <div style="text-align: right">Операционные: {month_data['operational_expenses']:,.0f} ₽</div>
                     <div style="text-align: right">Маркетинг: {month_data['marketing']:,.0f} ₽</div>
