@@ -72,21 +72,29 @@ class FinancialModel:
                     restaurants = active_users / 80  # 1 ресторан на 80 пользователей
                     subscription_revenue = 0
                     
-                    # Subscription revenue starts from month 13
-                    if month > 12:
-                        # Распределение подписок по типам
-                        basic_stores = stores * 0.35  # 35% базовых подписок
-                        premium_stores = stores * 0.15  # 15% премиум подписок
-                        basic_restaurants = restaurants * 0.35  # 35% базовых подписок
-                        premium_restaurants = restaurants * 0.15  # 15% премиум подписок
-                        
-                        # Расчет выручки от подписок
-                        subscription_revenue = (
-                            (basic_stores * 2500) +  # базовая подписка магазина
-                            (premium_stores * 8000) +  # премиум подписка магазина
-                            (basic_restaurants * 2000) +  # базовая подписка ресторана
-                            (premium_restaurants * 6000)  # премиум подписка ресторана
-                        )
+                    # Проверяем, начали ли действовать подписки
+                    basic_sub_active = month >= st.session_state.get('basic_subscription_start_month', 1)
+                    premium_sub_active = month >= st.session_state.get('premium_subscription_start_month', 3)
+                    business_sub_active = month >= st.session_state.get('business_subscription_start_month', 6)
+                    
+                    # Расчет выручки от пользовательских подписок
+                    user_subscription_revenue = 0
+                    if basic_sub_active:
+                        basic_subscribers = active_users * st.session_state.get('basic_subscription_conversion', 0.05)
+                        user_subscription_revenue += basic_subscribers * st.session_state.get('basic_subscription_price', 299)
+                    
+                    if premium_sub_active:
+                        premium_subscribers = active_users * st.session_state.get('premium_subscription_conversion', 0.02)
+                        user_subscription_revenue += premium_subscribers * st.session_state.get('premium_subscription_price', 999)
+                    
+                    # Расчет выручки от бизнес-подписок
+                    business_subscription_revenue = 0
+                    if business_sub_active:
+                        business_subscribers = (stores + restaurants) * 0.15  # 15% бизнес-клиентов
+                        business_subscription_revenue = business_subscribers * st.session_state.get('business_subscription_price', 4999)
+                    
+                    # Общая выручка от подписок
+                    subscription_revenue = user_subscription_revenue + business_subscription_revenue
                     
                     # Premium Revenue Streams
                     premium_user_rate = 0.04  # 4% премиум пользователей

@@ -42,7 +42,16 @@ PRESETS = {
         "burn_rate_fot_2": 3500000,
         "marketing_budget_fixed": 200000,
         "marketing_budget_rate": 0.05,
-        "initial_fot": 0
+        "initial_fot": 0,
+        # Параметры подписок
+        "basic_subscription_price": 299,
+        "basic_subscription_start_month": 1,
+        "premium_subscription_price": 999,
+        "premium_subscription_start_month": 3,
+        "business_subscription_price": 4999,
+        "business_subscription_start_month": 6,
+        "basic_subscription_conversion": 0.05,
+        "premium_subscription_conversion": 0.02
     },
     "optimistic": {
         "initial_users": 1200,
