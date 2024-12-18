@@ -109,7 +109,7 @@ class FinancialModel:
                     
                     # Revenue calculations
                     revenue = (
-                        exchange_commission + reward_commission + subscription_revenue +
+                        exchange_commission + reward_commission +
                         premium_revenue + ad_revenue + partner_revenue + expired_points_income
                     )
 
@@ -153,10 +153,6 @@ class FinancialModel:
                         'commission_revenue': exchange_commission + reward_commission,
                         'expired_points_income': expired_points_income,
                         'unclaimed_points': unclaimed_points,
-                        'subscription_revenue': subscription_revenue,
-                        'subscription_basic': subscription_details['basic'],
-                        'subscription_premium': subscription_details['premium'],
-                        'subscription_business': subscription_details['business'],
                         'premium_revenue': premium_revenue,
                         'additional_revenue': ad_revenue + partner_revenue
                     })
