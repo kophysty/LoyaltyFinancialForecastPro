@@ -147,7 +147,7 @@ def scenario_analysis_page():
             initial_investment = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
-                max_value=65000000,
+                max_value=100000000,
                 value=prev_investment,
                 step=1000000,
                 help="Объем начальных инвестиций на запуск проекта",
