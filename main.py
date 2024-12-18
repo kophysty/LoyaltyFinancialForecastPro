@@ -203,7 +203,7 @@ def main():
             border-radius: 10px;
             padding: 15px;
             background-color: white;
-            height: 200px;
+            height: 220px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
