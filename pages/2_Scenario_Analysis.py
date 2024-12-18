@@ -119,41 +119,42 @@ def scenario_analysis_page():
         st.subheader("Параметры инвестиций")
         col1, col2 = st.columns(2)
         
+        # Store previous values
+        prev_investment = st.session_state.get('initial_investment', 10000000)
+        prev_expenses = st.session_state.get('preparatory_expenses', 21000000)
+        
         with col1:
             initial_investment = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
                 max_value=50000000,
-                value=st.session_state.get('initial_investment', 10000000),
+                value=prev_investment,
                 step=1000000,
                 help="Объем начальных инвестиций на запуск проекта",
-                key="initial_investment_input"
+                key='initial_investment_input',
+                on_change=None
             )
-            st.session_state['initial_investment'] = initial_investment
             
         with col2:
             preparatory_expenses = st.number_input(
                 "Расходы на подготовительный этап (₽)",
                 min_value=1000000,
                 max_value=30000000,
-                value=st.session_state.get('preparatory_expenses', 21000000),
+                value=prev_expenses,
                 step=1000000,
                 help="Расходы на подготовительный этап перед запуском (~$300K)",
-                key="preparatory_expenses_input"
+                key='preparatory_expenses_input',
+                on_change=None
             )
+        
+        # Update session state and trigger rerun if values changed
+        if initial_investment != prev_investment:
+            st.session_state['initial_investment'] = initial_investment
+            st.rerun()
+            
+        if preparatory_expenses != prev_expenses:
             st.session_state['preparatory_expenses'] = preparatory_expenses
-            
-        # Триггер для перерасчета при изменении параметров
-        if 'last_investment' not in st.session_state:
-            st.session_state['last_investment'] = initial_investment
-        if 'last_preparatory' not in st.session_state:
-            st.session_state['last_preparatory'] = preparatory_expenses
-            
-        if (st.session_state['last_investment'] != initial_investment or 
-            st.session_state['last_preparatory'] != preparatory_expenses):
-            st.session_state['last_investment'] = initial_investment
-            st.session_state['last_preparatory'] = preparatory_expenses
-            st.experimental_rerun()
+            st.rerun()
         
         # Plot comparisons
         st.subheader("Графики сравнения")
