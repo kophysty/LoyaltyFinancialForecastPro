@@ -2,102 +2,102 @@ import streamlit as st
 from utils.translations import get_translation
 
 def documentation_page():
-    st.title("Документация по финансовой модели Кошелька Репутации")
+    st.title("Documentation for the Reputation Wallet Financial Model")
     
     st.markdown("""
-    ## Руководство по финансовой модели
+    ## Financial Model Guide
 
-    ### Ключевые метрики и механики расчета
+    ### Key Metrics and Calculation Mechanics
 
-    #### Объемы и обороты
-    - **Общий объем трат (GMV)** = Активные пользователи × Средний чек × 2.5 транзакции в месяц
-        - Средний чек в стандартном сценарии: 2,800₽
-        - Отражает все транзакции пользователей в торговых точках
+    #### Volumes and Turnover
+    - **Gross Merchandise Value (GMV)** = Active users × Average check × 2.5 transactions per month
+        - Average check in the standard scenario: 2,800₽
+        - Reflects all user transactions at retail outlets
     
-    - **Оборот программы лояльности** = GMV × Ставка кэшбэка (12% в стандартном сценарии)
-        - Объем начисленных баллов лояльности
-        - Например: при GMV = 1,000,000₽ и ставке 12%, оборот программы = 120,000₽ в баллах
+    - **Loyalty Program Turnover** = GMV × Cashback rate (12% in the standard scenario)
+        - Volume of loyalty points accrued
+        - For example: with GMV = 1,000,000₽ and a rate of 12%, the program turnover = 120,000₽ in points
 
-    #### Доходы платформы
+    #### Platform Income
     
-    - **Механика баллов и доходов**:
-        - Подтвержденные баллы:
-            * Конвертируются в токены
-            * Не имеют срока сгорания
-        - Неподтвержденные баллы:
-            * Сгорают если не подтверждены в течение 2 месяцев
-            * После сгорания учитываются как доход платформы
+    - **Points and Income Mechanics**:
+        - Confirmed points:
+            * Converted to tokens
+            * Do not expire
+        - Unconfirmed points:
+            * Expire if not confirmed within 2 months
+            * After expiration, they are counted as platform income
     
-    - **Комиссионные доходы**:
-        - 3% при обмене баллов
-        - 4% при начислении вознаграждений
+    - **Commission Income**:
+        - 3% when exchanging points
+        - 4% when accruing rewards
     
-    - **Партнерские доходы**:
-        - Подписки торговых точек (базовая/премиум)
+    - **Partner Income**:
+        - Retail outlet subscriptions (basic/premium)
     
-    #### Расходы
-    - **Фонд оплаты труда (ФОТ)**:
-        - Первые 6 месяцев: покрывается из первоначальных инвестиций
-        - 7-12 месяцы: 2,500,000₽/мес
-        - После 12 месяцев: 3,500,000₽/мес
+    #### Expenses
+    - **Payroll (Payroll)**:
+        - First 6 months: covered from initial investments
+        - Months 7-12: 2,500,000₽/month
+        - After 12 months: 3,500,000₽/month
 
-    - **Маркетинговые расходы**:
-        - Первые 6 месяцы: фиксированный бюджет 200,000₽/мес
-        - После 6 месяцев: 5% от выручки
-        - Эффективность: 200 новых пользователей на 100,000₽
+    - **Marketing Expenses**:
+        - First 6 months: fixed budget of 200,000₽/month
+        - After 6 months: 5% of revenue
+        - Efficiency: 200 new users per 100,000₽
 
-    - **Инфраструктура**: 
-        - Базовые затраты 200,000₽/мес
-        - Масштабирование при росте пользователей
+    - **Infrastructure**: 
+        - Basic costs of 200,000₽/month
+        - Scaling with user growth
 
-    #### ROI и финансовые показатели
-    - **Расчет ROI** = (Суммарная операционная прибыль / Суммарные операционные расходы) × 100%
-        - Операционные расходы включают:
-            * ФОТ
-            * Маркетинг
-            * Инфраструктуру
-        - Не включают первоначальные инвестиции, так как модель оценивает операционную эффективность
+    #### ROI and Financial Indicators
+    - **ROI Calculation** = (Total operating profit / Total operating expenses) × 100%
+        - Operating expenses include:
+            * Payroll
+            * Marketing
+            * Infrastructure
+        - Do not include initial investments, as the model evaluates operational efficiency
 
-    #### Налогообложение
-    - **НДС (20%)**:
-        - Начисляется на все виды выручки
-        - Включает комиссии, подписки и доход от сгоревших баллов
+    #### Taxation
+    - **VAT (20%)**:
+        - Charged on all types of revenue
+        - Includes commissions, subscriptions, and income from expired points
     
-    - **Налог на прибыль (20%)**:
-        - База = Выручка - НДС - Операционные расходы
-        - Включает доход от сгоревших баллов
-        - Особенности учета сгоревших баллов:
-            * Баллы становятся доходом только после истечения периода подтверждения (по умолчанию 2 месяца)
-            * Доход от сгоревших баллов = Неподтвержденные баллы × Процент сгорания
-            * Полностью включается в налогооблагаемую базу
+    - **Corporate Income Tax (20%)**:
+        - Base = Revenue - VAT - Operating expenses
+        - Includes income from expired points
+        - Features of accounting for expired points:
+            * Points become income only after the confirmation period expires (default 2 months)
+            * Income from expired points = Unconfirmed points × Expiration percentage
+            * Fully included in the taxable base
 
-    ### Сценарии и их особенности
+    ### Scenarios and Their Features
 
-    #### Стандартный сценарий
-    - Начальные пользователи: 1,000
-    - Конверсия в активных: 30%
-    - Темпы роста: 20% (1й год), 15% (2й год)
-    - Средний чек: 2,800₽
-    - Ставка кэшбэка: 12%
+    #### Standard Scenario
+    - Initial users: 1,000
+    - Conversion to active: 30%
+    - Growth rate: 20% (year 1), 15% (year 2)
+    - Average check: 2,800₽
+    - Cashback rate: 12%
 
-    #### Пессимистичный сценарий
-    - Начальные пользователи: 800
-    - Конверсия в активных: 30%
-    - Темпы роста: 15% (1й год), 10% (2й год)
-    - Средний чек: 2,500₽
-    - Ставка кэшбэка: 15%
+    #### Pessimistic Scenario
+    - Initial users: 800
+    - Conversion to active: 30%
+    - Growth rate: 15% (year 1), 10% (year 2)
+    - Average check: 2,500₽
+    - Cashback rate: 15%
 
-    #### Оптимистичный сценарий
-    - Начальные пользователи: 1,200
-    - Конверсия в активных: 45%
-    - Темпы роста: 25% (1й год), 15% (2й год)
-    - Средний чек: 3,200₽
-    - Ставка кэшбэка: 17%
+    #### Optimistic Scenario
+    - Initial users: 1,200
+    - Conversion to active: 45%
+    - Growth rate: 25% (year 1), 15% (year 2)
+    - Average check: 3,200₽
+    - Cashback rate: 17%
 
-    ### Управление моделью
-    - Все параметры настраиваются в разделе Parameter Management
-    - Сравнение сценариев доступно в разделе Scenario Analysis
-    - Поддерживается создание и сохранение пользовательских сценариев
+    ### Model Management
+    - All parameters are configurable in the Parameter Management section
+    - Scenario comparison is available in the Scenario Analysis section
+    - Supports the creation and saving of custom scenarios
     """)
 
 if __name__ == "__main__":
