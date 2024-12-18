@@ -2311,3 +2311,57 @@ streamlit.errors.StreamlitValueAboveMaxError: The `value` 60000000 is greater th
 2024-12-18 14:03:06,150 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
 2024-12-18 14:03:06,151 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
 2024-12-18 14:03:06,153 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 14:03:59,610 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 14:03:59,611 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 14:03:59,613 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 14:05:22,243 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 14:05:22,246 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 14:05:22,247 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 14:05:23,328 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 14:05:23,330 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 14:05:23,332 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 14:06:59,000 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 14:06:59,001 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 14:06:59,001 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 14:07:00,171 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 14:07:00,172 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 14:07:00,173 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:16:53,525 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:16:53,527 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:16:53,527 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:17:09,349 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:17:09,350 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:17:09,350 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:18:10,935 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:18:10,936 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:18:10,936 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:18:12,012 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:18:12,013 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:18:12,013 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:20:31,348 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:20:31,349 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:20:31,349 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:20:57,395 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:20:57,399 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:20:57,400 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:20:58,593 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:20:58,593 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:20:58,593 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:22:10,357 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:22:10,359 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:22:10,359 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:22:11,530 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:22:11,531 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:22:11,531 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:25:48,357 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:25:48,357 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:25:48,358 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:25:49,548 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:25:49,548 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:25:49,549 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:26:40,611 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:26:40,612 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:26:40,612 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
+2024-12-18 17:26:41,890 - loyalty_model - INFO - logging_config.py:59 - Initializing Financial Model
+2024-12-18 17:26:41,891 - loyalty_model - DEBUG - logging_config.py:63 - Starting financial calculations
+2024-12-18 17:26:41,891 - loyalty_model - INFO - logging_config.py:59 - Initial active users calculated: 300.0
