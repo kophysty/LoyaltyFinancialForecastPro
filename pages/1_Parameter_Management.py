@@ -128,6 +128,15 @@ def parameter_management_page():
                 step=1000,
                 help="Стоимость премиум-подписки для бизнеса"
             )
+
+            st.session_state['premium_user_start_month'] = st.number_input(
+                "Месяц начала подписок Премиум Пользователи",
+                min_value=1,
+                max_value=24,
+                value=preset_data.get('premium_user_start_month', 13),
+                step=1,
+                help="В каком месяце начнут действовать премиум-подписки для пользователей"
+            )
             
         with col2:
             st.markdown("**Операционные параметры:**")
@@ -219,7 +228,8 @@ def parameter_management_page():
                 'claim_period_months': st.session_state['claim_period_months'],
                 'premium_business_start_month': st.session_state['premium_business_start_month'],
                 'premium_business_rate': st.session_state['premium_business_rate'],
-                'premium_business_price': st.session_state['premium_business_price']
+                'premium_business_price': st.session_state['premium_business_price'],
+                'premium_user_start_month': st.session_state['premium_user_start_month']
             }
 
         st.divider()

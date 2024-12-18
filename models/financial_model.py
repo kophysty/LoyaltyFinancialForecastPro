@@ -88,7 +88,8 @@ class FinancialModel:
                     premium_subscription = 399  # стоимость премиум подписки
                     
                     # Расчет выручки от премиум пользователей
-                    premium_revenue = active_users * premium_user_rate * premium_subscription
+                    premium_user_start = st.session_state.get('premium_user_start_month', 13)
+                    premium_revenue = active_users * premium_user_rate * premium_subscription if month >= premium_user_start else 0
                     
                     # Additional Revenue
                     # Доход от рекламы: фиксированная ставка с пользователя
