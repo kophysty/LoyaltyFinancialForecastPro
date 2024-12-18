@@ -100,6 +100,7 @@ def parameter_management_page():
                 key=f"avg_check_{selected_preset}"
             )
 
+            st.markdown("**Управление доходами:**")
             st.session_state['premium_business_start_month'] = st.number_input(
                 "Месяц начала подписок Премиум Бизнес",
                 min_value=1,
