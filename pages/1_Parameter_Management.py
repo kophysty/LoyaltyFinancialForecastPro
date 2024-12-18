@@ -171,5 +171,32 @@ def parameter_management_page():
                 else:
                     st.warning("Введите название для нового сценария")
 
+        # Add Checkpoint buttons
+        st.markdown("### Сохранение настроек")
+        col_save3, col_save4 = st.columns(2)
+
+        with col_save3:
+            if st.button("Сохранить как временный чекпоинт", key="save_temp_checkpoint"):
+                current_values = get_current_values()
+                save_preset("user_checkpoint", current_values)
+                st.success("Настройки сохранены во временный чекпоинт (custom_presets.json)")
+
+        with col_save4:
+            if st.button("Сохранить в presets.py", key="save_permanent"):
+                current_values = get_current_values()
+                try:
+                    with open('utils/presets.py', 'r') as f:
+                        content = f.read()
+                    # Находим и обновляем стандартный пресет
+                    import re
+                    pattern = r'("standard":\s*{[^}]*})'
+                    new_preset = f'"standard": {str(current_values)}'
+                    new_content = re.sub(pattern, new_preset, content)
+                    with open('utils/presets.py', 'w') as f:
+                        f.write(new_content)
+                    st.success("Настройки сохранены как новый стандарт в presets.py")
+                except Exception as e:
+                    st.error(f"Ошибка при сохранении в presets.py: {str(e)}")
+
 if __name__ == "__main__":
     parameter_management_page()
