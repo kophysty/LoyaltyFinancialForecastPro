@@ -105,8 +105,8 @@ def parameter_management_page():
             st.session_state['initial_investment'] = st.number_input(
                 "Начальные инвестиции (₽)",
                 min_value=1000000,
-                max_value=50000000,
-                value=preset_data.get('initial_investment', 10000000),
+                max_value=100000000,
+                value=preset_data.get('initial_investment', 60000000),
                 step=1000000,
                 help="Объем начальных инвестиций на запуск проекта"
             )
@@ -114,10 +114,10 @@ def parameter_management_page():
             st.session_state['preparatory_expenses'] = st.number_input(
                 "Расходы на подготовительный этап (₽)",
                 min_value=1000000,
-                max_value=30000000,
-                value=preset_data.get('preparatory_expenses', 21000000),
+                max_value=50000000,
+                value=preset_data.get('preparatory_expenses', 35000000),
                 step=1000000,
-                help="Расходы на подготовительный этап перед запуском (~$300K)"
+                help="Расходы на подготовительный этап перед запуском"
             )
             
             st.session_state['base_infra_cost'] = st.number_input(
@@ -183,7 +183,7 @@ def parameter_management_page():
                 "Месяц запуска базовой подписки",
                 min_value=1,
                 max_value=24,
-                value=preset_data.get('basic_subscription_start_month', 1),
+                value=preset_data.get('basic_subscription_start_month', 6),
                 step=1,
                 help="Месяц, с которого начинает действовать базовая подписка",
                 key=f"basic_sub_start_{selected_preset}"
@@ -203,7 +203,7 @@ def parameter_management_page():
                 "Месяц запуска премиум подписки",
                 min_value=1,
                 max_value=24,
-                value=preset_data.get('premium_subscription_start_month', 3),
+                value=preset_data.get('premium_subscription_start_month', 6),
                 step=1,
                 help="Месяц, с которого начинает действовать премиум подписка",
                 key=f"premium_sub_start_{selected_preset}"
@@ -223,7 +223,7 @@ def parameter_management_page():
                 "Месяц запуска бизнес-подписки",
                 min_value=1,
                 max_value=24,
-                value=preset_data.get('business_subscription_start_month', 6),
+                value=preset_data.get('business_subscription_start_month', 12),
                 step=1,
                 help="Месяц, с которого начинает действовать бизнес-подписка",
                 key=f"business_sub_start_{selected_preset}"
