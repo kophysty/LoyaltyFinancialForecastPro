@@ -87,8 +87,25 @@ PRESETS = {
 
 def load_preset(preset_name):
     if preset_name in PRESETS:
-        for key, value in PRESETS[preset_name].items():
+        preset_data = PRESETS[preset_name]
+        # Убедимся, что все параметры подписок загружены
+        subscription_params = [
+            'basic_subscription_price', 'basic_subscription_start_month',
+            'premium_subscription_price', 'premium_subscription_start_month',
+            'business_subscription_price', 'business_subscription_start_month',
+            'basic_subscription_conversion', 'premium_subscription_conversion'
+        ]
+        
+        # Загружаем все параметры из пресета
+        for key, value in preset_data.items():
             st.session_state[key] = value
+            
+        # Проверяем, что все параметры подписок установлены
+        for param in subscription_params:
+            if param not in st.session_state and param in preset_data:
+                st.session_state[param] = preset_data[param]
+        
+        log_info(f"Loaded preset {preset_name} with subscription parameters")
 
 
 def save_preset(preset_name, values):
