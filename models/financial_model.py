@@ -55,7 +55,12 @@ class FinancialModel:
                     # Расчет дохода от неподтвержденных баллов
                     unclaimed_points = cashback * (1 - st.session_state['points_usage_rate'])
                     # Баллы сгорают только если не подтверждены в течение claim_period месяцев
-                    expired_points_income = (unclaimed_points * st.session_state['expired_points_rate']) if month > claim_period else 0
+                    if month <= claim_period:
+                        expired_points_income = 0
+                    else:
+                        # Берем неподтвержденные баллы за период claim_period месяцев назад
+                        historical_unclaimed = data[month - claim_period - 1]['unclaimed_points'] if month > claim_period else 0
+                        expired_points_income = historical_unclaimed * st.session_state['expired_points_rate']
                     # Комиссия обмена 3% от использованных баллов
                     exchange_commission = used_points * st.session_state['exchange_commission_rate']
                     # Комиссия начисления 5% от всего кэшбэка
@@ -163,6 +168,7 @@ class FinancialModel:
                         'total_new_users': total_new_users,
                         'commission_revenue': exchange_commission + reward_commission,
                         'expired_points_income': expired_points_income,
+                        'unclaimed_points': unclaimed_points,  # Добавляем для отслеживания истории
                         'subscription_revenue': subscription_revenue,
                         'premium_revenue': premium_revenue,
                         'additional_revenue': ad_revenue + partner_revenue
