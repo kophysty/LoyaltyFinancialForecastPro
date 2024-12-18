@@ -92,8 +92,6 @@ def scenario_analysis_page():
                     "Сценарий": {"pessimistic": "Пессимистичный", 
                                 "standard": "Стандартный", 
                                 "optimistic": "Оптимистичный"}[scenario_name],
-                    "Начальные инвестиции": format_currency(st.session_state.get('initial_investment', 10000000)),
-                    "Подготовительные расходы": format_currency(st.session_state.get('preparatory_expenses', 21000000)),
                     "Выручка (последний месяц)": format_currency(final_revenue),
                     "Расходы (последний месяц)": format_currency(final_expenses),
                     "Прибыль (последний месяц)": format_currency(final_profit),
@@ -116,6 +114,30 @@ def scenario_analysis_page():
         # Display metrics table
         st.subheader("Сравнение метрик")
         st.table(metrics_data)
+        
+        # Add investment parameters
+        st.subheader("Параметры инвестиций")
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.session_state['initial_investment'] = st.number_input(
+                "Начальные инвестиции (₽)",
+                min_value=1000000,
+                max_value=50000000,
+                value=st.session_state.get('initial_investment', 10000000),
+                step=1000000,
+                help="Объем начальных инвестиций на запуск проекта"
+            )
+            
+        with col2:
+            st.session_state['preparatory_expenses'] = st.number_input(
+                "Расходы на подготовительный этап (₽)",
+                min_value=1000000,
+                max_value=30000000,
+                value=st.session_state.get('preparatory_expenses', 21000000),
+                step=1000000,
+                help="Расходы на подготовительный этап перед запуском (~$300K)"
+            )
         
         # Plot comparisons
         st.subheader("Графики сравнения")
