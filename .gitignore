@@ -40,7 +40,8 @@ logs/
 *.log
 
 # Streamlit
-.streamlit/
+.streamlit/*
+!.streamlit/config.toml
 
 # Local development
 .local/

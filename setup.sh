@@ -1,4 +1,4 @@
 #!/bin/bash
 mkdir -p ~/.streamlit/
 echo "\
-[server]\n\nheadless = true\nport = $PORT\nenableCORS = false\n\n" > ~/.streamlit/config.toml
+[server]\nport = $PORT\nenableCORS = false\nenableXsrfProtection = true\nmaxUploadSize = 200\n\n[browser]\nserverAddress = \"0.0.0.0\"\ngatherUsageStats = false\n" > ~/.streamlit/config.toml
